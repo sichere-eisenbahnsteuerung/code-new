@@ -7,6 +7,11 @@
 struct module   *modules[MAX_MODULES];
 int              modules_map[MAX_MODULES];
 
+/*
+ * @brief   Initialize module subsystem
+ *
+ * @return  > 0 if initialization succeeds, <=0 if initialization fails
+ */
 int init_module_subsystem(void)
 {
     int n;
