@@ -12,10 +12,12 @@
 	const typeof( ((type *)0)->member ) *__mptr = (ptr);	\
 	(type *)( (char *)__mptr - offsetof(type,member) );})
 
+#define MAX_DRIVERS		10
+
 enum bus_driver_type_t
 {
-	BUS_DRIVER_I2C,
-	BUS_DRIVER_S88,
+	BUS_DRIVER_I2C = 0,
+	BUS_DRIVER_S88 = 1,
 }
 
 struct bus_driver
@@ -31,6 +33,7 @@ struct bus_driver
 int					 register_driver	(bus_driver_type_t type, struct bus_driver *driver);
 int					 unregister_driver	(bus_driver_type_t type);
 struct bus_driver	*require_driver		(bus_driver_type_t type);
+void				 release_driver		(bus_driver_type_t type);
 
 #endif
 

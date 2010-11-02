@@ -18,9 +18,13 @@ int fahrprogramm_init(void)
 
 int fahrprogramm_release(void)
 {
+	release_driver(I2C_DRIVER);
+
 	return 0;
 }
 
 int fahrprogramm_work(void)
 {
+	uint8_t data[] = { 0x1, 0x3, 0x3, 0x7 };
+	i2c_driver->send(data, 4);
 }

@@ -54,8 +54,43 @@ int register_module(struct module *mod)
     return rc;
 }
 
+/*
+ * FIXME
+ */
 int unregister_module(struct module *mod)
 {
     /* FIXME */
     return 0;
+}
+
+/* 
+ * @brief   Initialize all registered modules
+ */
+void init_all_modules(void)
+{
+    int n;
+
+    for (n = 0; n < MAX_MODULES; n++)
+    {
+        if (modules_map[n] > 0 && modules_map[n] != NULL)
+        {
+            modules_map[n]->init();
+        }
+    }
+}
+
+/*
+ * @brief   Release all registered modules
+ */
+void release_all_modules(void)
+{
+    int n;
+
+    for (n = 0; n < MAX_MODULES; n++)
+    {
+        if (modules_map[n] > 0 && modules_map[n] != NULL)
+        {
+            modules_map[n]->release();
+        }
+    }
 }
