@@ -1,6 +1,18 @@
 
+/*
+ * @brief Initialize common stuff for the main program
+ */
+void init_common(void)
+{
+	enable_interrupts(1);
+}
+
+/*
+ * @brief The method which gets called initialy by the processor
+ *//
 int main()
 {
+	init_common();
 	init_driver_subsystem();
 	init_module_subsystem();
 
@@ -12,6 +24,7 @@ int main()
 
 	init_all_modules();
 
+	/* FIXME work loop */
 
 	release_all_modules();
 }

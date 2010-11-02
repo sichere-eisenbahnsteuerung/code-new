@@ -1,4 +1,8 @@
 
+int fahrprogramm_init(void);
+int fahrprogramm_release(void);
+int fahrprogramm_work(void);
+
 struct module fahrprogramm_module = 
 {
 	.name		= "fahrprogramm",
