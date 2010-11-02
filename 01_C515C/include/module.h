@@ -3,10 +3,13 @@
 
 struct module
 {
-	const char		*name;
-	int (*init)		(void);
-	int (*release)	(void);
+    const char      *name;
+    int (*init)     (void);
+    int (*release)  (void);
 };
+
+int register_module     (struct module *module);
+int unregister_module   (struct module *module);
 
 #endif
 
