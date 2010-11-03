@@ -1,9 +1,10 @@
-C51 COMPILER V9.02   MAIN                                                                  11/03/2010 13:28:01 PAGE 1   
+C51 COMPILER V9.02   MAIN                                                                  11/03/2010 23:28:07 PAGE 1   
 
 
 C51 COMPILER V9.02, COMPILATION OF MODULE MAIN
 OBJECT MODULE PLACED IN main.obj
-COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE src\main.c BROWSE DEBUG OBJECTEXTEND PRINT(.\main.lst) OBJECT(main.obj)
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE src\main.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\main.lst) OBJECT(main.ob
+                    -j)
 
 line level    source
 

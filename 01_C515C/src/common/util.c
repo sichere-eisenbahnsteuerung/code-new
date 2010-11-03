@@ -1,5 +1,6 @@
 #include "util.h"
-
+		   
+#include <REG515C.H>
 /*
  * @brief Enable or disable interrupts
  *
@@ -7,7 +8,7 @@
  */
 void enable_interrupts(bool enable)
 {
-	IE = enable;
+	EAL = enable;
 }
 
 /*

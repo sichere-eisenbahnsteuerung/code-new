@@ -1,1 +1,0 @@
-"src\common\module.c" BROWSE DEBUG OBJECTEXTEND PRINT(.\module.lst) OBJECT(module.obj)

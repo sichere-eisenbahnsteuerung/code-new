@@ -1,49 +1,62 @@
-C51 COMPILER V9.02   RINGBUFFER                                                            11/03/2010 13:29:56 PAGE 1   
+C51 COMPILER V9.02   RINGBUFFER                                                            11/03/2010 23:28:07 PAGE 1   
 
 
 C51 COMPILER V9.02, COMPILATION OF MODULE RINGBUFFER
 OBJECT MODULE PLACED IN ringbuffer.obj
-COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE src\common\ringbuffer.c BROWSE DEBUG OBJECTEXTEND PRINT(.\ringbuffer.lst) O
-                    -BJECT(ringbuffer.obj)
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE src\common\ringbuffer.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\ringbuffer.
+                    -lst) OBJECT(ringbuffer.obj)
 
 line level    source
 
-   1          #include "ringbuffer.h"
-*** ERROR C141 IN LINE 6 OF SRC\COMMON\RINGBUFFER.H: syntax error near '['
-*** ERROR C129 IN LINE 9 OF SRC\COMMON\RINGBUFFER.H: missing ';' before 'uint8_t'
-   2          
-   3          void ringbuffer_init(RINGBUFFER_T *buffer) {
-   4                  buffer->read_position = 0;
-   5                  buffer->write_position = 0;
-   6                  buffer->size = 0;
-   7          }
-   8          
-   9          uint8_t ringbuffer_read(RINGBUFFER_T *buffer) {
-  10                  uint8_t interrupt_state = IE, retval;
-  11          
-  12                  if(buffer->size > 0) {
-  13                  retval = buffer->data[buffer->read_position];
-  14                  buffer->size--;
-  15                  buffer->read_position++;
-  16                  }
-  17          
-  18              IE = interrupt_state;
-  19          
-  20              return retval;
-  21          }
-  22          
-  23          uint8_t ringbuffer_write(RINGBUFFER_T *buffer) {
-  24                  uint8_t interrupt_state = IE;
-  25          
-  26                  if(buffer->size > 0) {
-  27                  retval = buffer->data[buffer->read_position];
-  28                  buffer->size--;
-  29                  buffer->read_position++;
-  30                  }
-  31          
-  32              IE = interrupt_state;
-  33          
-  34              return retval;
-  35          }
+   1          #include <REG515C.H>
+   2          #include "ringbuffer.h"
+   3          
+   4          void ringbuffer_init(ringbuffer_t *buffer) {
+   5   1              buffer->read_position = 0;
+   6   1              buffer->write_position = 0;
+   7   1              buffer->size = 0;
+   8   1      }
+   9          
+  10          uint8_t ringbuffer_read(ringbuffer_t *buffer) {
+  11   1              uint8_t interrupt_state = EAL, retval;
+  12   1              
+  13   1              if(buffer->size > 0) {
+  14   2              retval = buffer->content[buffer->read_position];
+  15   2              buffer->size--;
+  16   2              buffer->read_position++;
+  17   2              }
+  18   1      
+  19   1          EAL = interrupt_state;
+  20   1      
+  21   1          return retval;
+  22   1      }
+  23          
+  24          void ringbuffer_write(ringbuffer_t *buffer, uint8_t value) {
+  25   1              uint8_t interrupt_state = EAL;
+  26   1      
+  27   1              /*if(buffer->size > 0) {
+  28   1              retval = buffer->data[buffer->read_position];
+  29   1              buffer->size--;
+  30   1              buffer->read_position++;
+  31   1              }
+  32   1      
+  33   1          EAL = interrupt_state;
+  34   1      
+  35   1          return retval;        */
+  36   1      }
+*** WARNING C280 IN LINE 24 OF SRC\COMMON\RINGBUFFER.C: 'buffer': unreferenced local variable
+*** WARNING C280 IN LINE 24 OF SRC\COMMON\RINGBUFFER.C: 'value': unreferenced local variable
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     95    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----       5
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  0 ERROR(S)

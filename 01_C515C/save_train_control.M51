@@ -1,0 +1,572 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/03/2010  23:28:07  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE main.obj, driver.obj, module.obj, ringbuffer.obj, util.obj, i2c.obj, befehlsvalidierung.obj, fa
+>> hrprogramm.obj TO save_train_control RAMSIZE (256)
+
+
+MEMORY MODEL: LARGE
+
+
+INPUT MODULES INCLUDED:
+  main.obj (MAIN)
+  driver.obj (DRIVER)
+  module.obj (MODULE)
+  ringbuffer.obj (RINGBUFFER)
+  util.obj (UTIL)
+  i2c.obj (I2C)
+  befehlsvalidierung.obj (BEFEHLSVALIDIERUNG)
+  fahrprogramm.obj (FAHRPROGRAMM)
+  C:\KEIL\C51\LIB\C51L.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?CLDOPTR)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?CILDOPTR)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?CSTOPTR)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?IILDX)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?OFFXADD)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?PLDOPTR)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?ICALL)
+  C:\KEIL\C51\LIB\C51L.LIB (?C_INIT)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?PLDIDATA)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?PLDXDATA)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?PLDPDATA)
+  C:\KEIL\C51\LIB\C51L.LIB (?C?PLDCODE)
+
+
+LINK MAP OF MODULE:  save_train_control (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *  X D A T A   M E M O R Y  * * * * * * *
+            XDATA   0000H     0032H     UNIT         ?XD?DRIVER
+            XDATA   0032H     0032H     UNIT         ?XD?MODULE
+            XDATA   0064H     000FH     UNIT         ?XD?I2C
+            XDATA   0073H     0005H     UNIT         ?XD?_REGISTER_DRIVER?DRIVER
+            XDATA   0078H     0005H     UNIT         ?XD?_REGISTER_MODULE?MODULE
+            XDATA   007DH     0005H     UNIT         ?XD?_RINGBUFFER_WRITE?RINGBUFFER
+            XDATA   0082H     0005H     UNIT         _XDATA_GROUP_
+            XDATA   0087H     0003H     UNIT         ?XD?__UNREGISTER_DRIVER?DRIVER
+            XDATA   008AH     0003H     UNIT         ?XD?_REQUIRE_DRIVER?DRIVER
+            XDATA   008DH     0003H     UNIT         ?XD?_UNREGISTER_MODULE?MODULE
+            XDATA   0090H     0002H     UNIT         ?XD?INIT_ALL_MODULES?MODULE
+            XDATA   0092H     0002H     UNIT         ?XD?RELEASE_ALL_MODULES?MODULE
+            XDATA   0094H     0002H     UNIT         ?XD?_UDELAY?UTIL
+            XDATA   0096H     0002H     UNIT         ?XD?_MDELAY?UTIL
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2010  23:28:07  PAGE 2
+
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0101H     UNIT         ?C?LIB_CODE
+            CODE    0104H     008CH     UNIT         ?C_C51STARTUP
+            CODE    0190H     0082H     UNIT         ?PR?_REGISTER_MODULE?MODULE
+            CODE    0212H     0078H     UNIT         ?PR?INIT_ALL_MODULES?MODULE
+            CODE    028AH     0078H     UNIT         ?PR?RELEASE_ALL_MODULES?MODULE
+            CODE    0302H     0065H     UNIT         ?PR?_REGISTER_DRIVER?DRIVER
+            CODE    0367H     0053H     UNIT         ?PR?_REQUIRE_DRIVER?DRIVER
+            CODE    03BAH     0039H     UNIT         ?PR?_RELEASE_DRIVER?DRIVER
+            CODE    03F3H     0035H     UNIT         ?PR?_RINGBUFFER_READ?RINGBUFFER
+            CODE    0428H     002BH     UNIT         ?PR?__UNREGISTER_DRIVER?DRIVER
+            CODE    0453H     0027H     UNIT         ?PR?INIT_MODULE_SUBSYSTEM?MODULE
+            CODE    047AH     0022H     UNIT         ?PR?_CHECK_FOR_DRIVER?DRIVER
+            CODE    049CH     0015H     UNIT         ?PR?_RINGBUFFER_INIT?RINGBUFFER
+            CODE    04B1H     0015H     UNIT         ?PR?_RINGBUFFER_WRITE?RINGBUFFER
+            CODE    04C6H     0015H     UNIT         ?PR?_I2C_PROBE?I2C
+            CODE    04DBH     0015H     UNIT         ?PR?_I2C_SHUTDOWN?I2C
+            CODE    04F0H     0015H     UNIT         ?PR?_I2C_SEND?I2C
+            CODE    0505H     0015H     UNIT         ?PR?_I2C_RECV?I2C
+            CODE    051AH     0013H     UNIT         ?C_INITSEG
+            CODE    052DH     000FH     UNIT         ?PR?_UNREGISTER_MODULE?MODULE
+            CODE    053CH     0009H     UNIT         ?PR?_UDELAY?UTIL
+            CODE    0545H     0009H     UNIT         ?PR?_MDELAY?UTIL
+            CODE    054EH     0006H     UNIT         ?PR?_ENABLE_INTERRUPTS?UTIL
+            CODE    0554H     0005H     UNIT         ?PR?INIT_COMMON?MAIN
+            CODE    0559H     0004H     UNIT         ?CO?I2C
+            CODE    055DH     0003H     UNIT         ?PR?MAIN?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   save_train_control (MAIN)
+
+
+SEGMENT                                    XDATA_GROUP
+  +--> CALLED SEGMENT                    START    LENGTH
+--------------------------------------------------------
+?C_C51STARTUP                            -----    -----
+  +--> ?PR?MAIN?MAIN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MAIN                            -----    -----
+  +--> ?PR?INIT_COMMON?MAIN
+
+?PR?INIT_COMMON?MAIN                     -----    -----
+  +--> ?PR?_ENABLE_INTERRUPTS?UTIL
+
+?C_INITSEG                               -----    -----
+  +--> ?CO?I2C
+  +--> ?PR?_I2C_PROBE?I2C
+  +--> ?PR?_I2C_SHUTDOWN?I2C
+  +--> ?PR?_I2C_SEND?I2C
+  +--> ?PR?_I2C_RECV?I2C
+
+?PR?_I2C_PROBE?I2C                       0082H    0005H
+
+?PR?_I2C_SHUTDOWN?I2C                    0082H    0005H
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2010  23:28:07  PAGE 3
+
+
+
+?PR?_I2C_SEND?I2C                        0082H    0005H
+
+?PR?_I2C_RECV?I2C                        0082H    0005H
+
+
+
+SYMBOL TABLE OF MODULE:  save_train_control (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0554H         PUBLIC        init_common
+  C:055DH         PUBLIC        main
+  -------         PROC          INIT_COMMON
+  C:0554H         LINE#         10
+  C:0554H         LINE#         11
+  C:0554H         LINE#         12
+  -------         ENDPROC       INIT_COMMON
+  -------         PROC          MAIN
+  C:055DH         LINE#         19
+  C:055DH         LINE#         20
+  C:055DH         LINE#         21
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        DRIVER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  X:0000H         PUBLIC        drivers
+  C:047AH         PUBLIC        _check_for_driver
+  C:0428H         PUBLIC        __unregister_driver
+  C:03BAH         PUBLIC        _release_driver
+  C:0302H         PUBLIC        _register_driver
+  C:0367H         PUBLIC        _require_driver
+  -------         PROC          __UNREGISTER_DRIVER
+  X:0087H         SYMBOL        driver
+  -------         DO            
+  D:0006H         SYMBOL        rc
+  -------         ENDDO         
+  C:0428H         LINE#         24
+  C:0433H         LINE#         25
+  C:0433H         LINE#         26
+  C:0436H         LINE#         28
+  C:044FH         LINE#         29
+  C:044FH         LINE#         30
+  C:0452H         LINE#         31
+  C:0452H         LINE#         33
+  C:0452H         LINE#         34
+  -------         ENDPROC       __UNREGISTER_DRIVER
+  -------         PROC          _CHECK_FOR_DRIVER
+  D:0007H         SYMBOL        type
+  C:047AH         LINE#         36
+  C:047AH         LINE#         37
+  C:047AH         LINE#         38
+  C:049BH         LINE#         39
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2010  23:28:07  PAGE 4
+
+
+  -------         ENDPROC       _CHECK_FOR_DRIVER
+  -------         PROC          _REGISTER_DRIVER
+  D:0005H         SYMBOL        type
+  X:0073H         SYMBOL        driver
+  -------         DO            
+  X:0076H         SYMBOL        rc
+  -------         ENDDO         
+  C:0302H         LINE#         41
+  C:030FH         LINE#         42
+  C:030FH         LINE#         43
+  C:0314H         LINE#         46
+  C:031BH         LINE#         47
+  C:031BH         LINE#         48
+  C:033CH         LINE#         49
+  C:034EH         LINE#         50
+  C:0354H         LINE#         51
+  C:0356H         LINE#         53
+  C:0356H         LINE#         54
+  C:035EH         LINE#         55
+  C:035EH         LINE#         57
+  C:0366H         LINE#         58
+  -------         ENDPROC       _REGISTER_DRIVER
+  -------         PROC          _REQUIRE_DRIVER
+  D:0005H         SYMBOL        type
+  -------         DO            
+  X:008AH         SYMBOL        driver
+  -------         ENDDO         
+  C:0367H         LINE#         60
+  C:0369H         LINE#         61
+  C:0369H         LINE#         62
+  C:0372H         LINE#         64
+  C:0379H         LINE#         65
+  C:0379H         LINE#         66
+  C:038EH         LINE#         67
+  C:03AEH         LINE#         68
+  C:03AEH         LINE#         70
+  C:03B9H         LINE#         71
+  -------         ENDPROC       _REQUIRE_DRIVER
+  -------         PROC          _RELEASE_DRIVER
+  D:0005H         SYMBOL        type
+  C:03BAH         LINE#         73
+  C:03BCH         LINE#         74
+  C:03BCH         LINE#         75
+  C:03C3H         LINE#         76
+  C:03C3H         LINE#         77
+  C:03DDH         LINE#         78
+  C:03DDH         LINE#         79
+  C:03F2H         LINE#         80
+  C:03F2H         LINE#         81
+  C:03F2H         LINE#         82
+  -------         ENDPROC       _RELEASE_DRIVER
+  -------         ENDMOD        DRIVER
+
+  -------         MODULE        MODULE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  X:0032H         PUBLIC        modules_map
+  C:0212H         PUBLIC        init_all_modules
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2010  23:28:07  PAGE 5
+
+
+  C:052DH         PUBLIC        _unregister_module
+  C:0190H         PUBLIC        _register_module
+  C:028AH         PUBLIC        release_all_modules
+  C:0453H         PUBLIC        init_module_subsystem
+  X:0046H         PUBLIC        modules
+  -------         PROC          INIT_MODULE_SUBSYSTEM
+  -------         DO            
+  D:0004H         SYMBOL        n
+  -------         ENDDO         
+  C:0453H         LINE#         17
+  C:0453H         LINE#         18
+  C:0453H         LINE#         22
+  C:0456H         LINE#         23
+  C:0456H         LINE#         24
+  C:046BH         LINE#         25
+  C:0476H         LINE#         27
+  C:0479H         LINE#         28
+  -------         ENDPROC       INIT_MODULE_SUBSYSTEM
+  -------         PROC          _REGISTER_MODULE
+  X:0078H         SYMBOL        mod
+  -------         DO            
+  D:0002H         SYMBOL        n
+  X:007BH         SYMBOL        new_module_index
+  D:0004H         SYMBOL        rc
+  -------         ENDDO         
+  C:0190H         LINE#         38
+  C:019BH         LINE#         39
+  C:019BH         LINE#         41
+  C:01A1H         LINE#         42
+  C:01A4H         LINE#         45
+  C:01A6H         LINE#         46
+  C:01A6H         LINE#         47
+  C:01BEH         LINE#         48
+  C:01BEH         LINE#         49
+  C:01C6H         LINE#         50
+  C:01C8H         LINE#         51
+  C:01C8H         LINE#         52
+  C:01D3H         LINE#         55
+  C:01E3H         LINE#         56
+  C:01E3H         LINE#         57
+  C:0209H         LINE#         58
+  C:020DH         LINE#         59
+  C:020DH         LINE#         61
+  C:0211H         LINE#         62
+  -------         ENDPROC       _REGISTER_MODULE
+  -------         PROC          _UNREGISTER_MODULE
+  X:008DH         SYMBOL        mod
+  C:052DH         LINE#         67
+  C:0538H         LINE#         68
+  C:0538H         LINE#         70
+  C:053BH         LINE#         71
+  -------         ENDPROC       _UNREGISTER_MODULE
+  -------         PROC          INIT_ALL_MODULES
+  -------         DO            
+  X:0090H         SYMBOL        n
+  -------         ENDDO         
+  C:0212H         LINE#         76
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2010  23:28:07  PAGE 6
+
+
+  C:0212H         LINE#         77
+  C:0212H         LINE#         80
+  C:022BH         LINE#         81
+  C:022BH         LINE#         82
+  C:024FH         LINE#         83
+  C:024FH         LINE#         84
+  C:0279H         LINE#         85
+  C:0279H         LINE#         86
+  C:0289H         LINE#         87
+  -------         ENDPROC       INIT_ALL_MODULES
+  -------         PROC          RELEASE_ALL_MODULES
+  -------         DO            
+  X:0092H         SYMBOL        n
+  -------         ENDDO         
+  C:028AH         LINE#         92
+  C:028AH         LINE#         93
+  C:028AH         LINE#         96
+  C:02A3H         LINE#         97
+  C:02A3H         LINE#         98
+  C:02C7H         LINE#         99
+  C:02C7H         LINE#         100
+  C:02F1H         LINE#         101
+  C:02F1H         LINE#         102
+  C:0301H         LINE#         103
+  -------         ENDPROC       RELEASE_ALL_MODULES
+  -------         ENDMOD        MODULE
+
+  -------         MODULE        RINGBUFFER
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00E8H         PUBLIC        P4
+  D:00A8H         PUBLIC        IEN0
+  D:00B8H         PUBLIC        IEN1
+  D:00D8H         PUBLIC        ADCON0
+  C:03F3H         PUBLIC        _ringbuffer_read
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  C:04B1H         PUBLIC        _ringbuffer_write
+  C:049CH         PUBLIC        _ringbuffer_init
+  B:00A8H.7       PUBLIC        EAL
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  D:00C0H         PUBLIC        IRCON
+  -------         PROC          _RINGBUFFER_INIT
+  D:0001H         SYMBOL        buffer
+  C:049CH         LINE#         4
+  C:049CH         LINE#         5
+  C:04A3H         LINE#         6
+  C:04AAH         LINE#         7
+  -------         ENDPROC       _RINGBUFFER_INIT
+  -------         PROC          _RINGBUFFER_READ
+  D:0001H         SYMBOL        buffer
+  -------         DO            
+  D:0006H         SYMBOL        interrupt_state
+  D:0007H         SYMBOL        retval
+  -------         ENDDO         
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2010  23:28:07  PAGE 7
+
+
+  C:03F3H         LINE#         10
+  C:03F3H         LINE#         11
+  C:03F8H         LINE#         13
+  C:0403H         LINE#         14
+  C:0412H         LINE#         15
+  C:041AH         LINE#         16
+  C:0422H         LINE#         17
+  C:0422H         LINE#         19
+  C:0427H         LINE#         21
+  C:0427H         LINE#         22
+  -------         ENDPROC       _RINGBUFFER_READ
+  -------         PROC          _RINGBUFFER_WRITE
+  X:007DH         SYMBOL        buffer
+  X:0080H         SYMBOL        value
+  -------         DO            
+  X:0081H         SYMBOL        interrupt_state
+  -------         ENDDO         
+  C:04B1H         LINE#         24
+  C:04BFH         LINE#         25
+  C:04C5H         LINE#         36
+  -------         ENDPROC       _RINGBUFFER_WRITE
+  -------         ENDMOD        RINGBUFFER
+
+  -------         MODULE        UTIL
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0545H         PUBLIC        _mdelay
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00E8H         PUBLIC        P4
+  C:053CH         PUBLIC        _udelay
+  D:00A8H         PUBLIC        IEN0
+  D:00B8H         PUBLIC        IEN1
+  D:00D8H         PUBLIC        ADCON0
+  C:054EH         PUBLIC        _enable_interrupts
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:00A8H.7       PUBLIC        EAL
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  D:00C0H         PUBLIC        IRCON
+  -------         PROC          _ENABLE_INTERRUPTS
+  D:0007H         SYMBOL        enable
+  C:054EH         LINE#         9
+  C:054EH         LINE#         10
+  C:054EH         LINE#         11
+  C:0553H         LINE#         12
+  -------         ENDPROC       _ENABLE_INTERRUPTS
+  -------         PROC          _UDELAY
+  X:0094H         SYMBOL        usecs
+  C:053CH         LINE#         19
+  C:0544H         LINE#         20
+  C:0544H         LINE#         22
+  -------         ENDPROC       _UDELAY
+  -------         PROC          _MDELAY
+  X:0096H         SYMBOL        msecs
+  C:0545H         LINE#         29
+  C:054DH         LINE#         30
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2010  23:28:07  PAGE 8
+
+
+  C:054DH         LINE#         32
+  -------         ENDPROC       _MDELAY
+  -------         ENDMOD        UTIL
+
+  -------         MODULE        I2C
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:04F0H         SYMBOL        _i2c_send
+  C:0505H         SYMBOL        _i2c_recv
+  C:04DBH         SYMBOL        _i2c_shutdown
+  X:0064H         PUBLIC        i2c_driver
+  C:04C6H         SYMBOL        _i2c_probe
+  -------         PROC          _I2C_PROBE
+  X:0082H         SYMBOL        value
+  X:0085H         SYMBOL        len
+  C:04C6H         LINE#         11
+  C:04D7H         LINE#         12
+  C:04D7H         LINE#         13
+  C:04DAH         LINE#         14
+  -------         ENDPROC       _I2C_PROBE
+  -------         PROC          _I2C_SHUTDOWN
+  X:0082H         SYMBOL        value
+  X:0085H         SYMBOL        len
+  C:04DBH         LINE#         16
+  C:04ECH         LINE#         17
+  C:04ECH         LINE#         18
+  C:04EFH         LINE#         19
+  -------         ENDPROC       _I2C_SHUTDOWN
+  -------         PROC          _I2C_SEND
+  X:0082H         SYMBOL        value
+  X:0085H         SYMBOL        len
+  C:04F0H         LINE#         21
+  C:0501H         LINE#         22
+  C:0501H         LINE#         23
+  C:0504H         LINE#         24
+  -------         ENDPROC       _I2C_SEND
+  -------         PROC          _I2C_RECV
+  X:0082H         SYMBOL        value
+  X:0085H         SYMBOL        len
+  C:0505H         LINE#         26
+  C:0516H         LINE#         27
+  C:0516H         LINE#         28
+  C:0519H         LINE#         29
+  -------         ENDPROC       _I2C_RECV
+  -------         ENDMOD        I2C
+
+  -------         MODULE        BEFEHLSVALIDIERUNG
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  -------         ENDMOD        BEFEHLSVALIDIERUNG
+
+  -------         MODULE        FAHRPROGRAMM
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  -------         ENDMOD        FAHRPROGRAMM
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0003H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2010  23:28:07  PAGE 9
+
+
+  -------         MODULE        ?C?CILDOPTR
+  C:0030H         PUBLIC        ?C?CILDOPTR
+  -------         ENDMOD        ?C?CILDOPTR
+
+  -------         MODULE        ?C?CSTOPTR
+  C:0063H         PUBLIC        ?C?CSTOPTR
+  -------         ENDMOD        ?C?CSTOPTR
+
+  -------         MODULE        ?C?IILDX
+  C:0085H         PUBLIC        ?C?IILDX
+  -------         ENDMOD        ?C?IILDX
+
+  -------         MODULE        ?C?OFFXADD
+  C:009BH         PUBLIC        ?C?OFFXADD
+  -------         ENDMOD        ?C?OFFXADD
+
+  -------         MODULE        ?C?PLDOPTR
+  C:00A7H         PUBLIC        ?C?PLDOPTR
+  -------         ENDMOD        ?C?PLDOPTR
+
+  -------         MODULE        ?C?ICALL
+  C:00D7H         PUBLIC        ?C?ICALL
+  C:00DBH         PUBLIC        ?C?ICALL2
+  -------         ENDMOD        ?C?ICALL
+
+  -------         MODULE        ?C?PLDIDATA
+  C:00DDH         PUBLIC        ?C?PLDIDATA
+  -------         ENDMOD        ?C?PLDIDATA
+
+  -------         MODULE        ?C?PLDXDATA
+  C:00E6H         PUBLIC        ?C?PLDXDATA
+  -------         ENDMOD        ?C?PLDXDATA
+
+  -------         MODULE        ?C?PLDPDATA
+  C:00EFH         PUBLIC        ?C?PLDPDATA
+  -------         ENDMOD        ?C?PLDPDATA
+
+  -------         MODULE        ?C?PLDCODE
+  C:00F8H         PUBLIC        ?C?PLDCODE
+  -------         ENDMOD        ?C?PLDCODE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?__UNREGISTER_DRIVER?DRIVER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_REGISTER_DRIVER?DRIVER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_REQUIRE_DRIVER?DRIVER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_RELEASE_DRIVER?DRIVER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INIT_MODULE_SUBSYSTEM?MODULE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/03/2010  23:28:07  PAGE 10
+
+
+    SEGMENT: ?PR?_REGISTER_MODULE?MODULE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UNREGISTER_MODULE?MODULE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INIT_ALL_MODULES?MODULE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?RELEASE_ALL_MODULES?MODULE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_RINGBUFFER_INIT?RINGBUFFER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_RINGBUFFER_READ?RINGBUFFER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_RINGBUFFER_WRITE?RINGBUFFER
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_UDELAY?UTIL
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_MDELAY?UTIL
+
+Program Size: data=9.0 xdata=152 code=1376
+LINK/LOCATE RUN COMPLETE.  14 WARNING(S),  0 ERROR(S)

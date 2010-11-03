@@ -6,7 +6,7 @@
  */
 struct sensor_data
 {
-    uint8_t data[2];
+    uint8_t content[2];
     uint8_t error;
 };
 

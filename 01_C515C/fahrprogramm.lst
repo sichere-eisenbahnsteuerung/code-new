@@ -1,10 +1,10 @@
-C51 COMPILER V9.02   FAHRPROGRAMM                                                          11/03/2010 13:28:01 PAGE 1   
+C51 COMPILER V9.02   FAHRPROGRAMM                                                          11/03/2010 23:28:07 PAGE 1   
 
 
 C51 COMPILER V9.02, COMPILATION OF MODULE FAHRPROGRAMM
 OBJECT MODULE PLACED IN fahrprogramm.obj
-COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE src\modules\fahrprogramm.c BROWSE DEBUG OBJECTEXTEND PRINT(.\fahrprogramm.l
-                    -st) OBJECT(fahrprogramm.obj)
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE src\modules\fahrprogramm.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\fahrprog
+                    -ramm.lst) OBJECT(fahrprogramm.obj)
 
 line level    source
 
@@ -39,8 +39,8 @@ line level    source
   29          
   30          int fahrprogramm_work(void)
   31          {
-  32                  uint8_t data[] = { 0x1, 0x3, 0x3, 0x7 };
-  33                  i2c_driver->send(data, 4);
+  32                  uint8_t content[] = { 0x1, 0x3, 0x3, 0x7 };
+  33                  i2c_driver->send(content, 4);
   34          }
   35          
   36          */

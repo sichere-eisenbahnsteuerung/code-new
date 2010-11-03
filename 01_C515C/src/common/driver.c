@@ -9,7 +9,7 @@ struct driver_registration
 
 struct driver_registration drivers[MAX_DRIVERS];
 
-int _register_driver(struct bus_driver *driver)
+/*int _register_driver(bus_driver_t *driver)   TODO: ????? zwei Funktionen register_driver?
 {
 	int rc = 0;
 
@@ -19,9 +19,9 @@ int _register_driver(struct bus_driver *driver)
 	}
 
 	return rc;
-}
+}  */
 
-int _unregister_driver(struct bus_driver *driver)
+int _unregister_driver(bus_driver_t *driver)
 {
 	int rc = 0;
 
@@ -33,12 +33,12 @@ int _unregister_driver(struct bus_driver *driver)
 	return rc;
 }
 
-int check_for_driver(BUS_DRIVER_TYPE_T type)
+int check_for_driver(bus_driver_type_t type)
 {
 	return drivers[type].driver != NULL;
 }
 
-int register_driver(BUS_DRIVER_TYPE_T type, struct bus_driver *driver)
+int register_driver(bus_driver_type_t type, bus_driver_t *driver)
 {
 	int rc = 0;
 

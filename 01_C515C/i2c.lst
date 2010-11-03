@@ -1,46 +1,61 @@
-C51 COMPILER V9.02   I2C                                                                   11/03/2010 13:29:56 PAGE 1   
+C51 COMPILER V9.02   I2C                                                                   11/03/2010 23:28:07 PAGE 1   
 
 
 C51 COMPILER V9.02, COMPILATION OF MODULE I2C
 OBJECT MODULE PLACED IN i2c.obj
-COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE src\drivers\i2c.c BROWSE DEBUG OBJECTEXTEND PRINT(.\i2c.lst) OBJECT(i2c.obj
-                    -)
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE src\drivers\i2c.c LARGE BROWSE DEBUG OBJECTEXTEND PRINT(.\i2c.lst) OBJECT(i
+                    -2c.obj)
 
 line level    source
 
-   1          
-   2          struct bus_driver i2c_driver = {
-*** ERROR C230 IN LINE 2 OF SRC\DRIVERS\I2C.C: 'bus_driver': unknown struct/union/enum tag
-   3                  .name           = "i2c",
-*** ERROR C141 IN LINE 3 OF SRC\DRIVERS\I2C.C: syntax error near '.'
-   4                  .probe          = i2c_probe,
-   5                  .shutdown       = i2c_shutdown,
-   6                  .send           = i2c_send,
-   7                  .resv           = i2c_recv,
-   8          };
-   9          
-  10          static int i2c_probe(uint8_t *data, uint32_t len)
-*** ERROR C141 IN LINE 10 OF SRC\DRIVERS\I2C.C: syntax error near '*', expected ')'
-  11          {
-  12   1              return 0;
-  13   1      }
-  14          
-  15          static int i2c_shutdown(uint8_t *data, uint32_t len)
-*** ERROR C141 IN LINE 15 OF SRC\DRIVERS\I2C.C: syntax error near '*', expected ')'
-  16          {
-  17   1              return 0;
-  18   1      }
-  19          
-  20          static int i2c_send(uint8_t *data, uint32_t len)
-*** ERROR C141 IN LINE 20 OF SRC\DRIVERS\I2C.C: syntax error near '*', expected ')'
-  21          {
-  22   1              return 0;
-  23   1      }
-  24          
-  25          static int i2c_recv(uint8_t *data, uint32_t len)
-*** ERROR C141 IN LINE 25 OF SRC\DRIVERS\I2C.C: syntax error near '*', expected ')'
-  26          {
-  27   1              return 0;
-  28   1      }
+   1          #include "i2c.h"
+   2          
+   3          bus_driver_t i2c_driver = {
+   4                  "i2c",
+   5                  &i2c_probe, //(uint8_t*, uint32_t),
+   6                  *i2c_shutdown,
+   7                  *i2c_send,
+   8                  *i2c_recv
+   9          };
+  10          
+  11          static int i2c_probe(uint8_t *value, uint32_t len)
+  12          {
+  13   1              return 0;
+  14   1      }
+*** WARNING C280 IN LINE 11 OF SRC\DRIVERS\I2C.C: 'value': unreferenced local variable
+*** WARNING C280 IN LINE 11 OF SRC\DRIVERS\I2C.C: 'len': unreferenced local variable
+  15          
+  16          static int i2c_shutdown(uint8_t *value, uint32_t len)
+  17          {
+  18   1              return 0;
+  19   1      }
+*** WARNING C280 IN LINE 16 OF SRC\DRIVERS\I2C.C: 'value': unreferenced local variable
+*** WARNING C280 IN LINE 16 OF SRC\DRIVERS\I2C.C: 'len': unreferenced local variable
+  20          
+  21          static int i2c_send(uint8_t *value, uint32_t len)
+  22          {
+  23   1              return 0;
+  24   1      }
+*** WARNING C280 IN LINE 21 OF SRC\DRIVERS\I2C.C: 'value': unreferenced local variable
+*** WARNING C280 IN LINE 21 OF SRC\DRIVERS\I2C.C: 'len': unreferenced local variable
+  25          
+  26          static int i2c_recv(uint8_t *value, uint32_t len)
+  27          {
+  28   1              return 0;
+  29   1      }
+*** WARNING C280 IN LINE 26 OF SRC\DRIVERS\I2C.C: 'value': unreferenced local variable
+*** WARNING C280 IN LINE 26 OF SRC\DRIVERS\I2C.C: 'len': unreferenced local variable
 
-C51 COMPILATION COMPLETE.  0 WARNING(S),  6 ERROR(S)
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     84    ----
+   CONSTANT SIZE    =      4    ----
+   XDATA SIZE       =     15      20
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  8 WARNING(S),  0 ERROR(S)

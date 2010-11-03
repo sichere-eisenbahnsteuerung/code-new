@@ -29,8 +29,8 @@ int fahrprogramm_release(void)
 
 int fahrprogramm_work(void)
 {
-	uint8_t data[] = { 0x1, 0x3, 0x3, 0x7 };
-	i2c_driver->send(data, 4);
+	uint8_t content[] = { 0x1, 0x3, 0x3, 0x7 };
+	i2c_driver->send(content, 4);
 }
 
 */

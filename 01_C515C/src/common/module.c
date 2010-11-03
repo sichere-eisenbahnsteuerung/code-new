@@ -81,7 +81,7 @@ void init_all_modules(void)
     {
         if (modules_map[n] > 0 && modules_map[n] != NULL)
         {
-            modules_map[n]->init();
+            modules[n]->init();
         }
     }
 }
@@ -97,7 +97,7 @@ void release_all_modules(void)
     {
         if (modules_map[n] > 0 && modules_map[n] != NULL)
         {
-            modules_map[n]->release();
+            modules[n]->release();
         }
     }
 }
