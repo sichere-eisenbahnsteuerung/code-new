@@ -1,0 +1,46 @@
+C51 COMPILER V9.02   I2C                                                                   11/03/2010 13:29:56 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE I2C
+OBJECT MODULE PLACED IN i2c.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE src\drivers\i2c.c BROWSE DEBUG OBJECTEXTEND PRINT(.\i2c.lst) OBJECT(i2c.obj
+                    -)
+
+line level    source
+
+   1          
+   2          struct bus_driver i2c_driver = {
+*** ERROR C230 IN LINE 2 OF SRC\DRIVERS\I2C.C: 'bus_driver': unknown struct/union/enum tag
+   3                  .name           = "i2c",
+*** ERROR C141 IN LINE 3 OF SRC\DRIVERS\I2C.C: syntax error near '.'
+   4                  .probe          = i2c_probe,
+   5                  .shutdown       = i2c_shutdown,
+   6                  .send           = i2c_send,
+   7                  .resv           = i2c_recv,
+   8          };
+   9          
+  10          static int i2c_probe(uint8_t *data, uint32_t len)
+*** ERROR C141 IN LINE 10 OF SRC\DRIVERS\I2C.C: syntax error near '*', expected ')'
+  11          {
+  12   1              return 0;
+  13   1      }
+  14          
+  15          static int i2c_shutdown(uint8_t *data, uint32_t len)
+*** ERROR C141 IN LINE 15 OF SRC\DRIVERS\I2C.C: syntax error near '*', expected ')'
+  16          {
+  17   1              return 0;
+  18   1      }
+  19          
+  20          static int i2c_send(uint8_t *data, uint32_t len)
+*** ERROR C141 IN LINE 20 OF SRC\DRIVERS\I2C.C: syntax error near '*', expected ')'
+  21          {
+  22   1              return 0;
+  23   1      }
+  24          
+  25          static int i2c_recv(uint8_t *data, uint32_t len)
+*** ERROR C141 IN LINE 25 OF SRC\DRIVERS\I2C.C: syntax error near '*', expected ')'
+  26          {
+  27   1              return 0;
+  28   1      }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  6 ERROR(S)

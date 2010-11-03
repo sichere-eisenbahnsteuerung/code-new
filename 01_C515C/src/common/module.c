@@ -1,3 +1,5 @@
+#include "module.h"
+
 /*
  * vim: set expandtab:
  */

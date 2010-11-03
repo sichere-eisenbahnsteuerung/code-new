@@ -1,4 +1,4 @@
-#include <config.h>
+/*#include <config.h>
 #include <types.h>
 #include <module.h>
 #include <driver.h>
@@ -28,3 +28,4 @@ int befehlsvalidierung_release(void)
 int befehlsvalidierung_work(void)
 {
 }
+*/

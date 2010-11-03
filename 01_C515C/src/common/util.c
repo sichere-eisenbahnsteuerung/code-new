@@ -1,19 +1,13 @@
+#include "util.h"
 
 /*
  * @brief Enable or disable interrupts
  *
- * @param	state	0 = disable interrupts, 1 = enable interrupts
+ * @param	enable	0 = disable interrupts, 1 = enable interrupts
  */
-void enable_interrupts(uint8_t state)
+void enable_interrupts(bool enable)
 {
-	if (state == 0)
-	{
-		EAL = 0;
-	}
-	else 
-	{
-		EAL = 1;
-	}
+	IE = enable;
 }
 
 /*

@@ -1,5 +1,5 @@
 
-#include ""
+#include "driver.h"
 
 struct driver_registration 
 {
@@ -33,12 +33,12 @@ int _unregister_driver(struct bus_driver *driver)
 	return rc;
 }
 
-int check_for_driver(bus_driver_type_t type)
+int check_for_driver(BUS_DRIVER_TYPE_T type)
 {
-	return driver[type].driver != NULL;
+	return drivers[type].driver != NULL;
 }
 
-int register_driver(bus_driver_type_t type, struct bus_driver *driver)
+int register_driver(BUS_DRIVER_TYPE_T type, struct bus_driver *driver)
 {
 	int rc = 0;
 

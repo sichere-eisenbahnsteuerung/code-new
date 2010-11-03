@@ -1,0 +1,1556 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\Software\EisenbahnGit\code-new\01_C515C\save_train_control.uvproj
+Project File Date:  11/03/2010
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.C(7): warning C206: 'enable_interrupts': missing function-prototype
+SRC\MAIN.C(7): error C267: 'enable_interrupts': requires ANSI-style prototype
+SRC\MAIN.C(12): error C141: syntax error near '/'
+compiling driver.c...
+src\common\driver.c(2): error C309: bad or missing filename
+src\common\driver.c(2): warning C318: can't open file ''
+SRC\COMMON\DRIVER.C(10): error C202: 'MAX_DRIVERS': undefined identifier
+SRC\COMMON\DRIVER.C(10): error C136: invalid dimension size: [0]
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(18): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(18): error C204: 'probe': undefined member
+SRC\COMMON\DRIVER.C(28): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(30): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(30): error C204: 'shutdown': undefined member
+SRC\COMMON\DRIVER.C(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(38): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(7): error C141: syntax error near 'state', expected ')'
+SRC\COMMON\UTIL.C(9): error C202: 'state': undefined identifier
+SRC\COMMON\UTIL.C(11): error C202: 'EAL': undefined identifier
+SRC\COMMON\UTIL.C(15): error C202: 'EAL': undefined identifier
+SRC\COMMON\UTIL.C(24): error C141: syntax error near 'usecs', expected ')'
+SRC\COMMON\UTIL.C(34): error C141: syntax error near 'msecs', expected ')'
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+src\modules\befehlsvalidierung.c(1): warning C318: can't open file 'config.h'
+src\modules\befehlsvalidierung.c(2): warning C318: can't open file 'types.h'
+src\modules\befehlsvalidierung.c(3): warning C318: can't open file 'module.h'
+src\modules\befehlsvalidierung.c(4): warning C318: can't open file 'driver.h'
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(10): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(12): error C141: syntax error near '.'
+compiling fahrprogramm.c...
+SRC\MODULES\FAHRPROGRAMM.C(6): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\FAHRPROGRAMM.C(8): error C141: syntax error near '.'
+SRC\MODULES\FAHRPROGRAMM.C(14): error C202: 'NULL': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(18): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(25): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C202: 'uint8_t': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near '}'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.C(7): warning C206: 'enable_interrupts': missing function-prototype
+SRC\MAIN.C(7): error C267: 'enable_interrupts': requires ANSI-style prototype
+SRC\MAIN.C(12): error C141: syntax error near '/'
+compiling driver.c...
+src\common\driver.c(2): error C309: bad or missing filename
+src\common\driver.c(2): warning C318: can't open file ''
+SRC\COMMON\DRIVER.C(10): error C202: 'MAX_DRIVERS': undefined identifier
+SRC\COMMON\DRIVER.C(10): error C136: invalid dimension size: [0]
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(18): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(18): error C204: 'probe': undefined member
+SRC\COMMON\DRIVER.C(28): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(30): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(30): error C204: 'shutdown': undefined member
+SRC\COMMON\DRIVER.C(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(38): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\TYPES.H(13): error C129: missing ';' before 'bool'
+compiling util.c...
+SRC\COMMON\UTIL.C(7): error C141: syntax error near 'state', expected ')'
+SRC\COMMON\UTIL.C(9): error C202: 'state': undefined identifier
+SRC\COMMON\UTIL.C(11): error C202: 'EAL': undefined identifier
+SRC\COMMON\UTIL.C(15): error C202: 'EAL': undefined identifier
+SRC\COMMON\UTIL.C(24): error C141: syntax error near 'usecs', expected ')'
+SRC\COMMON\UTIL.C(34): error C141: syntax error near 'msecs', expected ')'
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+src\modules\befehlsvalidierung.c(1): warning C318: can't open file 'config.h'
+src\modules\befehlsvalidierung.c(2): warning C318: can't open file 'types.h'
+src\modules\befehlsvalidierung.c(3): warning C318: can't open file 'module.h'
+src\modules\befehlsvalidierung.c(4): warning C318: can't open file 'driver.h'
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(10): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(12): error C141: syntax error near '.'
+compiling fahrprogramm.c...
+SRC\MODULES\FAHRPROGRAMM.C(6): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\FAHRPROGRAMM.C(8): error C141: syntax error near '.'
+SRC\MODULES\FAHRPROGRAMM.C(14): error C202: 'NULL': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(18): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(25): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C202: 'uint8_t': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near '}'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(5): warning C318: can't open file 'types.h'
+\SOFTWARE\EISENBAHNGIT\CODE-NEW\01_C515C\SRC\COMMON\TYPES.H(13): error C129: missing ';' before 'bool'
+compiling driver.c...
+src\common\driver.c(2): error C309: bad or missing filename
+src\common\driver.c(2): warning C318: can't open file ''
+SRC\COMMON\DRIVER.C(10): error C202: 'MAX_DRIVERS': undefined identifier
+SRC\COMMON\DRIVER.C(10): error C136: invalid dimension size: [0]
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(18): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(18): error C204: 'probe': undefined member
+SRC\COMMON\DRIVER.C(28): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(30): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(30): error C204: 'shutdown': undefined member
+SRC\COMMON\DRIVER.C(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(38): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\TYPES.H(13): error C129: missing ';' before 'bool'
+compiling util.c...
+SRC\COMMON\TYPES.H(13): error C129: missing ';' before 'bool'
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+src\modules\befehlsvalidierung.c(1): warning C318: can't open file 'config.h'
+src\modules\befehlsvalidierung.c(2): warning C318: can't open file 'types.h'
+src\modules\befehlsvalidierung.c(3): warning C318: can't open file 'module.h'
+src\modules\befehlsvalidierung.c(4): warning C318: can't open file 'driver.h'
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(10): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(12): error C141: syntax error near '.'
+compiling fahrprogramm.c...
+SRC\MODULES\FAHRPROGRAMM.C(6): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\FAHRPROGRAMM.C(8): error C141: syntax error near '.'
+SRC\MODULES\FAHRPROGRAMM.C(14): error C202: 'NULL': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(18): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(25): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C202: 'uint8_t': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near '}'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(5): warning C318: can't open file 'types.h'
+SRC\COMMON/UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\MAIN.C(17): error C141: syntax error near '/'
+compiling driver.c...
+src\common\driver.c(2): error C309: bad or missing filename
+src\common\driver.c(2): warning C318: can't open file ''
+SRC\COMMON\DRIVER.C(10): error C202: 'MAX_DRIVERS': undefined identifier
+SRC\COMMON\DRIVER.C(10): error C136: invalid dimension size: [0]
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(18): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(18): error C204: 'probe': undefined member
+SRC\COMMON\DRIVER.C(28): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(30): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(30): error C204: 'shutdown': undefined member
+SRC\COMMON\DRIVER.C(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(38): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+src\modules\befehlsvalidierung.c(1): warning C318: can't open file 'config.h'
+src\modules\befehlsvalidierung.c(2): warning C318: can't open file 'types.h'
+src\modules\befehlsvalidierung.c(3): warning C318: can't open file 'module.h'
+src\modules\befehlsvalidierung.c(4): warning C318: can't open file 'driver.h'
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(10): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(12): error C141: syntax error near '.'
+compiling fahrprogramm.c...
+SRC\MODULES\FAHRPROGRAMM.C(6): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\FAHRPROGRAMM.C(8): error C141: syntax error near '.'
+SRC\MODULES\FAHRPROGRAMM.C(14): error C202: 'NULL': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(18): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(25): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C202: 'uint8_t': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near '}'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(7): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\MAIN.C(17): error C141: syntax error near '/'
+compiling driver.c...
+src\common\driver.c(2): error C309: bad or missing filename
+src\common\driver.c(2): warning C318: can't open file ''
+SRC\COMMON\DRIVER.C(10): error C202: 'MAX_DRIVERS': undefined identifier
+SRC\COMMON\DRIVER.C(10): error C136: invalid dimension size: [0]
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(18): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(18): error C204: 'probe': undefined member
+SRC\COMMON\DRIVER.C(28): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(30): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(30): error C204: 'shutdown': undefined member
+SRC\COMMON\DRIVER.C(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(38): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+src\modules\befehlsvalidierung.c(1): warning C318: can't open file 'config.h'
+src\modules\befehlsvalidierung.c(2): warning C318: can't open file 'types.h'
+src\modules\befehlsvalidierung.c(3): warning C318: can't open file 'module.h'
+src\modules\befehlsvalidierung.c(4): warning C318: can't open file 'driver.h'
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(10): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(12): error C141: syntax error near '.'
+compiling fahrprogramm.c...
+SRC\MODULES\FAHRPROGRAMM.C(6): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\FAHRPROGRAMM.C(8): error C141: syntax error near '.'
+SRC\MODULES\FAHRPROGRAMM.C(14): error C202: 'NULL': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(18): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(25): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C202: 'uint8_t': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near '}'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(7): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\MAIN.C(17): error C141: syntax error near '/'
+compiling driver.c...
+src\common\driver.c(2): error C309: bad or missing filename
+src\common\driver.c(2): warning C318: can't open file ''
+SRC\COMMON\DRIVER.C(10): error C202: 'MAX_DRIVERS': undefined identifier
+SRC\COMMON\DRIVER.C(10): error C136: invalid dimension size: [0]
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(18): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(18): error C204: 'probe': undefined member
+SRC\COMMON\DRIVER.C(28): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(30): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(30): error C204: 'shutdown': undefined member
+SRC\COMMON\DRIVER.C(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(38): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+src\modules\befehlsvalidierung.c(1): warning C318: can't open file 'config.h'
+src\modules\befehlsvalidierung.c(2): warning C318: can't open file 'types.h'
+src\modules\befehlsvalidierung.c(3): warning C318: can't open file 'module.h'
+src\modules\befehlsvalidierung.c(4): warning C318: can't open file 'driver.h'
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(10): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(12): error C141: syntax error near '.'
+compiling fahrprogramm.c...
+SRC\MODULES\FAHRPROGRAMM.C(6): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\FAHRPROGRAMM.C(8): error C141: syntax error near '.'
+SRC\MODULES\FAHRPROGRAMM.C(14): error C202: 'NULL': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(18): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(25): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C202: 'uint8_t': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near '}'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(7): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+compiling driver.c...
+src\common\driver.c(2): error C309: bad or missing filename
+src\common\driver.c(2): warning C318: can't open file ''
+SRC\COMMON\DRIVER.C(10): error C202: 'MAX_DRIVERS': undefined identifier
+SRC\COMMON\DRIVER.C(10): error C136: invalid dimension size: [0]
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(18): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(18): error C204: 'probe': undefined member
+SRC\COMMON\DRIVER.C(28): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(30): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(30): error C204: 'shutdown': undefined member
+SRC\COMMON\DRIVER.C(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(38): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+src\modules\befehlsvalidierung.c(1): warning C318: can't open file 'config.h'
+src\modules\befehlsvalidierung.c(2): warning C318: can't open file 'types.h'
+src\modules\befehlsvalidierung.c(3): warning C318: can't open file 'module.h'
+src\modules\befehlsvalidierung.c(4): warning C318: can't open file 'driver.h'
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(10): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(12): error C141: syntax error near '.'
+compiling fahrprogramm.c...
+SRC\MODULES\FAHRPROGRAMM.C(6): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\FAHRPROGRAMM.C(8): error C141: syntax error near '.'
+SRC\MODULES\FAHRPROGRAMM.C(14): error C202: 'NULL': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(18): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(25): error C202: 'I2C_DRIVER': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C202: 'uint8_t': undefined identifier
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(32): error C141: syntax error near '}'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near 'data'
+SRC\MODULES\FAHRPROGRAMM.C(33): error C141: syntax error near ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(7): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+compiling driver.c...
+src\common\driver.c(2): error C309: bad or missing filename
+src\common\driver.c(2): warning C318: can't open file ''
+SRC\COMMON\DRIVER.C(10): error C202: 'MAX_DRIVERS': undefined identifier
+SRC\COMMON\DRIVER.C(10): error C136: invalid dimension size: [0]
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(18): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(18): error C204: 'probe': undefined member
+SRC\COMMON\DRIVER.C(28): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(30): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(30): error C204: 'shutdown': undefined member
+SRC\COMMON\DRIVER.C(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(38): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+src\modules\befehlsvalidierung.c(1): warning C318: can't open file 'config.h'
+src\modules\befehlsvalidierung.c(2): warning C318: can't open file 'types.h'
+src\modules\befehlsvalidierung.c(3): warning C318: can't open file 'module.h'
+src\modules\befehlsvalidierung.c(4): warning C318: can't open file 'driver.h'
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(10): error C230: 'module': unknown struct/union/enum tag
+SRC\MODULES\BEFEHLSVALIDIERUNG.C(12): error C141: syntax error near '.'
+compiling fahrprogramm.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(7): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+compiling driver.c...
+src\common\driver.c(2): error C309: bad or missing filename
+src\common\driver.c(2): warning C318: can't open file ''
+SRC\COMMON\DRIVER.C(10): error C202: 'MAX_DRIVERS': undefined identifier
+SRC\COMMON\DRIVER.C(10): error C136: invalid dimension size: [0]
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(18): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(18): error C204: 'probe': undefined member
+SRC\COMMON\DRIVER.C(28): error C202: 'NULL': undefined identifier
+SRC\COMMON\DRIVER.C(30): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\COMMON\DRIVER.C(30): error C204: 'shutdown': undefined member
+SRC\COMMON\DRIVER.C(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(38): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(7): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(23): error C141: syntax error near 'struct'
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(7): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(9): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(9): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(9): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(65): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(80): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(82): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(96): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(98): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(9): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near ';', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near ';', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.H(9): error C141: syntax error near 'void'
+SRC\COMMON/UTIL.H(9): error C141: syntax error near 'enable', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(5): error C141: syntax error near 'struct'
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(7): error C141: syntax error near 'void'
+SRC\COMMON\UTIL.H(9): error C141: syntax error near 'enable', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near 'enable', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\COMMON/TYPES.H(9): error C129: missing ';' before 'typedef'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\TYPES.H(9): error C129: missing ';' before 'typedef'
+compiling util.c...
+SRC\COMMON\TYPES.H(9): error C129: missing ';' before 'typedef'
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\COMMON/UTIL.H(9): error C141: syntax error near 'enable', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.H(9): error C141: syntax error near 'enable', expected ')'
+SRC\COMMON\UTIL.C(8): error C141: syntax error near 'enable', expected ')'
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.C(21): warning C206: 'init_driver_subsystem': missing function-prototype
+SRC\MAIN.C(22): warning C206: 'init_module_subsystem': missing function-prototype
+SRC\MAIN.C(25): error C202: 'BUS_DRIVER_I2C': undefined identifier
+SRC\MAIN.C(28): error C202: 'fahrprogramm_module': undefined identifier
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.C(21): warning C206: 'init_driver_subsystem': missing function-prototype
+SRC\MAIN.C(22): warning C206: 'init_module_subsystem': missing function-prototype
+SRC\MAIN.C(25): error C202: 'BUS_DRIVER_I2C': undefined identifier
+SRC\MAIN.C(28): error C202: 'fahrprogramm_module': undefined identifier
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\COMMON/TYPES.H(13): error C230: 'bool_t': unknown struct/union/enum tag
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\TYPES.H(13): error C230: 'bool_t': unknown struct/union/enum tag
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\TYPES.H(13): error C230: 'bool_t': unknown struct/union/enum tag
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+compiling fahrprogramm.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.C(21): warning C206: 'init_driver_subsystem': missing function-prototype
+SRC\MAIN.C(22): warning C206: 'init_module_subsystem': missing function-prototype
+SRC\MAIN.C(25): error C202: 'BUS_DRIVER_I2C': undefined identifier
+SRC\MAIN.C(28): error C202: 'fahrprogramm_module': undefined identifier
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+compiling fahrprogramm.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\COMMON/DRIVER.H(29): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(30): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+compiling fahrprogramm.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\COMMON/DRIVER.H(28): error C141: syntax error near 'int'
+SRC\COMMON/DRIVER.H(29): error C141: syntax error near 'int'
+SRC\COMMON/DRIVER.H(29): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(30): error C141: syntax error near 'int'
+SRC\COMMON/DRIVER.H(30): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(31): error C141: syntax error near '}'
+SRC\COMMON/DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(28): error C141: syntax error near 'int'
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near 'int'
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near 'int'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(31): error C141: syntax error near '}'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+compiling fahrprogramm.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\COMMON/DRIVER.H(27): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(27): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(28): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(29): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(29): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(30): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(31): error C141: syntax error near '}'
+SRC\COMMON/DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(27): error C141: syntax error near ','
+SRC\COMMON\DRIVER.H(27): error C141: syntax error near ','
+SRC\COMMON\DRIVER.H(28): error C141: syntax error near ','
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near ','
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(31): error C141: syntax error near '}'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\COMMON/DRIVER.H(27): error C141: syntax error near 'int'
+SRC\COMMON/DRIVER.H(27): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(27): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(28): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(29): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(29): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(30): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(31): error C141: syntax error near '}'
+SRC\COMMON/DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(27): error C141: syntax error near 'int'
+SRC\COMMON\DRIVER.H(27): error C141: syntax error near ','
+SRC\COMMON\DRIVER.H(27): error C141: syntax error near ','
+SRC\COMMON\DRIVER.H(28): error C141: syntax error near ','
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near ','
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(31): error C141: syntax error near '}'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\COMMON/DRIVER.H(29): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(30): error C141: syntax error near ','
+SRC\COMMON/DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+compiling fahrprogramm.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\COMMON/DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON/DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(33): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(34): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(35): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.H(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.C(22): warning C206: 'init_driver_subsystem': missing function-prototype
+SRC\MAIN.C(23): warning C206: 'init_module_subsystem': missing function-prototype
+SRC\MAIN.C(26): error C202: 'i2c_driver': undefined identifier
+SRC\MAIN.C(29): error C202: 'fahrprogramm_module': undefined identifier
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.C(26): error C202: 'i2c_driver': undefined identifier
+SRC\MAIN.C(29): error C202: 'fahrprogramm_module': undefined identifier
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.C(31): warning C206: 'init_all_modules': missing function-prototype
+SRC\MAIN.C(35): warning C206: 'release_all_modules': missing function-prototype
+SRC\MAIN.C(36): warning C290: missing return value
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.C(36): warning C290: missing return value
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\MAIN.C(20): error C231: 'main': redefinition
+SRC\MAIN.C(36): error C231: 'main': redefinition
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.H(30): error C141: syntax error near '*', expected ')'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+SRC\COMMON/DRIVER.H(29): error C141: syntax error near '*'
+compiling driver.c...
+SRC\COMMON\DRIVER.H(29): error C141: syntax error near '*'
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+compiling fahrprogramm.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling driver.c...
+SRC\COMMON\DRIVER.C(16): error C202: 'NULL': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling driver.c...
+SRC\COMMON\DRIVER.C(18): warning C209: 'function': too few actual parameters
+SRC\COMMON\DRIVER.C(30): warning C209: 'function': too few actual parameters
+SRC\COMMON\DRIVER.C(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(38): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling driver.c...
+SRC\COMMON\DRIVER.C(18): warning C209: 'function': too few actual parameters
+SRC\COMMON\DRIVER.C(30): warning C209: 'function': too few actual parameters
+SRC\COMMON\DRIVER.C(36): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(38): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+compiling fahrprogramm.c...
+Target not created
+Build target 'Target 1'
+compiling main.c...
+compiling driver.c...
+SRC\COMMON\DRIVER.C(18): warning C209: 'function': too few actual parameters
+SRC\COMMON\DRIVER.C(30): warning C209: 'function': too few actual parameters
+SRC\COMMON\DRIVER.C(38): error C202: 'driver': undefined identifier
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+compiling befehlsvalidierung.c...
+compiling fahrprogramm.c...
+Target not created
+Build target 'Target 1'
+compiling driver.c...
+SRC\COMMON\DRIVER.C(18): warning C209: 'function': too few actual parameters
+SRC\COMMON\DRIVER.C(30): warning C209: 'function': too few actual parameters
+SRC\COMMON\DRIVER.C(41): error C141: syntax error near 'type', expected ')'
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created
+Build target 'Target 1'
+compiling driver.c...
+SRC\COMMON\DRIVER.C(18): warning C209: 'function': too few actual parameters
+SRC\COMMON\DRIVER.C(30): warning C209: 'function': too few actual parameters
+SRC\COMMON\DRIVER.C(42): error C236: '__register_driver': different length of parameter lists
+SRC\COMMON\DRIVER.C(50): error C202: 'SUCCESS': undefined identifier
+SRC\COMMON\DRIVER.C(54): error C202: 'ERROR_COULD_NOT_REGISTER_DRIVER': undefined identifier
+SRC\COMMON\DRIVER.C(58): error C237: '__register_driver': function already has a body
+SRC\COMMON\DRIVER.C(60): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(64): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(66): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(67): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(73): error C141: syntax error near 'type', expected ')'
+SRC\COMMON\DRIVER.C(75): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(77): error C202: 'type': undefined identifier
+SRC\COMMON\DRIVER.C(79): error C202: 'type': undefined identifier
+compiling module.c...
+SRC\COMMON\MODULE.C(67): warning C280: 'mod': unreferenced local variable
+SRC\COMMON\MODULE.C(82): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(84): error C199: left side of '->' requires struct/union pointer
+SRC\COMMON\MODULE.C(98): error C202: 'NULL': undefined identifier
+SRC\COMMON\MODULE.C(100): error C199: left side of '->' requires struct/union pointer
+compiling ringbuffer.c...
+SRC\COMMON\RINGBUFFER.H(6): error C141: syntax error near '['
+SRC\COMMON\RINGBUFFER.H(9): error C129: missing ';' before 'uint8_t'
+compiling util.c...
+SRC\COMMON\UTIL.C(10): error C202: 'IE': undefined identifier
+compiling i2c.c...
+SRC\DRIVERS\I2C.C(2): error C230: 'bus_driver': unknown struct/union/enum tag
+SRC\DRIVERS\I2C.C(3): error C141: syntax error near '.'
+SRC\DRIVERS\I2C.C(10): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(15): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(20): error C141: syntax error near '*', expected ')'
+SRC\DRIVERS\I2C.C(25): error C141: syntax error near '*', expected ')'
+Target not created

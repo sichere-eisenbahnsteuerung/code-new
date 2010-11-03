@@ -1,0 +1,111 @@
+C51 COMPILER V9.02   DRIVER                                                                11/03/2010 13:29:56 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE DRIVER
+OBJECT MODULE PLACED IN driver.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE src\common\driver.c BROWSE DEBUG OBJECTEXTEND PRINT(.\driver.lst) OBJECT(dr
+                    -iver.obj)
+
+line level    source
+
+   1          
+   2          #include "driver.h"
+   3          
+   4          struct driver_registration 
+   5          {
+   6                  struct bus_driver       *driver;
+   7                  unsigned int             ref_count;
+   8          };
+   9          
+  10          struct driver_registration drivers[MAX_DRIVERS];
+  11          
+  12          int _register_driver(struct bus_driver *driver)
+  13          {
+  14   1              int rc = 0;
+  15   1      
+  16   1              if (driver != NULL && driver->probe != NULL)
+  17   1              {
+  18   2                      rc = driver->probe();
+*** WARNING C209 IN LINE 18 OF SRC\COMMON\DRIVER.C: 'function': too few actual parameters
+  19   2              }
+  20   1      
+  21   1              return rc;
+  22   1      }
+  23          
+  24          int _unregister_driver(struct bus_driver *driver)
+  25          {
+  26   1              int rc = 0;
+  27   1      
+  28   1              if (driver != NULL && driver->shutdown != NULL)
+  29   1              {
+  30   2                      rc = driver->shutdown();
+*** WARNING C209 IN LINE 30 OF SRC\COMMON\DRIVER.C: 'function': too few actual parameters
+  31   2              }
+  32   1      
+  33   1              return rc;
+  34   1      }
+  35          
+  36          int check_for_driver(BUS_DRIVER_TYPE_T type)
+  37          {
+  38   1              return drivers[type].driver != NULL;
+  39   1      }
+  40          
+  41          int register_driver(BUS_DRIVER_TYPE_T type, struct bus_driver *driver)
+  42          {
+*** ERROR C236 IN LINE 42 OF SRC\COMMON\DRIVER.C: '__register_driver': different length of parameter lists
+  43   1              int rc = 0;
+  44   1      
+  45   1              /* Do we already have this driver? */
+  46   1              if (!check_for_driver(type))
+  47   1              {
+  48   2                      drivers[type].driver = driver;
+  49   2                      drivers[type].ref_count = 0;
+  50   2                      rc = SUCCESS;
+*** ERROR C202 IN LINE 50 OF SRC\COMMON\DRIVER.C: 'SUCCESS': undefined identifier
+C51 COMPILER V9.02   DRIVER                                                                11/03/2010 13:29:56 PAGE 2   
+
+  51   2              }
+  52   1              else
+  53   1              {
+  54   2                      rc = ERROR_COULD_NOT_REGISTER_DRIVER;
+*** ERROR C202 IN LINE 54 OF SRC\COMMON\DRIVER.C: 'ERROR_COULD_NOT_REGISTER_DRIVER': undefined identifier
+  55   2              }
+  56   1              
+  57   1              return rc;
+  58   1      }
+*** ERROR C237 IN LINE 58 OF SRC\COMMON\DRIVER.C: '__register_driver': function already has a body
+  59          
+  60          struct bus_driver* require_driver(bus_driver_type_t type)
+*** ERROR C141 IN LINE 60 OF SRC\COMMON\DRIVER.C: syntax error near 'type', expected ')'
+  61          {
+  62   1              struct bus_driver *driver = NULL;
+  63   1      
+  64   1              if (check_for_driver(type))
+*** ERROR C202 IN LINE 64 OF SRC\COMMON\DRIVER.C: 'type': undefined identifier
+  65   1              {
+  66   2                      drivers[type].ref_count++;
+*** ERROR C202 IN LINE 66 OF SRC\COMMON\DRIVER.C: 'type': undefined identifier
+  67   2                      driver = drivers[type].driver;
+*** ERROR C202 IN LINE 67 OF SRC\COMMON\DRIVER.C: 'type': undefined identifier
+  68   2              }
+  69   1      
+  70   1              return driver;
+  71   1      }
+  72          
+  73          void release_driver(bus_driver_type_t type)
+*** ERROR C141 IN LINE 73 OF SRC\COMMON\DRIVER.C: syntax error near 'type', expected ')'
+  74          {
+  75   1              if (check_for_driver(type))
+*** ERROR C202 IN LINE 75 OF SRC\COMMON\DRIVER.C: 'type': undefined identifier
+  76   1              {
+  77   2                      if (drivers[type].ref_count > 0)
+*** ERROR C202 IN LINE 77 OF SRC\COMMON\DRIVER.C: 'type': undefined identifier
+  78   2                      {
+  79   3                              drivers[type].ref_count--;
+*** ERROR C202 IN LINE 79 OF SRC\COMMON\DRIVER.C: 'type': undefined identifier
+  80   3                      }
+  81   2              }
+  82   1      }
+  83          
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  12 ERROR(S)

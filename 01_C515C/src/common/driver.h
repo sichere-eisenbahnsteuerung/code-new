@@ -1,6 +1,8 @@
 #ifndef _DRIVER_H_
 #define _DRIVER_H_
 
+#include "types.h"
+
 /**
  * container_of - cast a member of a structure out to the containing structure
  * @ptr:	the pointer to the member.
@@ -14,26 +16,26 @@
 
 #define MAX_DRIVERS		10
 
-enum bus_driver_type_t
+typedef enum bus_driver_type_t
 {
 	BUS_DRIVER_I2C = 0,
-	BUS_DRIVER_S88 = 1,
-}
+	BUS_DRIVER_S88 = 1
+} BUS_DRIVER_TYPE_T;
 
 struct bus_driver
 {
 	const char		*name;
 
-	int (*probe)	(struct device *dev);
-	int (*shutdown)	(struct device *dev);
-	int (*send)		(uint8 *data, uint32 len);
-	int (*recv)		(uint8 *data, uint32 len);
+	int (*probe)	(struct device *);
+	int (*shutdown)	(struct device *);
+	int (*send)		(uint8_t, uint32_t );
+	int (*recv)		(uint8_t, uint32_t );
 };
 
-int					 register_driver	(bus_driver_type_t type, struct bus_driver *driver);
-int					 unregister_driver	(bus_driver_type_t type);
-struct bus_driver	*require_driver		(bus_driver_type_t type);
-void				 release_driver		(bus_driver_type_t type);
+int					 register_driver	(bus_driver_type_t, struct bus_driver *);
+int					 unregister_driver	(bus_driver_type_t);
+struct bus_driver	*require_driver		(bus_driver_type_t);
+void				 release_driver		(bus_driver_type_t);
 
 #endif
 
