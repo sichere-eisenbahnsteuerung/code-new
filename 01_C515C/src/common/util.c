@@ -8,7 +8,14 @@
  */
 void enable_interrupts(bool enable)
 {
-	EAL = enable;
+	if (enable)
+	{
+		EAL = 1;
+	}
+	else 
+	{
+		EAL = 0;
+	}
 }
 
 /*
