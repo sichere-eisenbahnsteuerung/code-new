@@ -386,6 +386,11 @@
               <FileType>1</FileType>
               <FilePath>.\src\drivers\i2c.c</FilePath>
             </File>
+            <File>
+              <FileName>rs232.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\drivers\rs232.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

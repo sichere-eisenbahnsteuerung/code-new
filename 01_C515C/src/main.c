@@ -3,6 +3,7 @@
 #include "common/util.h"
 #include "common/driver.h"
 
+#include "drivers/rs232.c"
 
 /*
  * @brief Initialize common stuff for the main program
@@ -10,6 +11,7 @@
 void init_common(void)
 {
 	enable_interrupts(1);
+    RS232_init();
 }
 
 
@@ -19,6 +21,10 @@ void init_common(void)
 void main()
 {
 	init_common();
+
+    RS232_send('t');
+
+    while(1) {}
 	//init_driver_subsystem();
 	//init_module_subsystem();
 

@@ -1,4 +1,4 @@
-C51 COMPILER V9.02   MODULE                                                                11/03/2010 23:28:07 PAGE 1   
+C51 COMPILER V9.02   MODULE                                                                11/09/2010 14:22:56 PAGE 1   
 
 
 C51 COMPILER V9.02, COMPILATION OF MODULE MODULE
@@ -62,7 +62,7 @@ line level    source
   52   2          }
   53   1      
   54   1          /* If we found a index for the new module we append it to the array on that position */
-C51 COMPILER V9.02   MODULE                                                                11/03/2010 23:28:07 PAGE 2   
+C51 COMPILER V9.02   MODULE                                                                11/09/2010 14:22:56 PAGE 2   
 
   55   1          if (new_module_index >= 0)
   56   1          {

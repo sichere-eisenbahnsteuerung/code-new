@@ -1,4 +1,4 @@
-C51 COMPILER V9.02   UTIL                                                                  11/03/2010 23:28:07 PAGE 1   
+C51 COMPILER V9.02   UTIL                                                                  11/09/2010 14:22:56 PAGE 1   
 
 
 C51 COMPILER V9.02, COMPILATION OF MODULE UTIL
@@ -8,46 +8,42 @@ COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE src\common\util.c LARGE BROWSE DEBU
 
 line level    source
 
-   1          #include "util.h"
-   2                             
-   3          #include <REG515C.H>
-   4          /*
-   5           * @brief Enable or disable interrupts
-   6           *
-   7           * @param       enable  0 = disable interrupts, 1 = enable interrupts
-   8           */
-   9          void enable_interrupts(bool enable)
-  10          {
-  11   1              EAL = enable;
-  12   1      }
-  13          
-  14          /*
-  15           * @brief Wait for n usecs
-  16           *
-  17           * @param       usecs   Count of usecs to wait for
-  18           */
+   1          /** @brief: Utilities
+   2          */
+   3               
+   4          #include <REG515C.H>
+   5          #include "util.h"
+   6          uint8_t restore_EAL;
+   7          
+   8          void restore_enable_interrupts()
+   9          {
+  10   1          EAL = restore_EAL;
+  11   1      }                  
+  12          
+  13          void enable_interrupts(bool enable)
+  14          {
+  15   1          restore_EAL = EAL;
+  16   1              EAL = enable;
+  17   1      }
+  18          
   19          void udelay(uint32_t usecs)
   20          {
   21   1              /* FIXME */
   22   1      }
 *** WARNING C280 IN LINE 19 OF SRC\COMMON\UTIL.C: 'usecs': unreferenced local variable
   23          
-  24          /*
-  25           * @brief Wait for n msecs
-  26           *
-  27           * @param       msecs   Count of msecs to wait for
-  28           */
-  29          void mdelay(uint32_t msecs)
-  30          {
-  31   1              /* FIXME */
-  32   1      }
-*** WARNING C280 IN LINE 29 OF SRC\COMMON\UTIL.C: 'msecs': unreferenced local variable
+  24          
+  25          void mdelay(uint32_t msecs)
+  26          {
+  27   1              /* FIXME */
+  28   1      }
+*** WARNING C280 IN LINE 25 OF SRC\COMMON\UTIL.C: 'msecs': unreferenced local variable
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     24    ----
+   CODE SIZE        =     35    ----
    CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----       4
+   XDATA SIZE       =      1       8
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----
