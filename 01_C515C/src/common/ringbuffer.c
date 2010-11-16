@@ -11,23 +11,26 @@ void ringbuffer_init(ringbuffer_t *buffer) {
     }
 }
 
-bool ringbuffer_read(ringbuffer_t *buffer, uint8_t *value) {
+uint8_t ringbuffer_read(ringbuffer_t *buffer) {
+    uint8_t value = 0;
+    
     enable_interrupts(FALSE);
     	
 	if(buffer->size > 0) {
-        *value = buffer->content[buffer->read_position];
+        value = buffer->content[buffer->read_position];
         buffer->content[buffer->read_position] = NULL;
         buffer->size--;
         buffer->read_position++; 
-        buffer->read_position%=MAX_CONTENT; 
-        
-        restore_enable_interrupts();
-        return TRUE;
+        buffer->read_position%=MAX_CONTENT;
 	}
-    else {
-        restore_enable_interrupts();
-        return FALSE;
-    }
+     
+    restore_enable_interrupts();
+    return value;
+}
+
+
+bool ringbuffer_empty(ringbuffer_t *buffer) {
+    return (buffer->size == 0);
 }
 
 bool ringbuffer_write(ringbuffer_t *buffer, uint8_t value) {

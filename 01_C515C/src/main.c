@@ -3,7 +3,7 @@
 #include "common/util.h"
 #include "common/driver.h"
 
-#include "drivers/rs232.c"
+#include "drivers/rs232.h"
 
 /*
  * @brief Initialize common stuff for the main program
@@ -20,11 +20,23 @@ void init_common(void)
  */
 void main()
 {
+    uint8_t inp=0;
+
 	init_common();
 
-    RS232_send('t');
+    RS232_write('t');
 
-    while(1) {}
+    while(1) {
+        RS232_work();
+        if(RS232_available()) {
+            inp = RS232_read();
+            RS232_write(inp);  
+            RS232_write(inp+1);  
+            RS232_write(inp+2);  
+            RS232_write(13);    
+            RS232_write(10);
+        }
+    }
 	//init_driver_subsystem();
 	//init_module_subsystem();
 

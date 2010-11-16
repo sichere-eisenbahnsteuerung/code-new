@@ -2,44 +2,56 @@
 #include <REG515C.H>
 #include "../common/util.h"
 
-volatile uint8_t input_byte = 0;
-char wait_for_send = 0;
+static volatile uint8_t input_byte = 0;
+static char wait_for_send = 1;
 
-ringbuffer_t input_buffer;
+static ringbuffer_t input_buffer, output_buffer;
     
 
 void RS232_init ()
 {    
     ringbuffer_init(&input_buffer);
-
-    SCON  = 0x50;                   /* SCON: mode 1, 8-bit UART, enable rcvr    */
-    TMOD |= 0x20;                   /* TMOD: timer 1, mode 2, 8-bit reload      */
-    TH1   = 0xf3;                   /* TH1:  reload value for 2400 baud         */
-    TR1   = 1;                      /* TR1:  timer 1 run                        */
-    TI    = 1;                      /* TI:   set TI to send first char of UART  */
     
+    BD = 1; // Baudratengenerator einschalten
+	SM0 = 0; // Mode 1  8Bit variable Baudrate
+	SM1 = 1;
+	SRELH = 0x03; // 9600 Baud
+	SRELL = 0xDF;
+	REN = 1; // seriellen Empfang einschalten
+	TI = 1;
+//
+//    SCON  = 0x50;                   /* SCON: mode 1, 8-bit UART, enable rcvr    */
+//    TMOD |= 0x20;                   /* TMOD: timer 1, mode 2, 8-bit reload      */
+//    TH1   = 0xf3;                   /* TH1:  reload value for 2400 baud         */
+//    TR1   = 1;                      /* TR1:  timer 1 run                        */
+//    TI    = 1;                      /* TI:   set TI to send first char of UART  */
+//    
     ES = 1;                         /* Enable serial interrupts */
     
     wait_for_send = 0;
 }
 
-void RS232_send(uint8_t c)  {
-    while(wait_for_send) 
-    {
-        // Wait for Transmit Interrupt
-    }
-    wait_for_send = 1;
-    SBUF = c;
+bool RS232_write(uint8_t c)  {
+   return ringbuffer_write(&output_buffer, c);
 }
 
-uint8_t RS232_read(uint8_t *buffer, uint8_t length) {
-    uint8_t pos=0, input;
-    while(pos < length && ringbuffer_read(&input_buffer, &input))
-    {
-        buffer[pos] = input;
-        pos++;
+void RS232_work()  {
+    if(!wait_for_send) 
+    {   
+        if(!ringbuffer_empty(&output_buffer)) 
+        {
+            wait_for_send = 1;
+            SBUF = ringbuffer_read(&output_buffer);
+        }
     }
-    return pos;
+}
+
+uint8_t RS232_read() {
+    return ringbuffer_read(&input_buffer);
+}      
+
+bool RS232_available() {
+    return !ringbuffer_empty(&input_buffer);
 }
 
 void RS232_interrupt(void) interrupt 4 {
@@ -54,5 +66,6 @@ void RS232_interrupt(void) interrupt 4 {
         TI = 0;
         wait_for_send = 0;
     }
-    enable_interrupts(FALSE);
+    enable_interrupts(TRUE);
 }          
+ 

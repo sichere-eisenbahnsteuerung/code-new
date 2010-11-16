@@ -142,7 +142,7 @@
             <CpuDllArguments></CpuDllArguments>
             <PeripheralDll></PeripheralDll>
             <PeripheralDllArguments></PeripheralDllArguments>
-            <InitializationFile></InitializationFile>
+            <InitializationFile>.\WD_OFF.ini</InitializationFile>
           </SimDlls>
           <TargetDlls>
             <CpuDll></CpuDll>
@@ -356,16 +356,6 @@
         <Group>
           <GroupName>common</GroupName>
           <Files>
-            <File>
-              <FileName>driver.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\common\driver.c</FilePath>
-            </File>
-            <File>
-              <FileName>module.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\common\module.c</FilePath>
-            </File>
             <File>
               <FileName>ringbuffer.c</FileName>
               <FileType>1</FileType>
