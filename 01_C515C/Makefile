@@ -13,7 +13,7 @@ OBJFILES = $(patsubst %.c, %.obj, $(SOURCE))
 OBJS = $(addprefix $(OBJDIR)/, $(OBJFILES))
 HFILES = $(shell echo include/*.h)
 
-all: build-firmware build-tests run-test run-ca
+all: build-firmware build-tests run-tests
 
 $(OBJS): $(HFILES)
 
@@ -40,9 +40,13 @@ deps/check-0.9.8/Makefile: deps/check-0.9.8 deps/check-0.9.8/build-host
 deps/check-0.9.8/build-host/src/.libs/libcheck.la: deps/check-0.9.8/Makefile
 	( cd deps/check-0.9.8/build-host ; make )
 
-build-tests: deps/check-0.9.8/build-host/src/.libs/libcheck.la
+libcheck-host: deps/check-0.9.8/build-host/src/.libs/libcheck.la
+
+build-tests: libcheck-host
+	make -C tests build
 
 run-tests:
+	make -C tests run
 
 clean:
 	rm -rf build
