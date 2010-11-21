@@ -3,30 +3,7 @@ include config.mk
 
 TOPDIR = $(shell pwd)
 
-SOURCE = \
-	common/util.c \
-	common/main.c \
-	common/ringbuffer.c \
-	$(NULL)
-
-OBJFILES = $(patsubst %.c, %.obj, $(SOURCE))
-OBJS = $(addprefix $(OBJDIR)/, $(OBJFILES))
-HFILES = $(shell echo include/*.h)
-
-all: build-firmware build-tests run-tests
-
-$(OBJS): $(HFILES)
-
-$(OBJDIR)/%.obj: 
-	$(CC) $< $(CFLAGS)
-
-build-firmware: $(OBJ)
-
-run-ca:
-	@echo "Running coda analysis..."
-	for f in $(SOURCE) ; do \
-	  $(SPLINT) $(SPLINTFLAGS) $$f ; \
-	done
+all: build-tests run-tests
 
 deps/check-0.9.8/build-host:
 	mkdir -p $@
