@@ -6,6 +6,7 @@ SOURCE = \
 	test_helper.c \
 	test_main.c \
 	test_ringbuffer.c \
+	../common/ringbuffer.c \
 	$(NULL)
 
 all: build run

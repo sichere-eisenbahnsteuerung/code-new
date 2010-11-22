@@ -32,6 +32,13 @@ enum bool_t
  * Common types
  */
 
+/*
+ * NOTE: We can only define our own types when don't have any std lib types. Otherwise we
+ * have to change our naming conventions for the types below.
+ */
+
+#ifndef _STDLIB_H
+
 /** @brief 32 bit unsigned integer */
 typedef unsigned long uint32_t;
 /** @brief 32 bit signed integer */
@@ -45,9 +52,10 @@ typedef unsigned char uint8_t;
 /** @brief 8 bit signed integer */
 typedef signed char int8_t;
 
-/** @brief Boolean type */                         
-typedef enum bool_t bool;
+#endif
 
+/** @brief Boolean type */
+typedef enum bool_t bool;
 
 
 /*
@@ -55,7 +63,9 @@ typedef enum bool_t bool;
  */
 
 /** @brief NULL = 0 */
+#ifndef NULL
 #define NULL 0
+#endif
 
 #endif
 

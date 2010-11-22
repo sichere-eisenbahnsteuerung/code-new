@@ -14,6 +14,9 @@ struct test_helper *test_helper_create(Suite *suite)
 	helper->suite = suite;
 	helper->runner = srunner_create(helper->suite);
 
+	/* FIXME we should configure the srunner now to output all test results in a xml
+	 * logging file */
+
 	return helper;
 }
 

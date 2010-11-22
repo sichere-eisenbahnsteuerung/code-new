@@ -18,7 +18,7 @@
 /*
  * @brief Ringbuffer data structure
  */
-typedef struct ringbuffer 
+typedef struct
 {
     uint8_t content[MAX_CONTENT];
     uint8_t read_position;

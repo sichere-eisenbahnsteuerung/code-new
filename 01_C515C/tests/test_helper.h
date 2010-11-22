@@ -4,6 +4,7 @@
 #include <check.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 struct test_helper;
 
