@@ -18,17 +18,8 @@
  * Init the RS232 port.
  */
 void RS232_init ();
-         
-     
-/**
- * @brief RS232 receive function
- *
- * Reads all available bytes from the receive buffer.
- *
- * @param buffer Provided buffer to store bytes.
- * @return the next byte, or NULL if no byte available
- */   
-uint8_t RS232_read();
+      
+void RS232_work();
 
 
 #endif
