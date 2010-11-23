@@ -4,14 +4,10 @@
 
 static volatile uint8_t input_byte = 0;
 static char wait_for_send = 1;
-
-static ringbuffer_t input_buffer, output_buffer;
     
 
 void RS232_init ()
 {    
-    ringbuffer_init(&input_buffer);
-    
     BD = 1; // Baudratengenerator einschalten
 	SM0 = 0; // Mode 1  8Bit variable Baudrate
 	SM1 = 1;
@@ -31,34 +27,27 @@ void RS232_init ()
     wait_for_send = 0;
 }
 
-bool RS232_write(uint8_t c)  {
-   return ringbuffer_write(&output_buffer, c);
-}
-
 void RS232_work()  {
     if(!wait_for_send) 
     {   
-        if(!ringbuffer_empty(&output_buffer)) 
+        if(rs232_output_read_pos != rs232_output_write_pos) 
         {
             wait_for_send = 1;
-            SBUF = ringbuffer_read(&output_buffer);
+            SBUF = rs232_output_buffer[rs232_output_read_pos];
+            rs232_output_read_pos = (rs232_output_read_pos + 1) % RS232_BUFFERSIZE;
         }
     }
-}
-
-uint8_t RS232_read() {
-    return ringbuffer_read(&input_buffer);
-}      
-
-bool RS232_available() {
-    return !ringbuffer_empty(&input_buffer);
 }
 
 void RS232_interrupt(void) interrupt 4 {
     enable_interrupts(FALSE);
     if(RI)
     {    
-        ringbuffer_write(&input_buffer, SBUF);
+        if((rs232_input_write_pos+1) % RS232_BUFFERSIZE != rs232_input_read_pos) 
+        {
+            rs232_input_buffer[rs232_input_write_pos] = SBUF;
+            rs232_input_write_pos = (rs232_input_write_pos + 1) % RS232_BUFFERSIZE;
+        }
         RI = 0;    
     }
     if(TI)
