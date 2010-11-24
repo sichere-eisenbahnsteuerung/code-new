@@ -1,9 +1,9 @@
-
+                       
+#include <intrins.h>
 #include "main.h"
 #include "common/util.h"
-#include "common/driver.h"
 
-#include "drivers/rs232.c"
+#include "drivers/rs232.h"
 
 /*
  * @brief Initialize common stuff for the main program
@@ -14,29 +14,27 @@ void init_common(void)
     RS232_init();
 }
 
-
 /*
  * @brief The method which gets called initialy by the processor
  */
 void main()
 {
+    uint8_t inp=0;
+
 	init_common();
 
-    RS232_send('t');
+    rs232_output_buffer[rs232_output_write_pos] = 't';
+    rs232_output_write_pos = (rs232_input_write_pos + 1) % RS232_BUFFERSIZE;
 
-    while(1) {}
-	//init_driver_subsystem();
-	//init_module_subsystem();
+    while(1) {
+        RS232_work();
+        if(rs232_input_read_pos != rs232_input_write_pos) 
+        {
+            inp = rs232_input_buffer[rs232_input_read_pos];
+            rs232_input_read_pos = (rs232_input_read_pos + 1) % RS232_BUFFERSIZE;
 
-	/* first register all drivers */
-	//register_driver(BUS_DRIVER_I2C, i2c_driver);
-
-	/* secondly register all modules */
-	//register_module(fahrprogramm_module);
-
-	//init_all_modules();
-
-	/* FIXME work loop */
-
-	//release_all_modules();
+            rs232_output_buffer[rs232_output_write_pos] = inp;
+            rs232_output_write_pos = (rs232_output_write_pos + 1) % RS232_BUFFERSIZE;
+        }
+    }
 }
