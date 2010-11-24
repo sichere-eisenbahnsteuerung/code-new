@@ -2,7 +2,6 @@
 #include <intrins.h>
 #include "main.h"
 #include "common/util.h"
-#include "common/driver.h"
 
 #include "drivers/rs232.h"
 
