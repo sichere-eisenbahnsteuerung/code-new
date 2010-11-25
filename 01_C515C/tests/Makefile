@@ -2,6 +2,7 @@
 include ../config.mk
 
 SOURCE = \
+	hardware_simulator.c \
 	test_stub_util.c \
 	test_helper.c \
 	test_main.c \
