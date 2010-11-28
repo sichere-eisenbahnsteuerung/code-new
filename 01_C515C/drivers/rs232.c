@@ -39,7 +39,8 @@ void RS232_work()  {
     }
 }
 
-void RS232_interrupt(void) interrupt 4 {
+void RS232_interrupt(void) INTERRUPT(4)
+{
     enable_interrupts(FALSE);
     if(RI)
     {    
