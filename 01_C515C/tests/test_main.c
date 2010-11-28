@@ -1,23 +1,23 @@
 
 #include "test_helper.h"
 
-extern Suite *ringbuffer_suite_create(void);
+extern Suite *test_rs232_create_suite(void);
 
 int main(int argc, char **argv)
 {
-#if 0
-	struct test_helper *rbtest;
+	struct test_helper *rs232test;
 
 	/* Create all test helpers */
-	rbtest = test_helper_create(ringbuffer_suite_create());
+	rs232test = test_helper_create(test_rs232_create_suite());
 
 	/* Execute all test helpers */
-	test_helper_execute_all(rbtest);
+	test_helper_execute_all(rs232test);
 
 	/* FIXME fetch the result from all test helpers */
 
 	/* Free all test helpers */
-	test_helper_free(rbtest);
-#endif
+	test_helper_free(rs232test);
+
 	return 0;
 }
+

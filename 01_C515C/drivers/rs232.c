@@ -1,9 +1,12 @@
-#include "rs232.h"
-#include <REG515C.H>
-#include "../common/util.h"
 
-static volatile uint8_t input_byte = 0;
-static char wait_for_send = 1;
+#include <types.h>
+#include <util.h>
+#include <c515c.h>
+
+#include <rs232.h>
+
+volatile uint8_t input_byte = 0;
+char wait_for_send = 1;
     
 
 void RS232_init ()

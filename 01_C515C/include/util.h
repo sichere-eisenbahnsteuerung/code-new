@@ -10,8 +10,6 @@
 
 #include "types.h"
 
-#define INTERRUPT(n) interrupt n
-
 /*
  * @brief Wait for n usecs
  *

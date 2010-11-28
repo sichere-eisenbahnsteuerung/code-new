@@ -16,6 +16,7 @@ hw_register_t r_t2con;
 hw_register_t r_ircon;
 hw_register_t r_p1;
 hw_register_t r_p4;
+hw_register_t r_adcon0;
 
 /*
  * Hardware byte register definition

@@ -2,10 +2,6 @@
 #define _HARDWARE_SIMULATOR_H_
 
 /* 
- * Redefine some macros 
- */
-
-/* 
  * Hardware bit-register definition
  */
 typedef struct
@@ -20,7 +16,7 @@ typedef struct
     uint8_t b7:1;
 } __attribute__((packed)) hw_register_t;
 
-#define HW_REGISTER_BIT(r,n) ((*(volatile struct hw_register_t*)&r)->b##n)
+#define HW_REGISTER_BIT(r,n) ((&r)->b##n)
 #define HW_REGISTER_RESET(r) memset(&r, 0, sizeof(hw_register_t))
 
 /* 

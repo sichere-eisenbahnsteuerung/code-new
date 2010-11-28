@@ -6,10 +6,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-#ifdef INTERRUPT
-#undef INTERRUPT
-#define INTERRUPT(n)
-#endif
+#include "hardware_simulator.h"
 
 struct test_helper;
 
