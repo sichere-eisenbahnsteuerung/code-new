@@ -11,24 +11,27 @@ SOURCE = \
 	../modules/betriebsmittelverwaltung/rs232_shared_memory.c \
 	$(NULL)
 
-OBJS = $(SOURCE:.c=.o)
-OBJFILES = \
-	$(patsubst '../drivers/%','',$(OBJS)) \
-	$(patsubst '../modules/betriebsmittelverwaltung/%','',$(OBJS)) \
-	$(NULL)
+CHECK_LIBDIR = ../deps/check-0.9.8/build-host/src/.libs
 
-OBJFILES = `echo $(OBJS) | sed 's/\.\.\/drivers\///g' | sed 's/\.\.\/modules\/betriebsmittelverwaltung\///g'`
+TARGET_NAME = test_main
+LIBS = -lcheck
+INCS = -I../include -I../deps/check-0.9.8/build-host/src -I.
+CFLAGS = $(INCS) -DTARGET_HOST
+LDFLAGS = -o $(TARGET_NAME) $(LIBS) -L$(CHECK_LIBDIR)
+
+OBJS = $(SOURCE:.c=.o)
+OBJFILES = $(shell echo $(OBJS) | sed 's/\.\.\/drivers\///g' | sed 's/\.\.\/modules\/betriebsmittelverwaltung\///g')
 
 all: build run
 
 build: $(OBJS)
-	gcc -o test_main -lcheck -L../deps/check-0.9.8/build-host/src/.libs $(OBJFILES)
+	gcc $(LDFLAGS) $(OBJFILES)
 
 %.o: %.c 
-	$(CC_HOST) -c $< -I../include -I../deps/check-0.9.8/build-host/src -I. -DTARGET_HOST
+	$(CC_HOST) -c $< $(CFLAGS)
 
 run:
-	LD_LIBRARY_PATH=../deps/check-0.9.8/build-host/src/.libs ./test_main
+	LD_LIBRARY_PATH=$(CHECK_LIBDIR) ./$(TARGET_NAME)
 
 clean:
-	rm test_main
+	rm $(TARGET_NAME) $(OBJFILES)
