@@ -6,6 +6,11 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#ifdef INTERRUPT
+#undef INTERRUPT
+#define INTERRUPT(n)
+#endif
+
 struct test_helper;
 
 struct test_helper *test_helper_create(Suite *suite);
