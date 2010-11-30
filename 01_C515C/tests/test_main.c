@@ -1,7 +1,7 @@
 #include <getopt.h>
 #include "test_helper.h"
 
-extern Suite *test_rs232_create_suite(void);
+extern TCase *test_rs232_create(void);
 
 char log_output_directory[200];
 char *current_test_date = NULL;
@@ -44,6 +44,8 @@ void handle_arguments(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
+	char buffer[200];
+
 	handle_arguments(argc, argv);
 
 	if (current_test_date == NULL)
@@ -51,19 +53,19 @@ int main(int argc, char **argv)
 		fprintf(stderr, "No test date specified! Aborting ...\n");
 		exit(1);
 	}
+	
+	Suite *suite = suite_create("sichere-eisenbahnsteuerung");
 
-	struct test_helper *rs232test;
+	suite_add_tcase(suite, test_rs232_create());
 
-	/* Create all test helpers */
-	rs232test = test_helper_create(test_rs232_create_suite(), strdup("rs232"));
+	SRunner *runner = srunner_create(suite);
 
-	/* Execute all test helpers */
-	test_helper_execute_all(rs232test);
+	snprintf(buffer, 200, "logs/%s_results.xml", current_test_date);
+	srunner_set_xml(runner, strdup(buffer));
 
-	/* FIXME fetch the result from all test helpers */
+	srunner_run_all(runner, CK_VERBOSE);
 
-	/* Free all test helpers */
-	test_helper_free(rs232test);
+	srunner_free(runner);
 
 	return 0;
 }

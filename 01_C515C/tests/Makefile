@@ -32,11 +32,12 @@ build: $(OBJS)
 %.o: %.c 
 	$(CC_HOST) -c $< $(CFLAGS)
 
-logs/$(TEST_DATE):
-	mkdir -p logs/$(TEST_DATE)
+logs:
+	mkdir -p logs
 
-run: logs/$(TEST_DATE)
+run: logs
 	LD_LIBRARY_PATH=$(CHECK_LIBDIR) ./$(TARGET_NAME) --test-date='$(TEST_DATE)'
+	xsltproc common/style.xsl logs/$(TEST_DATE)_results.xml > $(TEST_DATE)_results.html
 
 clean:
 	rm $(TARGET_NAME) $(OBJFILES)

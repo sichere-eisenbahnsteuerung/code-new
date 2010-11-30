@@ -21,15 +21,11 @@ START_TEST(test_rs232_init_check_for_correct_hardware_configuration)
 }
 END_TEST
 
-Suite *test_rs232_create_suite(void)
+TCase *test_rs232_create(void)
 {
-	Suite *s = suite_create("rs232");
+	TCase *tc = tcase_create("rs232");
+	tcase_add_test(tc, test_rs232_init_check_for_correct_hardware_configuration);
 
-	TCase *tc_core = tcase_create("init");
-	tcase_add_test(tc_core, test_rs232_init_check_for_correct_hardware_configuration);
-
-	suite_add_tcase(s, tc_core);
-
-	return s;
+	return tc;
 }
 
