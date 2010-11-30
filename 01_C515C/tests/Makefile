@@ -22,6 +22,8 @@ LDFLAGS = -o $(TARGET_NAME) $(LIBS) -L$(CHECK_LIBDIR)
 OBJS = $(SOURCE:.c=.o)
 OBJFILES = $(shell echo $(OBJS) | sed 's/\.\.\/drivers\///g' | sed 's/\.\.\/modules\/betriebsmittelverwaltung\///g')
 
+TEST_DATE = $(shell echo `date +%Y%m%d%H%M`)
+
 all: build run
 
 build: $(OBJS)
@@ -30,8 +32,12 @@ build: $(OBJS)
 %.o: %.c 
 	$(CC_HOST) -c $< $(CFLAGS)
 
-run:
-	LD_LIBRARY_PATH=$(CHECK_LIBDIR) ./$(TARGET_NAME)
+logs/$(TEST_DATE):
+	mkdir -p logs/$(TEST_DATE)
+
+run: logs/$(TEST_DATE)
+	LD_LIBRARY_PATH=$(CHECK_LIBDIR) ./$(TARGET_NAME) --test-date='$(TEST_DATE)'
 
 clean:
 	rm $(TARGET_NAME) $(OBJFILES)
+

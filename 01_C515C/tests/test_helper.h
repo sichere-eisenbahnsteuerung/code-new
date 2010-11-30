@@ -10,7 +10,7 @@
 
 struct test_helper;
 
-struct test_helper *test_helper_create(Suite *suite);
+struct test_helper *test_helper_create(Suite *suite, const char *name);
 void test_helper_execute_all(struct test_helper *helper);
 void test_helper_free(struct test_helper *helper);
 
