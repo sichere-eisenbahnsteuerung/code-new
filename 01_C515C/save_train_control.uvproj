@@ -294,7 +294,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>./common;./include;./drivers;./modules</IncludePath>
             </VariousControls>
           </C51>
           <Ax51>
@@ -351,13 +351,37 @@
               <FileType>1</FileType>
               <FilePath>.\common\main.c</FilePath>
             </File>
+            <File>
+              <FileName>util.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\common\util.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>rs232.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\drivers\rs232.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>modules</GroupName>
+          <Files>
+            <File>
+              <FileName>betriebsmittelverwaltung.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\modules\betriebsmittelverwaltung\betriebsmittelverwaltung.c</FilePath>
+            </File>
+            <File>
+              <FileName>xpressnet.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\drivers\xpressnet.c</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>

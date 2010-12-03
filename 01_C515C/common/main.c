@@ -11,7 +11,7 @@
 void init_common(void)
 {
 	enable_interrupts(1);
-    RS232_init();
+    rs232_init();
 }
 
 /*
@@ -27,7 +27,7 @@ void main()
     rs232_output_write_pos = (rs232_input_write_pos + 1) % RS232_BUFFERSIZE;
 
     while(1) {
-        RS232_work();
+        rs232_work();
         if(rs232_input_read_pos != rs232_input_write_pos) 
         {
             inp = rs232_input_buffer[rs232_input_read_pos];
