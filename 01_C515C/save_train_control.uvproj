@@ -344,59 +344,20 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>main</GroupName>
+          <GroupName>common</GroupName>
           <Files>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\main.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>common</GroupName>
-          <Files>
-            <File>
-              <FileName>util.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\common\util.c</FilePath>
+              <FilePath>.\common\main.c</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
           <GroupName>drivers</GroupName>
-          <Files>
-            <File>
-              <FileName>rs232.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\drivers\rs232.c</FilePath>
-            </File>
-          </Files>
         </Group>
         <Group>
           <GroupName>modules</GroupName>
-          <Files>
-            <File>
-              <FileName>befehlsvalidierung.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\modules\befehlsvalidierung.c</FilePath>
-            </File>
-            <File>
-              <FileName>fahrprogramm.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\modules\fahrprogramm.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>betriebsmittel</GroupName>
-          <Files>
-            <File>
-              <FileName>betriebsmittelverwaltung.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\betriebsmittel\betriebsmittelverwaltung.c</FilePath>
-            </File>
-          </Files>
         </Group>
       </Groups>
     </Target>

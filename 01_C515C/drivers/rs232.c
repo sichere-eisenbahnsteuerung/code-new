@@ -1,6 +1,6 @@
 #include "rs232.h"
 #include <REG515C.H>
-#include "../common/util.h"
+#include "util.h"
 
 static volatile uint8_t input_byte = 0;
 static char wait_for_send = 1;

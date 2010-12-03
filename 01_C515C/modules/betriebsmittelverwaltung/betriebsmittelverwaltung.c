@@ -1,4 +1,4 @@
-#include "../common/types.h"
+#include "types.h"
 #include "rs232_shared_memory.h"
 
 

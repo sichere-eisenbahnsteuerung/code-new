@@ -1,9 +1,9 @@
                        
 #include <intrins.h>
 #include "main.h"
-#include "common/util.h"
+#include "util.h"
 
-#include "drivers/rs232.h"
+#include "rs232.h"
 
 /*
  * @brief Initialize common stuff for the main program

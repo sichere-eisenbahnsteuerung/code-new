@@ -9,8 +9,8 @@
 #ifndef _RS232_H_
 #define _RS232_H_
  
-#include "../common/types.h"
-#include "../betriebsmittel/rs232_shared_memory.h"
+#include "types.h"
+#include "rs232_shared_memory.h"
   
 /**
  * @brief RS232 init function

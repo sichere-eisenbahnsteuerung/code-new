@@ -2,7 +2,7 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
-#include "common/types.h"
+#include "types.h"
 
 /* Function prototypes */
 
