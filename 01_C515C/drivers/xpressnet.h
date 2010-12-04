@@ -10,16 +10,15 @@
 #define _XPRESSNET_H_
  
 #include "types.h"
-#include "rs232_shared_memory.h"
   
 /**
  * @brief RS232 init function
  *
  * Init the RS232 port.
  */
-void RS232_init ();
+void xpressnet_init ();
       
-void RS232_work();
+void xpressnet_work();
 
 
 #endif
