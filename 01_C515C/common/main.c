@@ -3,7 +3,7 @@
 #include "main.h"
 #include "util.h"
 
-#include "rs232_shared_memory.h"  
+#include "xpressnet_shared_memory.h"  
 #include "rs232.h"
 
 /*
@@ -24,8 +24,23 @@ void main()
 
 	init_common();
 
+	streckenbefehl_ev_xpressnet.target = LOK2;
+	streckenbefehl_ev_xpressnet.command = 3;
 
     while(1) {
         xpressnet_work();
+		if(streckenbefehl_ev_xpressnet.target == IDLE) {
+			if(inp == 0) {
+				inp++;	  
+				streckenbefehl_ev_xpressnet.target = ENTKUPPLER1;
+				streckenbefehl_ev_xpressnet.command = 1;
+			}		
+			else if(inp == 1) {
+				inp++;	  		 
+				streckenbefehl_ev_xpressnet.target = WEICHE1;
+				streckenbefehl_ev_xpressnet.command = 0;
+			}
+		}
+
     }
 }
