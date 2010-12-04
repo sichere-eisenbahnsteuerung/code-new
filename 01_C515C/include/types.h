@@ -6,19 +6,6 @@
 #ifndef _TYPES_H_
 #define _TYPES_H_
 
-/*
- * Application specific types
- */
-
-/**
- * @brief   Describes which type of a train we have. There are two possible kinds of a
- *          type currently as we have two trains running in the rails.
- */
-enum train_t
-{
-    TRAIN_0,
-    TRAIN_1
-};
 
 /** @brief Boolean Type */
 enum bool_t
@@ -26,6 +13,7 @@ enum bool_t
     TRUE = 1,
     FALSE = 0
 };
+
 
 
 /*
@@ -66,6 +54,52 @@ typedef enum bool_t bool;
 #ifndef NULL
 #define NULL 0
 #endif
+
+
+
+/*
+ * Application specific types
+ */
+
+/**
+ * @brief   Ziel eines Streckenbefehls (entweder Lok, Weiche oder Entkoppler)
+ */
+typedef enum
+{
+	IDLE, 									/**< Kein Befehl auszufuehren */
+    LOK1,	
+    LOK2,
+	WEICHE1,  
+	WEICHE2,
+	WEICHE3,
+	ENTKUPPLER1,	
+	ENTKUPPLER2
+} streckenbefehl_ziel;			  
+
+/**
+ * @brief   Ein Streckenbefehl
+ */
+typedef struct
+{
+    streckenbefehl_ziel target;				/**< Ziel des Streckenbefehls */ 
+	uint8_t command; 						/**< Der auszufuehrende Befehl.
+											  * 
+											  *	Bei einem Lokbefehl - Geschwindigkeit: 
+											  *		- 0x00: Stop
+											  *		- 0x01: Abkuppeln
+											  *		- 0x02: Ankuppeln
+											  *		- 0x03: Fahrt
+											  *
+											  * Bei einer Weiche:
+											  *		- 0x00: Geradeaus
+											  *		- 0x01: Abbiegen
+											  *
+											  * Bei einem Entkuppler:
+											  *		- 0x00: Keine Aktion
+											  *		- 0x01: Entkuppeln
+											  */ 
+} streckenbefehl;
+
 
 #endif
 
