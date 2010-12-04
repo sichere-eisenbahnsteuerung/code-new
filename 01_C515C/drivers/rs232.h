@@ -1,9 +1,8 @@
 /**
 * @file rs232.h
-* @brief rs232 driver
+* @brief RS232 Treiber
 *
-* Hardware driver for rs232 port. Serial port receive data is read into a ringbuffer via interrupt. 
-* Data to be sent is saved in a ringbuffer and will be sent when rs232_work is called.
+* Hardware Treiber für RS232. Bytes aus dem Ringbuffer im Shared Memory werden in der Work-Funktion gesendet, per Interrupt empfangene Bytes in einen zweiten Ringbuffer geschrieben.
 */
 
 #ifndef _RS232_H_
@@ -12,12 +11,13 @@
 #include "types.h"
   
 /**
- * @brief rs232 init function
- *
- * Init the rs232 port.
+ * @brief RS232 Initialisierung
  */
 void rs232_init();
-      
+
+/**
+ * @brief RS232 Work-Funktion
+ */      
 void rs232_work();
 
 
