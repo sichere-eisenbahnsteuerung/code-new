@@ -10,7 +10,6 @@
 #define _RS232_H_
  
 #include "types.h"
-#include "rs232_shared_memory.h"
   
 /**
  * @brief rs232 init function

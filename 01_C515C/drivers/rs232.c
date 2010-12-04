@@ -1,6 +1,7 @@
 #include "rs232.h"
 #include <REG515C.H>
-#include "util.h"
+#include "util.h"		
+#include "rs232_shared_memory.h"
 
 static volatile uint8_t input_byte = 0;
 static bool wait_for_send = TRUE;
