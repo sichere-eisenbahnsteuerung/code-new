@@ -372,14 +372,14 @@
           <GroupName>modules</GroupName>
           <Files>
             <File>
-              <FileName>betriebsmittelverwaltung.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\modules\betriebsmittelverwaltung\betriebsmittelverwaltung.c</FilePath>
-            </File>
-            <File>
               <FileName>xpressnet.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\drivers\xpressnet.c</FilePath>
+            </File>
+            <File>
+              <FileName>betriebsmittelverwaltung.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\modules\betriebsmittelverwaltung\betriebsmittelverwaltung.c</FilePath>
             </File>
           </Files>
         </Group>
