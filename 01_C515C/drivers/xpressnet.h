@@ -1,9 +1,8 @@
 /**
-* @file rs232.h
+* @file xpressnet.h
 * @brief RS232 driver
 *
-* Hardware driver for RS232 port. Serial port receive data is read into a ringbuffer via interrupt. 
-* Data to be sent is saved in a ringbuffer and will be sent when RS232_work is called.
+* XpressNet Treiber. Sendet XpressNet-Befehle aus dem Shared Memory in der Work-Funktion und wertet die Antwort aus. Dabei wird der RS232-Treiber genutzt und selbststaendig aufgerufen.
 */
 
 #ifndef _XPRESSNET_H_
@@ -12,12 +11,17 @@
 #include "types.h"
   
 /**
- * @brief RS232 init function
+ * @brief XpressNet Initialisierung
  *
- * Init the RS232 port.
+ * Initialisiert XpressNet und RS232.
  */
 void xpressnet_init ();
-      
+
+/**
+ * @brief XpressNet Work-Funktion
+ *
+ * Ruft auch die RS232 Work-Funktion auf.
+ */       
 void xpressnet_work();
 
 

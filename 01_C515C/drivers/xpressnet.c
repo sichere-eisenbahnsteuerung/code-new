@@ -22,19 +22,21 @@
 
 
 
-/* Funktionen zur Konvertierung von XpressNet-Befehlen */ 
+/* Funktionen zur Befehlsabarbeitung */ 
 static void checkForInput();
 static void checkForCommands();	
 static void commandWeiche();
 static void commandEntkuppler(); 
-static void commandLok();
+static void commandLok();	
+
+/* Funktionen zur Konvertierung von XpressNet-Befehlen */ 
 static bool writeSchaltbefehl(uint8_t address, uint8_t output, bool activate);
 static bool writeFahrbefehl(uint8_t address, uint8_t speed);
 
 /* Funktionen zum Lesen und Schreiben der RS232-Ringbuffer */
 static uint8_t write_byte(uint8_t b);
 static uint8_t max_bytes_to_write();
-static bool bytes_to_read();
+static uint8_t bytes_to_read();
 static uint8_t read_byte();
 static uint8_t peek_byte();
 
@@ -62,7 +64,7 @@ void xpressnet_work()
 
 
 /* 
- * Funktionen zur Konvertierung von XpressNet-Befehlen 
+ * Funktionen zur Befehlsverarbeitung
  */ 
 				 
 static void checkForCommands() {
@@ -76,7 +78,9 @@ static void checkForCommands() {
 
 				 
 static void commandLok() {
-	uint8_t xpressnet_address = 0, speed = 0;
+	uint8_t xpressnet_address = 0, speed = 0;	 
+	 
+	// XpressNet-Adresse bestimmen
 	switch(streckenbefehl_ev_xpressnet.target)
 	{
 		case LOK1:
@@ -109,7 +113,7 @@ static void commandLok() {
 			return;
 	}
 				 
-	if(!writeFahrbefehl(xpressnet_address, speed))
+	if(writeFahrbefehl(xpressnet_address, speed))
 	{
 		// TODO: FEHLER;
 		return;
@@ -119,6 +123,8 @@ static void commandLok() {
 				 
 static void commandEntkuppler() {
 	uint8_t xpressnet_address = 0;
+
+	// XpressNet-Adresse bestimmen
 	switch(streckenbefehl_ev_xpressnet.target)
 	{
 		case ENTKUPPLER1:
@@ -155,6 +161,8 @@ static void commandEntkuppler() {
 				 
 static void commandWeiche() {
 	uint8_t xpressnet_address = 0;
+	
+	// XpressNet-Adresse bestimmen
 	switch(streckenbefehl_ev_xpressnet.target)
 	{
 		case WEICHE1:
@@ -191,6 +199,48 @@ static void commandWeiche() {
 	}
 }
 
+static void checkForInput() 
+{						 
+	uint8_t retval;
+	
+	if(bytes_to_read() > 0)														// Wenn Eingabe vorhanden
+	{
+		switch(peek_byte())													// Erstes Headerbyte unterscheidet die Nachrichten
+		{
+			/*
+			 * 0x01: Antwort auf einen Befehl
+	 		 */
+			case 0x01:									
+				if(bytes_to_read() >= 3) { 									// Antwort ist 3 Byte lang
+					read_byte();											// Headerbyte lesen
+					retval = read_byte();
+					if(retval ^ 0x01 != read_byte()) { 						// Checksummen-Prüfung: 3. Byte ist XOR der ersten beiden
+						// TODO: FEHLER: Falsche Checksumme
+					}
+					switch(retval) {
+						case 0x04:
+							wait_for_answer = FALSE;						// Alles ok
+							if(!activation_pending) {
+								streckenbefehl_ev_xpressnet.target = IDLE;	// Nach erfolgter Aktivierung Streckenbefehl löschen
+							}
+							break;
+						default:
+							break;
+							// TODO: Kommunikationsfehler: NOTAUS
+					}
+				}
+				break;
+			default:
+				// TODO: Behandlung von anderen Nachrichten
+				read_byte();
+		}
+	}
+}
+
+/* 
+ * Funktionen zur Konvertierung von XpressNet-Befehlen (siehe auch xpressnet_li101f.pdf, 3.24 und 3.26)
+ */ 
+
 static bool writeSchaltbefehl(uint8_t address, uint8_t output, bool activate) {
 	uint8_t xor_byte=0;
 
@@ -217,6 +267,8 @@ static bool writeSchaltbefehl(uint8_t address, uint8_t output, bool activate) {
 
 	write_byte(xor_byte);
 	
+	wait_for_answer = TRUE;
+	
 	return TRUE;	
 }
 
@@ -228,7 +280,7 @@ static bool writeFahrbefehl(uint8_t address, uint8_t speed) {
 		return FALSE;
 	}
 
-	xor_byte ^= write_byte(0x52); 					   	// Header	
+	xor_byte ^= write_byte(0xE4); 					   	// Header	
 	xor_byte ^= write_byte(0x13); 					   	// Header für 128-stufige Geschwindigkeiten
 	xor_byte ^= write_byte(0x00); 					   	// Adresse High (immer 0)	 
 	xor_byte ^= write_byte(address); 					// Adresse Low
@@ -237,44 +289,10 @@ static bool writeFahrbefehl(uint8_t address, uint8_t speed) {
 
 	write_byte(xor_byte);
 	
+	wait_for_answer = TRUE;
+
 	return TRUE;	
 }
-
-static void checkForInput() 
-{						 
-	uint8_t retval;
-	
-	switch(peek_byte())													// Erstes Headerbyte unterscheidet die Nachrichten
-	{
-		/*
-		 * 0x01: Antwort auf einen Befehl
- 		 */
-		case 0x01:									
-			if(bytes_to_read() >= 3) { 									// Antwort ist 3 Byte lang
-				read_byte();											// Headerbyte lesen
-				retval = read_byte();
-				if(retval ^ 0x01 != read_byte()) { 						// Checksummen-Prüfung: 3. Byte ist XOR der ersten beiden
-					// TODO: FEHLER: Falsche Checksumme
-				}
-				switch(retval) {
-					case 0x04:
-						wait_for_answer = FALSE;						// Alles ok
-						if(!activation_pending) {
-							streckenbefehl_ev_xpressnet.target = IDLE;	// Nach erfolgter Aktivierung Streckenbefehl löschen
-						}
-						break;
-					default:
-						break;
-						// TODO: Kommunikationsfehler: NOTAUS
-				}
-			}
-			break;
-		default:
-			// TODO: Behandlung von anderen Nachrichten
-			read_byte();
-	}
-}
-
 
 
 /*
@@ -291,8 +309,8 @@ static uint8_t max_bytes_to_write() {
 	return (rs232_output_read_pos + RS232_BUFFERSIZE - rs232_output_write_pos - 1) % RS232_BUFFERSIZE;
 }
 
-static bool bytes_to_read() {
-	return rs232_input_read_pos != rs232_input_write_pos;
+static uint8_t bytes_to_read() {
+	return (rs232_input_write_pos + RS232_BUFFERSIZE - rs232_input_read_pos) % RS232_BUFFERSIZE;
 }	
 
 static uint8_t read_byte() {
