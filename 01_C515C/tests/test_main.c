@@ -1,7 +1,5 @@
 #include <getopt.h>
-#include "test_helper.h"
-
-extern TCase *test_rs232_create(void);
+#include <test_helper.h>
 
 char log_output_directory[200];
 char *current_test_date = NULL;
@@ -42,6 +40,8 @@ void handle_arguments(int argc, char **argv)
 	}
 }
 
+extern ctest_suite *test_rs232_create_suite(void);
+
 int main(int argc, char **argv)
 {
 	char buffer[200];
@@ -54,18 +54,13 @@ int main(int argc, char **argv)
 		exit(1);
 	}
 	
-	Suite *suite = suite_create("sichere-eisenbahnsteuerung");
+	ctest_runner *runner = ctest_runner_create();
 
-	suite_add_tcase(suite, test_rs232_create());
+	ctest_runner_add_suite(runner, test_rs232_create_suite());
+	
+	ctest_runner_execute_all(runner);
 
-	SRunner *runner = srunner_create(suite);
-
-	snprintf(buffer, 200, "logs/%s_results.xml", current_test_date);
-	srunner_set_xml(runner, strdup(buffer));
-
-	srunner_run_all(runner, CK_VERBOSE);
-
-	srunner_free(runner);
+	ctest_runner_free(runner);
 
 	return 0;
 }
