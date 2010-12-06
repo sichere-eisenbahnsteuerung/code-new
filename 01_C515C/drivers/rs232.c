@@ -1,5 +1,5 @@
 #include "rs232.h"
-#include <REG515C.H>
+#include "c515c.h"
 #include "util.h"		
 #include "rs232_shared_memory.h"
 
@@ -34,7 +34,7 @@ void rs232_work()
 	}
 }
 
-void rs232_interrupt(void) interrupt 4 
+void rs232_interrupt(void) INTERRUPT(4)
 {
     enable_interrupts(FALSE);
     if(RI)

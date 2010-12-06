@@ -9,7 +9,7 @@
 #define _UTIL_H_
 
 #include "types.h"
-                
+
 /*
  * @brief Wait for n usecs
  *

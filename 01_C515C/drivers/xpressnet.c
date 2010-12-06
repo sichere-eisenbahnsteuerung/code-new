@@ -1,5 +1,4 @@
 #include "xpressnet.h"
-#include <REG515C.H>
 #include "util.h"
 #include "rs232.h"
 #include "xpressnet_shared_memory.h"	
@@ -214,8 +213,9 @@ static void checkForInput()
 				if(bytes_to_read() >= 3) { 									// Antwort ist 3 Byte lang
 					read_byte();											// Headerbyte lesen
 					retval = read_byte();
-					if(retval ^ 0x01 != read_byte()) { 						// Checksummen-Prüfung: 3. Byte ist XOR der ersten beiden
+					if((retval ^ 0x01) != read_byte()) { 						// Checksummen-Prüfung: 3. Byte ist XOR der ersten beiden
 						// TODO: FEHLER: Falsche Checksumme
+						return;
 					}
 					switch(retval) {
 						case 0x04:
@@ -315,7 +315,7 @@ static uint8_t bytes_to_read() {
 
 static uint8_t read_byte() {
 	uint8_t inp;
-    inp = rs232_input_buffer[rs232_input_read_pos];
+    inp = rs232_input_buffer[rs232_input_read_pos];	 
     rs232_input_read_pos = (rs232_input_read_pos + 1) % RS232_BUFFERSIZE;
 	return inp;
 }		

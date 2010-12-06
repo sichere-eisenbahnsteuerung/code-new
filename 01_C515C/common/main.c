@@ -4,7 +4,7 @@
 #include "util.h"
 
 #include "xpressnet_shared_memory.h"  
-#include "rs232.h"
+#include "xpressnet.h"
 
 /*
  * @brief Initialize common stuff for the main program
