@@ -25,9 +25,7 @@ void rs232_init ()
 void rs232_work()  
 {	
 	while(CTS_PIN && rs232_output_read_pos != rs232_output_write_pos) {		   				// Solange CTS gesetzt ist und noch Zeichen zu senden sind
-	    while(wait_for_send) 																// Auf das Senden des lezten Zeichens warten
-	    {   
-		}
+		WAIT_FOR(wait_for_send == FALSE); // Auf das Senden des lezten Zeichens warten
         wait_for_send = TRUE;
         SBUF = rs232_output_buffer[rs232_output_read_pos];									// Zeichen senden
         rs232_output_read_pos = (rs232_output_read_pos + 1) % RS232_BUFFERSIZE;
