@@ -6,7 +6,7 @@
 static volatile uint8_t input_byte = 0;
 static bool wait_for_send = TRUE;
 
-sbit CTS_PIN = P3^5;   
+#define CTS_PIN T1   
 
 void rs232_init ()
 {    
@@ -34,7 +34,7 @@ void rs232_work()
 	}
 }
 
-void rs232_interrupt(void) INTERRUPT(4)
+void s232_interrupt(void) INTERRUPT(4)
 {
     enable_interrupts(FALSE);
     if(RI)
