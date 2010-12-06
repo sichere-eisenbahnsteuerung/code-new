@@ -18,7 +18,7 @@
  * Init the RS232 port.
  * @brief RS232 Initialisierung
  */
-void RS232_init ();
+void rs232_init ();
 
 /**
  * @brief RS232 Work-Funktion
