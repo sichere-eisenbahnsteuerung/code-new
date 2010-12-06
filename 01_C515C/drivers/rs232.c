@@ -32,7 +32,7 @@ void rs232_work()
 	}
 }
 
-void s232_interrupt(void) INTERRUPT(4)
+void rs232_interrupt(void) INTERRUPT(4)
 {
     enable_interrupts(FALSE);
     if(RI)
