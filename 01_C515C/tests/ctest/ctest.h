@@ -30,9 +30,9 @@ void             ctest_suite_free(ctest_suite *suite);
  * @param suite Test-Suite der die neue Test-Funktion hinzugefügt werden soll
  * @param test_func Test-Funktion die der Test-Suite hinzugefügt wird
  */
-void             ctest_suite_add_test_func_with_name(ctest_suite *suite, const char *name, ctest_test_func *test_func);
+void             ctest_suite_add_test_func_with_name(ctest_suite *suite, const char *name, ctest_test_func test_func);
 
-#define ctest_suite_add_test_func(suite, func) ctest_suite_add_test_func_with_name(suite, #func, &func)
+#define ctest_suite_add_test_func(suite, func) ctest_suite_add_test_func_with_name(suite, #func, func)
 
 /*
  * @brief Erstellt einen Test-Runner
@@ -71,7 +71,7 @@ void             ctest_runner_execute_all(ctest_runner *runner);
  * @param func Callback-Funktion die aufgerufen wird, sobald das WAIT_FOR-Makro aufgerufen
  *             wird
  */
-void             ctest_register_wait_for_handler(ctest_wait_for_func *func);
+void             ctest_register_wait_for_handler(ctest_wait_for_func func);
 
 /*
  * @brief Ruft den aktuell gesetzten WAIT_FOR-Makro Handler auf. Diese Funktion sollte
@@ -82,13 +82,13 @@ void             ctest_trigger_wait_for_handler(void);
 
 #ifdef WAIT_FOR
 #undef WAIT_FOR
+#endif
 /* 
  * @brief Redefinition des WAIT_FOR-Makros, die bei jedem Warte-Schleifen-Durchlauf die
  *        ctest_trigger_wait_for_handler Funktion aufruft.
  */
 #define WAIT_FOR(condition) \
     while(!condition) { ctest_trigger_wait_for_handler(); } 
-#endif
 
 int ctest_assert_is_true(unsigned int value, char *message, const char *file, unsigned int line);
 int ctest_assert_is_false(unsigned int value, char *message, const char *file, unsigned int line);

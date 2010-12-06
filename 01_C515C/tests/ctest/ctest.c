@@ -1,5 +1,5 @@
 
-#include <linuxlist.h>
+#include "linuxlist.h"
 #include <ctest.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -46,7 +46,7 @@ ctest_suite *ctest_suite_create(const char *name)
     return suite;
 }
 
-void ctest_suite_add_test_func_with_name(ctest_suite *suite, const char *name, ctest_test_func *test_func)
+void ctest_suite_add_test_func_with_name(ctest_suite *suite, const char *name, ctest_test_func test_func)
 {
     struct _ctest_test_func_container *fcnt = NULL;
 
@@ -174,7 +174,7 @@ void ctest_runner_free(ctest_runner *runner)
     runner = NULL;
 }
 
-void ctest_register_wait_for_handler(ctest_wait_for_func *func)
+void ctest_register_wait_for_handler(ctest_wait_for_func func)
 {
     current_wait_for_func = func;
 }

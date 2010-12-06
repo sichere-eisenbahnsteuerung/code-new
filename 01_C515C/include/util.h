@@ -13,8 +13,10 @@
 /*
  * @brief Wartet bis die Übergeben Condition den Wert true hat
  */
+#ifndef WAIT_FOR
 #define WAIT_FOR(condition) \
     while(!condition) { }
+#endif
 
 /*
  * @brief Wait for n usecs
