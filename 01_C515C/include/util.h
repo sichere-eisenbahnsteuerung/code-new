@@ -11,6 +11,12 @@
 #include "types.h"
 
 /*
+ * @brief Wartet bis die Übergeben Condition den Wert true hat
+ */
+#define WAIT_FOR(condition) \
+    while(!condition) { }
+
+/*
  * @brief Wait for n usecs
  *
  * @param	usecs	Count of usecs to wait for
