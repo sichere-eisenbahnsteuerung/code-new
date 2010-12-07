@@ -8,7 +8,7 @@ SOURCE = \
 	test_rs232.c \
 	ctest/ctest.c \
 	../drivers/rs232.c \
-	../modules/betriebsmittelverwaltung/rs232_shared_memory.c \
+	../modules/betriebsmittelverwaltung.c \
 	$(NULL)
 
 CHECK_LIBDIR = ../deps/check-0.9.8/build-host/src/.libs
@@ -20,7 +20,7 @@ CFLAGS = $(INCS) -DTARGET_HOST -g
 LDFLAGS = -o $(TARGET_NAME) $(LIBS) -L$(CHECK_LIBDIR)
 
 OBJS = $(SOURCE:.c=.o)
-OBJFILES = $(shell echo $(OBJS) | sed 's/\.\.\/drivers\///g' | sed 's/\.\.\/modules\/betriebsmittelverwaltung\///g' | sed 's/ctest\///g')
+OBJFILES = $(shell echo $(OBJS) | sed 's/\.\.\/drivers\///g' | sed 's/\.\.\/modules\///g' | sed 's/ctest\///g')
 
 TEST_DATE = $(shell echo `date +%Y%m%d%H%M`)
 
