@@ -362,6 +362,11 @@
           <GroupName>drivers</GroupName>
           <Files>
             <File>
+              <FileName>xpressnet.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\drivers\xpressnet.c</FilePath>
+            </File>
+            <File>
               <FileName>rs232.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\drivers\rs232.c</FilePath>
@@ -372,14 +377,9 @@
           <GroupName>modules</GroupName>
           <Files>
             <File>
-              <FileName>xpressnet.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\drivers\xpressnet.c</FilePath>
-            </File>
-            <File>
               <FileName>betriebsmittelverwaltung.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\modules\betriebsmittelverwaltung\betriebsmittelverwaltung.c</FilePath>
+              <FilePath>.\modules\betriebsmittelverwaltung.c</FilePath>
             </File>
           </Files>
         </Group>
