@@ -13,9 +13,11 @@
 /*
  * @brief Wartet bis die Übergeben Condition den Wert true hat
  */
-#ifndef WAIT_FOR
-#define WAIT_FOR(condition) \
-    while(!condition) { }
+#ifndef TARGET_HOST
+	#define WAIT_FOR(condition) \
+		while(!condition) { }
+#else
+	#include "ctest.h"
 #endif
 
 /*
