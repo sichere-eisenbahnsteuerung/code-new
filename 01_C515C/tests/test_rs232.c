@@ -34,6 +34,20 @@ START_TEST_FUNC(test_rs232_test_send_character)
 }
 END_TEST_FUNC
 
+void simulate_send_char() {
+	SBUF = 0;
+	TI = 1;
+	rs232_interrupt();
+	assert_is_true(TI == 0, "TI-Flag nicht zurückgesetzt");
+}
+
+void simulate_read_char(uint8_t c) {
+	SBUF = c;
+	RI = 1;
+	rs232_interrupt();
+	assert_is_true(RI == 0, "TI-Flag nicht zurückgesetzt");
+}
+
 ctest_suite *test_rs232_create_suite(void)
 {
     ctest_suite *suite = ctest_suite_create("rs232");
