@@ -3,7 +3,6 @@
 #include "main.h"
 #include "util.h"
 
-#include "xpressnet_shared_memory.h"  
 #include "xpressnet.h"
 
 /*

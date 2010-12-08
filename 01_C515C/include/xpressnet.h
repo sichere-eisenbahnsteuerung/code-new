@@ -13,6 +13,7 @@
 #define _XPRESSNET_H_
  
 #include "types.h"
+#include "xpressnet_shared_memory.h"
   
 /**
  * @brief XpressNet Initialisierung
