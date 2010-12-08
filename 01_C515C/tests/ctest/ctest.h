@@ -1,3 +1,11 @@
+/**
+ * @file ctest.h
+ * @ingroup ctest
+ * @brief Einfaches UnitTest-Framework
+ *
+ * @author Simon Busch
+ * @date 08.12.2010
+ */
 #ifndef _CTEST_H_
 #define _CTEST_H_
 
