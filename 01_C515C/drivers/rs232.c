@@ -6,8 +6,6 @@
 static volatile uint8_t input_byte = 0;
 static bool wait_for_send = TRUE;
 
-#define CTS_PIN T1   
-
 void rs232_init ()
 {    
     BD = 1; 					// Baudratengenerator einschalten

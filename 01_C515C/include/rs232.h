@@ -25,5 +25,9 @@ void rs232_init ();
  */      
 void rs232_work();
 
+/**
+ * @brief Hardware-Pin für das CTS-Signal
+ */
+#define CTS_PIN T1   
 
 #endif
