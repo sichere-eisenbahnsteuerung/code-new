@@ -17,4 +17,10 @@
 @defgroup modules Anwendungs-Schicht
 
 @defgroup sharedmemory Shared Memory
+
+@defgroup tests Test-Umgebung
+@defgroup ctest Test-Framework
+@ingroup tests
+@defgroup unittest Unit-Tests
+@ingroup tests
 */
