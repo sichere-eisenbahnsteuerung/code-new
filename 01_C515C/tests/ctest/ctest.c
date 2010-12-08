@@ -1,5 +1,5 @@
 
-#include <linuxlist.h>
+#include "linuxlist.h"
 #include <ctest.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,6 +29,8 @@ struct _ctest_runner
     p->member.next = &p->member; \
     p->member.prev = &p->member;
 
+static ctest_wait_for_func current_wait_for_func = NULL;
+
 /* 
  * Test-Suite
  */
@@ -44,7 +46,7 @@ ctest_suite *ctest_suite_create(const char *name)
     return suite;
 }
 
-void ctest_suite_add_test_func_with_name(ctest_suite *suite, const char *name, ctest_test_func *test_func)
+void ctest_suite_add_test_func_with_name(ctest_suite *suite, const char *name, ctest_test_func test_func)
 {
     struct _ctest_test_func_container *fcnt = NULL;
 
@@ -170,6 +172,19 @@ void ctest_runner_free(ctest_runner *runner)
     /* Abschliessend geben wir den Speicherplatz des Test-Runners frei */
     free(runner);
     runner = NULL;
+}
+
+void ctest_register_wait_for_handler(ctest_wait_for_func func)
+{
+    current_wait_for_func = func;
+}
+
+void ctest_trigger_wait_for_handler(void)
+{
+    if (current_wait_for_func != NULL)
+    {
+        current_wait_for_func();
+    }
 }
 
 int ctest_assert_is_true(unsigned int value, char *message, const char *file, unsigned int line)

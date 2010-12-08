@@ -11,6 +11,9 @@ build-tests:
 run-tests:
 	make -C tests run
 
+docs:
+	doxygen Doxyfile
+
 clean:
 	make -C tests clean
 	rm -rf build
