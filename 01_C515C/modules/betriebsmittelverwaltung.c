@@ -1,3 +1,15 @@
+/**
+ * @file
+ * @ingroup sharedmemory
+ * @ingroup modules
+ * @brief Die Betriebsmittelverwaltung
+ *
+ * Die Betriebsmittelverwaltung ist für die Verwaltung von Ressourcen wie Speicherplatz und Rechenzeit verantwortlich. Sie ruft die einzelnen Module in der Reihenfolge der Zeitscheibe auf und legt das Shared Memory an.
+ *
+ * @author Hanno Fellmann
+ * @date 08.12.2010
+ */
+ 
 #include "types.h"
 #include "rs232_shared_memory.h"   
 #include "xpressnet_shared_memory.h"
