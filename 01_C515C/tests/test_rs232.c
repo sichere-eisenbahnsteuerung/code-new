@@ -41,18 +41,20 @@ END_TEST_FUNC
  */
 START_TEST_FUNC(test_rs232_test_send_character)
 {
+	ctest_register_wait_for_handler(&simulate_send_char);
 	
+	ctest_register_wait_for_handler(NULL);
 }
 END_TEST_FUNC
 
-void simulate_send_char() {
+int simulate_send_char() {
 	SBUF = 0;
 	TI = 1;
 	rs232_interrupt();
 	assert_is_true(TI == 0, "TI-Flag nicht zurückgesetzt");
 }
 
-void simulate_read_char(uint8_t c) {
+int simulate_read_char(uint8_t c) {
 	SBUF = c;
 	RI = 1;
 	rs232_interrupt();
