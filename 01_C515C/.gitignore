@@ -1,1 +1,10 @@
-deps/check-0.9.8
+doxygen
+logs
+*.o
+*.exe
+*.lst
+*.obj
+save_train_control
+save_train_control.lnp
+save_train_control.M51
+save_train_control.plg
