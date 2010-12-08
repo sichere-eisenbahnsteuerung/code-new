@@ -1,7 +1,13 @@
 /**
-* @file test_rs232.c
-* @brief RS232 Test-Script
-*/
+ * @file
+ * @ingroup unittest
+ * @brief RS232 Test-Script
+ *
+ * Führt den RS232-Unittest durch (Initialisierung, Senden und Empfangen).
+ *
+ * @author Hanno Fellmann
+ * @date 08.12.2010
+ */
 
 #include <test_helper.h>
 #include <rs232.h>
@@ -14,14 +20,13 @@ static uint8_t max_bytes_to_write();
 static uint8_t bytes_to_read();
 static uint8_t read_byte();
 static uint8_t peek_byte();
-static void clear_bytes();
 
-// Zwischenspeicher fÃ¼r gesendete Bytes zur Kontrolle
+// Zwischenspeicher für gesendete Bytes zur Kontrolle
 static uint8_t bytes_sent[20] = {0}, bytes_sent_idx = 0;
 
 /**
  * @brief Hardware-Initialisierung testen
- * @pre RS232 ist noch nicht initialisiert
+ * @pre Keine.
  */
 START_TEST_FUNC(test_rs232_init_check_for_correct_hardware_configuration)
 {
@@ -38,8 +43,10 @@ START_TEST_FUNC(test_rs232_init_check_for_correct_hardware_configuration)
 END_TEST_FUNC
 
 /**
- * @brief Senden von Zeichen
- * Sendet insgesamt 100 x 4 Zeichen Ã¼ber die RS232-Schnittstelle.
+ * @brief Senden von Zeichen testen
+ * @pre Keine.
+ *
+ * Sendet insgesamt 100 x 4 Zeichen über die RS232-Schnittstelle.
  */
 START_TEST_FUNC(test_rs232_test_send_character)
 {
@@ -80,8 +87,10 @@ END_TEST_FUNC
 
 
 /**
- * @brief Empfangen von Zeichen
- * EmpfÃ¤ngt insgesamt 100 x 4 Zeichen Ã¼ber die RS232-Schnittstelle.
+ * @brief Empfangen von Zeichen testen
+ * @pre Keine.
+ *
+ * Empfängt insgesamt 100 x 4 Zeichen über die RS232-Schnittstelle.
  */
 START_TEST_FUNC(test_rs232_test_receive_character)
 {
@@ -112,7 +121,7 @@ END_TEST_FUNC
 
 /**
  * @brief Simuliert die Sende-Hardwarefunktion
- * @warning Null kann nicht gesendet werden! Die Simulation ist nicht mÃ¶glich, weil Ã„nderungen an SBUF nicht feststelltbar sind. Deshalb wird Null als "nichts zu senden" interpretiert.
+ * @warning Null kann nicht gesendet werden! Die Simulation ist nicht möglich, weil Änderungen an SBUF nicht feststelltbar sind. Deshalb wird Null als "nichts zu senden" interpretiert.
  */
 int simulate_send_byte() {
 	if(SBUF != 0) {							
@@ -137,6 +146,11 @@ int simulate_read_byte(uint8_t c) {
 	assert_is_true(RI == 0, "TI-Flag nicht zurÃ¼ckgesetzt");
 }
 
+/**
+ * @brief Erstellt die Test Suite
+ *
+ * Erstellt eine Test Suite, die die Initialisierung, das Senden und das Empfangen über RS232 testet.
+ */
 ctest_suite *test_rs232_create_suite(void)
 {
     ctest_suite *suite = ctest_suite_create("rs232");
