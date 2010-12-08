@@ -4,6 +4,7 @@ logs
 *.exe
 *.lst
 *.obj
+*.bak
 save_train_control
 save_train_control.lnp
 save_train_control.M51
