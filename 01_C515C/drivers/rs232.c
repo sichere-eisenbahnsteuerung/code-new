@@ -1,7 +1,6 @@
 #include "rs232.h"
 #include "c515c.h"
 #include "util.h"		
-#include "rs232_shared_memory.h"
 
 static volatile uint8_t input_byte = 0;
 static bool wait_for_send = TRUE;
@@ -17,6 +16,8 @@ void rs232_init ()
 	TI = 1;
     ES = 1;                     // Enable serial interrupts
     
+	rs232_output_read_pos = rs232_output_write_pos = 0;
+	rs232_input_read_pos = rs232_input_write_pos = 0;
     wait_for_send = FALSE;
 }
 
