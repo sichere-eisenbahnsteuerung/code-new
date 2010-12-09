@@ -18,14 +18,14 @@
 /**
  * @brief XpressNet Initialisierung
  *
- * Initialisiert XpressNet und RS232.
+ * Initialisiert XpressNet.
+ * 
+ * @pre RS232 muss bereits initialisiert sein.
  */
 void xpressnet_init ();
 
 /**
  * @brief XpressNet Work-Funktion
- *
- * Ruft auch die RS232 Work-Funktion auf.
  */       
 void xpressnet_work();
 

@@ -1,6 +1,5 @@
 #include "xpressnet.h"
 #include "util.h"
-#include "rs232.h"
 #include "xpressnet_shared_memory.h"	
 #include "rs232_shared_memory.h"
 
@@ -47,7 +46,6 @@ static bool activation_pending = FALSE;				// Der aktuelle Befehl ist der Deakti
 void xpressnet_init ()
 {    
 	wait_for_answer = 0;
-    rs232_init();
 }
 
 void xpressnet_work() 
@@ -57,8 +55,6 @@ void xpressnet_work()
 	if(!wait_for_answer) {							// Antwort erhalten? Neue Befehle ausführen
 		checkForCommands();
 	}
-
-    rs232_work();									// RS232-Schnittstelle aufrufen
 }
 
 
