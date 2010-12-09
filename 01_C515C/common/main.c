@@ -3,14 +3,16 @@
 #include "main.h"
 #include "util.h"
 
-#include "xpressnet.h"
+#include "xpressnet.h"	 
+#include "rs232.h"
 
 /*
  * @brief Initialize common stuff for the main program
  */
 void init_common(void)
 {
-	enable_interrupts(1);
+	enable_interrupts(1);		 
+    rs232_init();
     xpressnet_init();
 }
 
@@ -27,7 +29,8 @@ void main()
 	streckenbefehl_ev_xpressnet.command = 3;
 
     while(1) {
-        xpressnet_work();
+        xpressnet_work();	 
+    	rs232_work();
 		if(streckenbefehl_ev_xpressnet.target == IDLE) {
 			if(inp == 0) {
 				inp++;	  
