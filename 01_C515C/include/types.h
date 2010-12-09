@@ -3,8 +3,8 @@
  * @brief Global Type Definitions
  */
 
-#ifndef _TYPES_H_
-#define _TYPES_H_
+#ifndef _USR_TYPES_H_	// _TYPES_H_ ist durch stdlib vergeben!
+#define _USR_TYPES_H_
 
 
 /** @brief Boolean Type */
@@ -25,8 +25,7 @@ enum bool_t
  * have to change our naming conventions for the types below.
  */
 
-#ifndef _STDLIB_H
-
+#ifndef _STDLIB_H_
 /** @brief 32 bit unsigned integer */
 typedef unsigned long uint32_t;
 /** @brief 32 bit signed integer */
