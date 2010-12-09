@@ -41,6 +41,7 @@ void handle_arguments(int argc, char **argv)
 }
 
 extern ctest_suite *test_rs232_create_suite(void);
+extern ctest_suite *test_xpressnet_create_suite(void);
 
 int main(int argc, char **argv)
 {
@@ -57,6 +58,7 @@ int main(int argc, char **argv)
 	ctest_runner *runner = ctest_runner_create();
 
 	ctest_runner_add_suite(runner, test_rs232_create_suite());
+	ctest_runner_add_suite(runner, test_xpressnet_create_suite());
 	
 	ctest_runner_execute_all(runner);
 
