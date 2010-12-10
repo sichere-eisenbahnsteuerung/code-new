@@ -43,7 +43,7 @@ END_TEST_FUNC
 
 /**
  * @brief Senden von Zeichen testen
- * @pre Keine.
+ * @pre RS232 initialisiert.
  *
  * Sendet insgesamt 100 x 4 Zeichen über die RS232-Schnittstelle.
  */
@@ -51,7 +51,6 @@ START_TEST_FUNC(test_rs232_test_send_character)
 {
 	int i=0;
 	
-	rs232_init();
 	rs232_output_read_pos = rs232_output_write_pos = 0;
 	
 	ctest_register_wait_for_handler(&simulate_send_byte);
@@ -87,15 +86,13 @@ END_TEST_FUNC
 
 /**
  * @brief Empfangen von Zeichen testen
- * @pre Keine.
+ * @pre RS232 initialisiert.
  *
  * Empfängt insgesamt 100 x 4 Zeichen über die RS232-Schnittstelle.
  */
 START_TEST_FUNC(test_rs232_test_receive_character)
 {
 	int i=0;
-	
-	rs232_init();
 	
 	rs232_input_read_pos = rs232_input_write_pos = 0;
 	
