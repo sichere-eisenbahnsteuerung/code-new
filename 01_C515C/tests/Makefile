@@ -41,6 +41,9 @@ run: logs
 	LD_LIBRARY_PATH=$(CHECK_LIBDIR) ./$(TARGET_NAME) --test-date='$(TEST_DATE)'
 #	xsltproc common/style.xsl logs/$(TEST_DATE)_results.xml > $(TEST_DATE)_results.html
 
+doc:
+	doxygen
+
 clean:
 	rm $(TARGET_NAME) $(OBJFILES)
 
