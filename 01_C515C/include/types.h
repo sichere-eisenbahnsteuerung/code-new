@@ -3,8 +3,8 @@
  * @brief Global Type Definitions
  */
 
-#ifndef _USR_TYPES_H_	// _TYPES_H_ ist durch stdlib vergeben!
-#define _USR_TYPES_H_
+#ifndef TYPES_H_	// _TYPES_H_ ist durch stdlib vergeben!
+#define TYPES_H_
 
 
 /** @brief Boolean Type */
