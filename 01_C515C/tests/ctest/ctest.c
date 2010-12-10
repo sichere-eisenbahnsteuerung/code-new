@@ -59,7 +59,7 @@ void ctest_suite_add_test_func_with_name(ctest_suite *suite, const char *name, c
     fcnt->name = strdup(name);
 
     /* Der neue Test-Container gehört zu der übergebenen Test-Suite */
-    llist_add(&fcnt->list, &suite->func_list);
+    llist_add_tail(&fcnt->list, &suite->func_list);
 }
 
 void ctest_suite_free(ctest_suite *suite)
@@ -134,7 +134,7 @@ void ctest_runner_add_suite(ctest_runner *runner, ctest_suite *suite)
     assert(runner != NULL);
     assert(suite != NULL);
 
-    llist_add(&suite->list, &runner->suite_list);
+    llist_add_tail(&suite->list, &runner->suite_list);
 }
 
 void ctest_runner_execute_all(ctest_runner *runner)
