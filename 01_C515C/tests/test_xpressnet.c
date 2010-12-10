@@ -7,6 +7,8 @@
  *
  * @author Hanno Fellmann
  * @date 08.12.2010
+ * @todo Tests für Weiche 2+3, Entkoppler 1+2 hinzufügen
+ * @todo Bytes für Befehle überprüfen.
  */
 
 #include <test_helper.h>
