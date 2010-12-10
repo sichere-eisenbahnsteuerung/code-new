@@ -1,3 +1,9 @@
+/** 
+ * @file
+ * @todo Notaus bei fehlerhaften Antworten des XpressNet-Interface
+ * @todo Überprüfen der Streckenbefehle  
+ */
+ 
 #include "xpressnet.h"
 #include "util.h"
 #include "xpressnet_shared_memory.h"	
