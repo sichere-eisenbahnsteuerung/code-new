@@ -71,7 +71,7 @@ START_TEST_FUNC(test_rs232_test_send_character)
 		write_byte(8);
 		bytes_sent_idx = 0;
 		rs232_work();
-		simulate_send_byte();
+		assert_is_true(simulate_send_byte() == 0, "Fehler im simulierten Senden!");
 		assert_is_true(bytes_sent_idx == 4, "Falsche Anzahl gesendeter Bytes");
 		assert_is_true(bytes_sent[0] == 2, "Byte 1 fehlerhaft gesendet");
 		assert_is_true(bytes_sent[1] == 4, "Byte 2 fehlerhaft gesendet");
@@ -100,10 +100,10 @@ START_TEST_FUNC(test_rs232_test_receive_character)
 	rs232_input_read_pos = rs232_input_write_pos = 0;
 	
 	for(i=0;i<100;i++) {
-		simulate_read_byte(1);
-		simulate_read_byte(3);
-		simulate_read_byte(5);
-		simulate_read_byte(7);
+		assert_is_true(simulate_read_byte(1) == 0, "Fehler beim simulierten Empfangen!");
+		assert_is_true(simulate_read_byte(3) == 0, "Fehler beim simulierten Empfangen!");
+		assert_is_true(simulate_read_byte(5) == 0, "Fehler beim simulierten Empfangen!");
+		assert_is_true(simulate_read_byte(7) == 0, "Fehler beim simulierten Empfangen!");
 		
 		rs232_work();
 		
