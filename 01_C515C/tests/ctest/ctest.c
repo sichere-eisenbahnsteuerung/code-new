@@ -90,6 +90,12 @@ void ctest_suite_free(ctest_suite *suite)
     free(suite);
 }
 
+/*
+ * @brief Hilfs-Funktion für den ctest_runner, eine Test-Suite des Test-Runners
+ *        auszuführen.
+ *
+ * @param suite Test-Suite, die ausgeführt werden soll
+ */
 void _ctest_suite_execute_all(ctest_suite *suite)
 {
     struct _ctest_test_func_container *fcnt;
@@ -110,6 +116,9 @@ void _ctest_suite_execute_all(ctest_suite *suite)
             {
                 printf("[SUITE: %s] test func '%s': PASSED\n", suite->name, fcnt->name);
             }
+
+            /* Den evtl. registrierten WAIT_FOR-Handler zurücksetzen */
+            ctest_register_wait_for_handler(NULL);
         }
     }
 }
