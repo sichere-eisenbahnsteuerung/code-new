@@ -25,7 +25,7 @@ enum bool_t
  * have to change our naming conventions for the types below.
  */
 
-#ifndef _STDLIB_H_
+#ifndef _STDINT_H
 /** @brief 32 bit unsigned integer */
 typedef unsigned long uint32_t;
 /** @brief 32 bit signed integer */
@@ -38,7 +38,6 @@ typedef signed int int16_t;
 typedef unsigned char uint8_t;
 /** @brief 8 bit signed integer */
 typedef signed char int8_t;
-
 #endif
 
 /** @brief Boolean type */
