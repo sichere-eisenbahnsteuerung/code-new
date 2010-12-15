@@ -94,6 +94,8 @@ START_TEST_FUNC(test_rs232_test_receive_character)
 {
 	int i=0;
 	
+	ctest_register_wait_for_handler(&simulate_send_byte);
+    
 	rs232_input_read_pos = rs232_input_write_pos = 0;
 	
 	for(i=0;i<100;i++) {
