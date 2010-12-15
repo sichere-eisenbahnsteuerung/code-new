@@ -7,28 +7,26 @@
  *
  * @author Hanno Fellmann
  * @date 08.12.2010
+ *
+ * @sa rs232.c
  */
 
 #ifndef _RS232_H_
 #define _RS232_H_
- 
+
 #include "rs232_shared_memory.h"
-  
+
 #include "types.h"
 
 /**
- * @brief Hardware-Pin für das CTS-Signal
+ * @brief Hardware-Pin für das CTS-Signal.
+ *
+ * Das CTS-Signal liegt Hardwareseitig auf dem Anschluss T1. Zur Kompatibilität 
+ * mit dem Testframework wird nicht die Portnotation (z.B. P3^4) verwendet.
  */
-#define CTS_PIN T1     
+#define CTS_PIN T1
 
-/**
- * @brief RS232 Initialisierung
- */
 void rs232_init ();
-
-/**
- * @brief RS232 Work-Funktion
- */      
 void rs232_work();
 
 
