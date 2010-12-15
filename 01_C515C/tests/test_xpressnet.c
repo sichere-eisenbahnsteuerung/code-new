@@ -7,8 +7,6 @@
  *
  * @author Hanno Fellmann
  * @date 08.12.2010
- *
- * @todo Bytes für Befehle überprüfen.
  */
 
 #include <test_helper.h>
@@ -23,30 +21,30 @@ static uint8_t read_byte();
 static uint8_t peek_byte();
 
 // Weiche 1
-static uint8_t weiche1_geradeaus1[] = {0x52, 0x00, 0x87};
-static uint8_t weiche1_geradeaus2[] = {0x52, 0x00, 0x8E};
-static uint8_t weiche1_abbiegen1[]  = {0x52, 0x00, 0x86};
-static uint8_t weiche1_abbiegen2[] = {0x52, 0x00, 0x8F};
+static uint8_t weiche1_geradeaus1[] = {0x52, 0x00, 0x86};
+static uint8_t weiche1_geradeaus2[] = {0x52, 0x00, 0x8F};
+static uint8_t weiche1_abbiegen1[]  = {0x52, 0x00, 0x87};
+static uint8_t weiche1_abbiegen2[]  = {0x52, 0x00, 0x8E};
 
 // Weiche 2
-static uint8_t weiche2_geradeaus1[] = {0x52, 0x01, 0x81};
-static uint8_t weiche2_geradeaus2[] = {0x52, 0x01, 0x88};
-static uint8_t weiche2_abbiegen1[]  = {0x52, 0x01, 0x80};
-static uint8_t weiche2_abbiegen2[] = {0x52, 0x01, 0x89};
+static uint8_t weiche2_geradeaus1[] = {0x52, 0x01, 0x80};
+static uint8_t weiche2_geradeaus2[] = {0x52, 0x01, 0x89};
+static uint8_t weiche2_abbiegen1[]  = {0x52, 0x01, 0x81};
+static uint8_t weiche2_abbiegen2[]  = {0x52, 0x01, 0x88};
 
 // Weiche 3
-static uint8_t weiche3_geradeaus1[] = {0x52, 0x00, 0x85};
-static uint8_t weiche3_geradeaus2[] = {0x52, 0x00, 0x8C};
-static uint8_t weiche3_abbiegen1[]  = {0x52, 0x00, 0x84};
-static uint8_t weiche3_abbiegen2[] = {0x52, 0x00, 0x8D};
+static uint8_t weiche3_geradeaus1[] = {0x52, 0x00, 0x84};
+static uint8_t weiche3_geradeaus2[] = {0x52, 0x00, 0x8D};
+static uint8_t weiche3_abbiegen1[]  = {0x52, 0x00, 0x85};
+static uint8_t weiche3_abbiegen2[]  = {0x52, 0x00, 0x8C};
 
 // Entkuppler 1
 static uint8_t entkuppler1_deaktivieren[] = {0x52, 0x01, 0x84};
-static uint8_t entkuppler1_aktivieren[] = {0x52, 0x01, 0x8C};
+static uint8_t entkuppler1_aktivieren[] =   {0x52, 0x01, 0x8C};
 
 // Entkuppler 2
 static uint8_t entkuppler2_deaktivieren[] = {0x52, 0x01, 0x82};
-static uint8_t entkuppler2_aktivieren[] = {0x52, 0x01, 0x8A};
+static uint8_t entkuppler2_aktivieren[] =   {0x52, 0x01, 0x8A};
 
 // Lok 1
 static uint8_t lok1_v0[] = {0xE4, 0x13, 0x00, 0x01, 0x00};
@@ -81,19 +79,19 @@ START_TEST_FUNC(test_init_xpressnet)
 START_TEST_FUNC(test_xpressnet_weiche1)
 {
 	// Weiche 1
-	streckenbefehl_ev_xpressnet.target = WEICHE1;
+	streckenbefehl_ev_xpressnet.target = WEICHE_A;
 	streckenbefehl_ev_xpressnet.command = 0; // Geradeaus
 	xpressnet_work();
-	assert_is_true(testCommand("Weiche 1 geradeaus 1", weiche1_geradeaus1, 4, WEICHE1)==0, "Fehler in Befehlssequenz!");
+	assert_is_true(testCommand("Weiche 1 geradeaus 1", weiche1_geradeaus1, 4, WEICHE_A)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 1 geradeaus 2", weiche1_geradeaus2, 4, IDLE)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
 	assert_is_true(bytes_to_read() == 0, "Daten gesendet ohne gesetzten Befehl!");
 	
-	streckenbefehl_ev_xpressnet.target = WEICHE1;
+	streckenbefehl_ev_xpressnet.target = WEICHE_A;
 	streckenbefehl_ev_xpressnet.command = 1; // Abbiegen
 	xpressnet_work();
-	assert_is_true(testCommand("Weiche 1 abbiegen 1", weiche1_abbiegen1, 4, WEICHE1)==0, "Fehler in Befehlssequenz!");
+	assert_is_true(testCommand("Weiche 1 abbiegen 1", weiche1_abbiegen1, 4, WEICHE_A)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 1 abbiegen 2", weiche1_abbiegen2, 4, IDLE)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -111,19 +109,19 @@ END_TEST_FUNC
 START_TEST_FUNC(test_xpressnet_weiche2)
 {
 	// Weiche 2
-	streckenbefehl_ev_xpressnet.target = WEICHE2;
+	streckenbefehl_ev_xpressnet.target = WEICHE_B;
 	streckenbefehl_ev_xpressnet.command = 0; // Geradeaus
 	xpressnet_work();
-	assert_is_true(testCommand("Weiche 2 geradeaus 1", weiche2_geradeaus1, 4, WEICHE2)==0, "Fehler in Befehlssequenz!");
+	assert_is_true(testCommand("Weiche 2 geradeaus 1", weiche2_geradeaus1, 4, WEICHE_B)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 2 geradeaus 2", weiche2_geradeaus2, 4, IDLE)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
 	assert_is_true(bytes_to_read() == 0, "Daten gesendet ohne gesetzten Befehl!");
 	
-	streckenbefehl_ev_xpressnet.target = WEICHE2;
+	streckenbefehl_ev_xpressnet.target = WEICHE_B;
 	streckenbefehl_ev_xpressnet.command = 1; // Abbiegen
 	xpressnet_work();
-	assert_is_true(testCommand("Weiche 2 abbiegen 1", weiche2_abbiegen1, 4, WEICHE2)==0, "Fehler in Befehlssequenz!");
+	assert_is_true(testCommand("Weiche 2 abbiegen 1", weiche2_abbiegen1, 4, WEICHE_B)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 2 abbiegen 2", weiche2_abbiegen2, 4, IDLE)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -140,19 +138,19 @@ END_TEST_FUNC
 START_TEST_FUNC(test_xpressnet_weiche3)
 {
 	// Weiche 3
-	streckenbefehl_ev_xpressnet.target = WEICHE3;
+	streckenbefehl_ev_xpressnet.target = WEICHE_C;
 	streckenbefehl_ev_xpressnet.command = 0; // Geradeaus
 	xpressnet_work();
-	assert_is_true(testCommand("Weiche 3 geradeaus 1", weiche3_geradeaus1, 4, WEICHE3)==0, "Fehler in Befehlssequenz!");
+	assert_is_true(testCommand("Weiche 3 geradeaus 1", weiche3_geradeaus1, 4, WEICHE_C)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 3 geradeaus 2", weiche3_geradeaus2, 4, IDLE)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
 	assert_is_true(bytes_to_read() == 0, "Daten gesendet ohne gesetzten Befehl!");
 	
-	streckenbefehl_ev_xpressnet.target = WEICHE3;
+	streckenbefehl_ev_xpressnet.target = WEICHE_C;
 	streckenbefehl_ev_xpressnet.command = 1; // Abbiegen
 	xpressnet_work();
-	assert_is_true(testCommand("Weiche 3 abbiegen 1", weiche3_abbiegen1, 4, WEICHE3)==0, "Fehler in Befehlssequenz!");
+	assert_is_true(testCommand("Weiche 3 abbiegen 1", weiche3_abbiegen1, 4, WEICHE_C)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 3 abbiegen 2", weiche3_abbiegen2, 4, IDLE)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -170,10 +168,10 @@ END_TEST_FUNC
 START_TEST_FUNC(test_xpressnet_entkuppler1)
 {
 	// Entkuppler 1
-	streckenbefehl_ev_xpressnet.target = ENTKUPPLER1;
+	streckenbefehl_ev_xpressnet.target = ENTKUPPLER_E1;
 	streckenbefehl_ev_xpressnet.command = 0; // Geradeaus
 	xpressnet_work();
-	assert_is_true(testCommand("Entkuppler 1deaktivieren", entkuppler1_deaktivieren, 4, ENTKUPPLER1)==0, "Fehler in Befehlssequenz!");
+	assert_is_true(testCommand("Entkuppler 1deaktivieren", entkuppler1_deaktivieren, 4, ENTKUPPLER_E1)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
 	assert_is_true(testCommand("Entkuppler 1 aktiveren", entkuppler1_aktivieren, 4, IDLE)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -188,10 +186,10 @@ END_TEST_FUNC
 START_TEST_FUNC(test_xpressnet_entkuppler2)
 {
 	// Entkuppler 1
-	streckenbefehl_ev_xpressnet.target = ENTKUPPLER2;
+	streckenbefehl_ev_xpressnet.target = ENTKUPPLER_E2;
 	streckenbefehl_ev_xpressnet.command = 0; // Geradeaus
 	xpressnet_work();
-	assert_is_true(testCommand("Entkuppler 1deaktivieren", entkuppler2_deaktivieren, 4, ENTKUPPLER2)==0, "Fehler in Befehlssequenz!");
+	assert_is_true(testCommand("Entkuppler 1deaktivieren", entkuppler2_deaktivieren, 4, ENTKUPPLER_E2)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
 	assert_is_true(testCommand("Entkuppler 1 aktiveren", entkuppler2_aktivieren, 4, IDLE)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -205,22 +203,22 @@ END_TEST_FUNC
  */
 START_TEST_FUNC(test_xpressnet_lok1)
 {
-	streckenbefehl_ev_xpressnet.target = LOK1;
+	streckenbefehl_ev_xpressnet.target = LOK_1;
 	streckenbefehl_ev_xpressnet.command = 0;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Stop", lok1_v0, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK1;
+	streckenbefehl_ev_xpressnet.target = LOK_1;
 	streckenbefehl_ev_xpressnet.command = 1;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Abkoppeln", lok1_v1, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK1;
+	streckenbefehl_ev_xpressnet.target = LOK_1;
 	streckenbefehl_ev_xpressnet.command = 2;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Ankoppeln", lok1_v2, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK1;
+	streckenbefehl_ev_xpressnet.target = LOK_1;
 	streckenbefehl_ev_xpressnet.command = 3;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Fahrt", lok1_v3, 6, IDLE)==0, "Fehler in Befehlssequenz!");
@@ -237,22 +235,22 @@ END_TEST_FUNC
  */
 START_TEST_FUNC(test_xpressnet_lok2)
 {
-	streckenbefehl_ev_xpressnet.target = LOK2;
+	streckenbefehl_ev_xpressnet.target = LOK_2;
 	streckenbefehl_ev_xpressnet.command = 0;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Stop", lok2_v0, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK2;
+	streckenbefehl_ev_xpressnet.target = LOK_2;
 	streckenbefehl_ev_xpressnet.command = 1;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Abkoppeln", lok2_v1, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK2;
+	streckenbefehl_ev_xpressnet.target = LOK_2;
 	streckenbefehl_ev_xpressnet.command = 2;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Ankoppeln", lok2_v2, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK2;
+	streckenbefehl_ev_xpressnet.target = LOK_2;
 	streckenbefehl_ev_xpressnet.command = 3;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Fahrt", lok2_v3, 6, IDLE)==0, "Fehler in Befehlssequenz!");
