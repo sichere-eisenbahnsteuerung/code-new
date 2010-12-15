@@ -13,8 +13,14 @@
 
 #include "types.h"
 
-/// @brief Größe der Ringbuffer in Bytes
-#define RS232_BUFFERSIZE 10
+/**
+ * @brief Größe der Ringbuffer in Bytes
+ *
+ * Die Größe des RS232-Buffers beträgt 20 Bytes, da die maximale Länge eines
+ * Xpressnet-Befehls 17 Byte beträgt, und ein gewisser Puffer für die Dauer der
+ * Abarbeitung berücksichtigt werden muss.
+ */
+#define RS232_BUFFERSIZE 20
 
 /**
  * @name Puffer für empfangene Zeichen
