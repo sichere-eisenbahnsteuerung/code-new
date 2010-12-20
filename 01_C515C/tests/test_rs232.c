@@ -77,8 +77,6 @@ START_TEST_FUNC(test_rs232_test_send_character)
 		assert_is_true(bytes_sent[2] == 6, "Byte 3 fehlerhaft gesendet");
 		assert_is_true(bytes_sent[3] == 8, "Byte 4 fehlerhaft gesendet");
 	}
-	
-	ctest_register_wait_for_handler(NULL);
 }
 END_TEST_FUNC
 
@@ -112,8 +110,6 @@ START_TEST_FUNC(test_rs232_test_receive_character)
 		assert_is_true(read_byte() == 5, "Byte 3 fehlerhaft empfangen");
 		assert_is_true(read_byte() == 7, "Byte 4 fehlerhaft empfangen");
 	}
-	
-	ctest_register_wait_for_handler(NULL);
 }
 END_TEST_FUNC
 
