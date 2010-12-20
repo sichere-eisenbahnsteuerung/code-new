@@ -65,13 +65,13 @@ typedef enum bool_t bool;
 typedef enum
 {
 	IDLE, 									/**< Kein Befehl auszufuehren */
-    LOK1,									/**< Lok 1 */
-    LOK2,									/**< Lok 2 */
-	WEICHE1,								/**< Weiche 1 */  
-	WEICHE2,								/**< Weiche 2 */
-	WEICHE3,								/**< Weiche 3 */
-	ENTKUPPLER1,							/**< Entkuppler 1 */	
-	ENTKUPPLER2								/**< Entkuppler 2 */
+    LOK_1,									/**< Lok 1 */
+    LOK_2,									/**< Lok 2 */
+	WEICHE_A,								/**< Weiche 1 */  
+	WEICHE_B,								/**< Weiche 2 */
+	WEICHE_C,								/**< Weiche 3 */
+	ENTKUPPLER_E1,							/**< Entkuppler 1 */	
+	ENTKUPPLER_E2							/**< Entkuppler 2 */
 } streckenbefehl_ziel;			  
 
 /**
