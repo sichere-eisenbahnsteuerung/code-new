@@ -65,8 +65,8 @@ typedef enum bool_t bool;
 typedef enum
 {
 	IDLE, 									/**< Kein Befehl auszufuehren */
-    LOK_1,									/**< Lok 1 */
-    LOK_2,									/**< Lok 2 */
+    LOK_RED,									/**< Lok 1 */
+    LOK_BLACK,									/**< Lok 2 */
 	WEICHE_A,								/**< Weiche 1 */  
 	WEICHE_B,								/**< Weiche 2 */
 	WEICHE_C,								/**< Weiche 3 */
