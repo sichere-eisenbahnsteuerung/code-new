@@ -55,8 +55,8 @@
  * @name Funktionen zur Befehlsabarbeitung
  * 
  * Diese Funktionen lesen die Befehle aus dem Shared Memory ein
- * ( @link xpressnet_shared_memory::streckenbefehl_ev_xpressnet
- * streckenbefehl_ev_xpressnet @endlink ) und starten die Verarbeitung.
+ * ( @link xpressnet_shared_memory::streckenbefehl_xpressnet
+ * streckenbefehl_xpressnet @endlink ) und starten die Verarbeitung.
  */
  /*@{*/
 static void checkForInput();
@@ -149,7 +149,7 @@ void xpressnet_work()
  */
 static void checkForCommands()
 {
-    if(streckenbefehl_ev_xpressnet.target != IDLE)
+    if(streckenbefehl_xpressnet.target != IDLE)
     {
         commandLok();
         commandWeiche();
@@ -170,7 +170,7 @@ static void commandLok()
     uint8_t xpressnet_address = 0, speed = 0;
 
     // XpressNet-Adresse bestimmen
-    switch(streckenbefehl_ev_xpressnet.target)
+    switch(streckenbefehl_xpressnet.target)
     {
     case LOK_1:
         xpressnet_address = XPRESSNET_LOK_1;
@@ -183,7 +183,7 @@ static void commandLok()
         return;
     }
 
-    switch(streckenbefehl_ev_xpressnet.command)
+    switch(streckenbefehl_xpressnet.command)
     {
     case 0x00:
         speed = V_STOP;
@@ -221,7 +221,7 @@ static void commandEntkuppler() {
     uint8_t xpressnet_address = 0;
 
     // XpressNet-Adresse bestimmen
-    switch(streckenbefehl_ev_xpressnet.target)
+    switch(streckenbefehl_xpressnet.target)
     {
     case ENTKUPPLER_E1:
         xpressnet_address = XPRESSNET_ENTKUPPLER_E1;
@@ -266,7 +266,7 @@ static void commandWeiche() {
     uint8_t xpressnet_address = 0;
 
     // XpressNet-Adresse bestimmen
-    switch(streckenbefehl_ev_xpressnet.target)
+    switch(streckenbefehl_xpressnet.target)
     {
     case WEICHE_A:
         xpressnet_address = XPRESSNET_WEICHE_A;
@@ -284,7 +284,7 @@ static void commandWeiche() {
 
     if(!activation_pending) {
         // Weiche erst in der anderen Richtung deaktivieren
-        if(!writeSchaltbefehl(xpressnet_address, streckenbefehl_ev_xpressnet.command, FALSE))
+        if(!writeSchaltbefehl(xpressnet_address, streckenbefehl_xpressnet.command, FALSE))
         {
             // TODO: FEHLER;
             return;
@@ -293,7 +293,7 @@ static void commandWeiche() {
     }
     else {
         // Weiche in der gewünschten Richtung aktivieren
-        if(!writeSchaltbefehl(xpressnet_address, 1-streckenbefehl_ev_xpressnet.command, TRUE))
+        if(!writeSchaltbefehl(xpressnet_address, 1-streckenbefehl_xpressnet.command, TRUE))
         {
             // TODO: FEHLER;
             return;
@@ -335,7 +335,7 @@ static void checkForInput()
                     wait_for_answer = FALSE;
                     if(!activation_pending) {
                         // Nach erfolgter Aktivierung Streckenbefehl löschen
-                        streckenbefehl_ev_xpressnet.target = IDLE;
+                        streckenbefehl_xpressnet.target = IDLE;
                     }
                     break;
                 default:
