@@ -203,22 +203,22 @@ END_TEST_FUNC
  */
 START_TEST_FUNC(test_xpressnet_lok1)
 {
-	streckenbefehl_xpressnet.target = LOK_1;
+	streckenbefehl_xpressnet.target = LOK_RED;
 	streckenbefehl_xpressnet.command = 0;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Stop", lok1_v0, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_xpressnet.target = LOK_1;
+	streckenbefehl_xpressnet.target = LOK_RED;
 	streckenbefehl_xpressnet.command = 1;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Abkoppeln", lok1_v1, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_xpressnet.target = LOK_1;
+	streckenbefehl_xpressnet.target = LOK_RED;
 	streckenbefehl_xpressnet.command = 2;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Ankoppeln", lok1_v2, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_xpressnet.target = LOK_1;
+	streckenbefehl_xpressnet.target = LOK_RED;
 	streckenbefehl_xpressnet.command = 3;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Fahrt", lok1_v3, 6, IDLE)==0, "Fehler in Befehlssequenz!");
@@ -235,22 +235,22 @@ END_TEST_FUNC
  */
 START_TEST_FUNC(test_xpressnet_lok2)
 {
-	streckenbefehl_xpressnet.target = LOK_2;
+	streckenbefehl_xpressnet.target = LOK_BLACK;
 	streckenbefehl_xpressnet.command = 0;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Stop", lok2_v0, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_xpressnet.target = LOK_2;
+	streckenbefehl_xpressnet.target = LOK_BLACK;
 	streckenbefehl_xpressnet.command = 1;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Abkoppeln", lok2_v1, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_xpressnet.target = LOK_2;
+	streckenbefehl_xpressnet.target = LOK_BLACK;
 	streckenbefehl_xpressnet.command = 2;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Ankoppeln", lok2_v2, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_xpressnet.target = LOK_2;
+	streckenbefehl_xpressnet.target = LOK_BLACK;
 	streckenbefehl_xpressnet.command = 3;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Fahrt", lok2_v3, 6, IDLE)==0, "Fehler in Befehlssequenz!");
