@@ -46,7 +46,7 @@ void main()
 			}
 			else if(inp == 3) {
 				inp++;	  		 
-				streckenbefehl_xpressnet.target = LOK_1;
+				streckenbefehl_xpressnet.target = LOK_RED;
 				streckenbefehl_xpressnet.command = 3;
 			}
             else {
