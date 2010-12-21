@@ -37,7 +37,7 @@ static int Comport = 13; // COM14
 void rs232_init ()
 {
     CTS_PIN = 1;
-    OpenComport(0, "\\\\.\\COM1", 19200);
+    OpenComport(0, "\\\\.\\COM2", 19200);
 }
 
 /**
