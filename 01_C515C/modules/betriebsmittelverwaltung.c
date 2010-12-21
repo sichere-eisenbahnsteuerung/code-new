@@ -32,4 +32,4 @@ uint8_t rs232_output_write_pos = 0;
  * Shared Memory Streckenbefehle 
  */
 
-streckenbefehl streckenbefehl_ev_xpressnet = { IDLE, 0x00 };
+streckenbefehl streckenbefehl_xpressnet = { IDLE, 0x00 };

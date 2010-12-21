@@ -17,6 +17,6 @@
  *
  * Wurde der Befehl erfolgreich gesendet, wird das Ziel auf IDLE gesetzt. 
  */
-extern streckenbefehl streckenbefehl_ev_xpressnet;
+extern streckenbefehl streckenbefehl_xpressnet;
 
 #endif
