@@ -17,7 +17,9 @@ void init_common(void)
 }
 
 /*
- * @brief The method which gets called initialy by the processor
+ * @brief The method which gets called initially by the processor
+ * 
+ * Hauptfunktion für den Integrationstest RS232.
  */
 void main()
 {
@@ -30,24 +32,29 @@ void main()
     	rs232_work();
 		if(streckenbefehl_xpressnet.target == IDLE) {
 			if(inp == 0) {
-				inp++;	  
-				streckenbefehl_xpressnet.target = WEICHE_A;
+				inp++;
+				streckenbefehl_xpressnet.target = ENTKUPPLER_E1;
 				streckenbefehl_xpressnet.command = 0;
 			}		
 			else if(inp == 1) {
-				inp++;	  		 
-				streckenbefehl_xpressnet.target = WEICHE_B;
-				streckenbefehl_xpressnet.command =0;
-			}	
+				inp++;
+				streckenbefehl_xpressnet.target = ENTKUPPLER_E1;
+				streckenbefehl_xpressnet.command = 0;
+			}
 			else if(inp == 2) {
-				inp++;	  		 
-				streckenbefehl_xpressnet.target = WEICHE_C;
+				inp++;	  
+				streckenbefehl_xpressnet.target = WEICHE_A;
 				streckenbefehl_xpressnet.command = 0;
 			}
 			else if(inp == 3) {
 				inp++;	  		 
-				streckenbefehl_xpressnet.target = LOK_RED;
-				streckenbefehl_xpressnet.command = 3;
+				streckenbefehl_xpressnet.target = WEICHE_B;
+				streckenbefehl_xpressnet.command = 0;
+			}	
+			else if(inp == 4) {
+				inp++;	  		 
+				streckenbefehl_xpressnet.target = WEICHE_C;
+				streckenbefehl_xpressnet.command = 1;
 			}
             else {
                 break;
