@@ -98,6 +98,11 @@ static uint8_t peek_byte();
  * @brief Warten auf Befehlsbestätigung vom LI101F
  */
 static bool wait_for_answer = TRUE;
+ /**
+ * @brief Warten auf Schaltinformation vom LI101F (bei Entkupplern die einzige
+ *        Rückmeldung)
+ */
+static bool wait_for_schaltinformation = TRUE;
 /**
  * @brief Der aktuelle Befehl ist der Deaktivierungsbefehl, die Aktivierung
  * muss noch gesendet werden
@@ -118,7 +123,8 @@ static bool activation_pending = FALSE;
  */  
 void xpressnet_init ()
 {
-    wait_for_answer = 0;
+    wait_for_answer = FALSE;
+    wait_for_schaltinformation = FALSE;
 }
 
 /**
@@ -133,7 +139,7 @@ void xpressnet_work()
     checkForInput();
     
     // Antwort erhalten? Neue Befehle ausführen
-    if(!wait_for_answer) {
+    if(!wait_for_answer && !wait_for_schaltinformation) {
         checkForCommands();
     }
 }
@@ -207,6 +213,8 @@ static void commandLok()
         // TODO: FEHLER;
         return;
     }
+
+    wait_for_answer = TRUE;
 }
 
 /**
@@ -241,6 +249,8 @@ static void commandEntkuppler() {
             // TODO: FEHLER;
             return;
         }
+
+        wait_for_answer = TRUE;
         activation_pending = TRUE;
     }
     else {
@@ -250,6 +260,8 @@ static void commandEntkuppler() {
             // TODO: FEHLER;
             return;
         }
+
+        wait_for_schaltinformation = TRUE;
         activation_pending = FALSE;
     }
 }
@@ -289,6 +301,8 @@ static void commandWeiche() {
             // TODO: FEHLER;
             return;
         }
+        
+        wait_for_answer = TRUE;
         activation_pending = TRUE;
     }
     else {
@@ -298,6 +312,9 @@ static void commandWeiche() {
             // TODO: FEHLER;
             return;
         }
+
+        wait_for_answer = TRUE;
+        wait_for_schaltinformation = TRUE;
         activation_pending = FALSE;
     }
 }
@@ -330,17 +347,57 @@ static void checkForInput()
                     return;
                 }
                 switch(retval) {
+                case 0x01: 
+                    // Timeout
+                    wait_for_answer = FALSE;
+                    wait_for_schaltinformation = FALSE;
+                    if(activation_pending) 
+                    {
+                        activation_pending = FALSE;
+                    }
+                    printf("Timeout XPRESSNET\n");
+                    break;
                 case 0x04:
                     // Alles ok
                     wait_for_answer = FALSE;
-                    if(!activation_pending) {
+                    if(!activation_pending && !wait_for_schaltinformation) {
                         // Nach erfolgter Aktivierung Streckenbefehl löschen
                         streckenbefehl_xpressnet.target = IDLE;
                     }
                     break;
+                case 0x06: 
+                    // Überlauf
+                    wait_for_answer = FALSE;
+                    wait_for_schaltinformation = FALSE;
+                    if(activation_pending) 
+                    {
+                        activation_pending = FALSE;
+                    }
+                    printf("UEBERLAUF XPRESSNET\n");
+                    break;
                 default:
+                    wait_for_answer = FALSE;
+                    printf("FEHLERXPRESSNET 0x%X\n", retval);
                     break;
                     // TODO: Kommunikationsfehler: NOTAUS
+                }
+            }
+            break;
+            /*
+            * 0x42: Schaltinformation
+            */
+        case 0x42:
+            if(bytes_to_read() >= 4) {
+                // Checksummen-Prüfung: 4. Byte ist XOR der ersten drei
+                if((read_byte() ^ read_byte() ^ read_byte()) != read_byte()) {
+                    // TODO: FEHLER: Falsche Checksumme
+                    return;
+                }
+                // Alles ok
+                wait_for_schaltinformation = FALSE;
+                if(!activation_pending && !wait_for_answer) {
+                    // Nach erfolgter Aktivierung Streckenbefehl löschen
+                    streckenbefehl_xpressnet.target = IDLE;
                 }
             }
             break;
@@ -391,8 +448,6 @@ static bool writeSchaltbefehl(uint8_t address, uint8_t output, bool activate) {
 
     write_byte(xor_byte);
 
-    wait_for_answer = TRUE;
-
     return TRUE;
 }
 
@@ -421,8 +476,6 @@ static bool writeFahrbefehl(uint8_t address, uint8_t speed) {
     xor_byte ^= write_byte(speed);                         // Geschwindigkeit
 
     write_byte(xor_byte);
-
-    wait_for_answer = TRUE;
 
     return TRUE;
 }
