@@ -16,6 +16,10 @@
 @defgroup modules_sec Sicherheits-Schicht
 
 @defgroup modules Anwendungs-Schicht
+@defgroup betriebsmittelverwaltung Betriebsmittelverwaltung
+@ingroup modules
+@defgroup leitzentrale Leitzentrale
+@ingroup modules
 
 @defgroup sharedmemory Shared Memory
 
@@ -24,4 +28,6 @@
 @ingroup tests
 @defgroup unittest Unit-Tests
 @ingroup tests
+
+@defgroup includes Allgemeine Includes
 */
