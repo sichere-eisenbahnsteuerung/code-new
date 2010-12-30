@@ -4,12 +4,14 @@ include ../../config.mk
 SOURCE = \
     ../ctest/ctest.c \
 	../hardware_simulator.c \
+	../timer_simulator.c \
 	rs232_main.c \
     ../test_stub_util.c \
 	rs232_stub.c \
 	rs232_win_linux.c \
 	../../drivers/xpressnet.c \
 	../../modules/betriebsmittelverwaltung.c \
+	../../modules/leitzentrale.c \
 	$(NULL)
 
 TARGET_NAME = rs232_main
@@ -23,7 +25,7 @@ OBJFILES = $(shell echo $(OBJS) | sed 's/\.\.\/\.\.\/drivers\///g' | sed 's/\.\.
 
 TEST_DATE = $(shell echo `date +%Y%m%d%H%M`)
 
-all: build run
+all: build
 
 build: $(OBJS)
 	gcc $(LDFLAGS) $(OBJFILES)
