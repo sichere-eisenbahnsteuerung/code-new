@@ -8,11 +8,14 @@ SOURCE = \
 	test_stub_util.c \
 	test_main.c \
 	test_rs232.c \
+	test_leitzentrale.c \
+	timer_simulator.c \
 	test_xpressnet.c \
 	ctest/ctest.c \
 	../drivers/rs232.c \
 	../drivers/xpressnet.c \
 	../modules/betriebsmittelverwaltung.c \
+	../modules/leitzentrale.c \
 	$(NULL)
 
 # Wie heisst unser ausführbares Assembly?
