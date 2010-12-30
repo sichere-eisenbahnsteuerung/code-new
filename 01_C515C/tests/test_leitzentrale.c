@@ -1,9 +1,10 @@
 /**
  * @file
  * @ingroup unittest
- * @brief RS232 Test-Script
+ * @brief Leitzentrale Test-Script
  *
- * Führt den RS232-Unittest durch (Initialisierung, Senden und Empfangen).
+ * Führt den Leitzentrale-Unittest durch (Initialisierung und zyklisches
+ * Senden der Fahrbefehle).
  *
  * @author Hanno Fellmann
  * @date 08.12.2010
@@ -85,7 +86,7 @@ END_TEST_FUNC
 /**
  * @brief Erstellt die Test Suite
  *
- * Erstellt eine Test Suite, die die Initialisierung, das Senden und das Empfangen über RS232 testet.
+ * Erstellt eine Test Suite, die Leitzentrale testet.
  */
 ctest_suite *test_leitzentrale_create_suite(void)
 {
