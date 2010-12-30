@@ -10,7 +10,8 @@
  * @author Hanno Fellmann
  * @date 08.12.2010
  */
-
+		 
+#include "types.h"
 #include "rs232.h"
 #include "c515c.h"
 #include "util.h"
@@ -25,6 +26,26 @@
 static bool wait_for_send = TRUE;
 /*@}*/
 
+/**
+ * @brief Baudrate: 19200 Baud
+ */
+#define BAUDRATE 19200L
+/** 
+ * @brief Reload-Werte für den Baudraten-Generator
+ *
+ * Der Baudraten-Generator ist ein 10-Bit Timer, der im
+ * Gegensatz zu den Standard-Timern mit dem Quarztakt zählt.
+ * Der Overflow des Baudraten-Generators ist die Baud-Rate-Clock,
+ * deren Taktfrequenz das 16-fache der Baudrate ist.
+ *
+ * Mit der Formel 1024 - (2 x Quarztakt) / (32 x Baudrate) lässt
+ * sich der Reload-Wert berechnen, der beim Overflow des 
+ * Baudraten-Generators automatisch wieder geladen werden muss
+ * (siehe auch C515C-Manual).
+ *
+ * Der 16-Bit Wert wird auf SRELH und SRELL aufgeteilt.
+ */
+#define SERIAL_RELOAD 1024L - (2 * QUARZTAKT) / (32 * BAUDRATE)
 
 /**
  * @brief RS232 Initialisierung.
@@ -33,14 +54,14 @@ static bool wait_for_send = TRUE;
  */
 void rs232_init ()
 {
-    // Baudratengenerator einschalten
+	// Baudratengenerator einschalten
     BD = 1;
-    // Mode 1  8Bit variable Baudrate
+    // Mode 1 -> 8 Bit, variable Baudrate
     SM0 = 0;
     SM1 = 1;
-    // 9600 Baud
-    SRELH = 0x03;
-    SRELL = 0xDF;
+    // Baudrate setzen (mit SMOD = 1)
+	SRELH = (SERIAL_RELOAD >> 8); 
+	SRELL = SERIAL_RELOAD % 0x100;
     // seriellen Empfang einschalten
     REN = 1;
     TI = 1;
@@ -58,7 +79,7 @@ void rs232_init ()
  * Sendet alle Bytes aus dem Sendepuffer, solange CTS gesetzt ist.
  */
 void rs232_work()
-{
+{  
     // Solange CTS gesetzt ist und noch Zeichen zu senden sind
     while(CTS_PIN && rs232_output_read_pos != rs232_output_write_pos) {
         // Auf das Senden des lezten Zeichens warten
