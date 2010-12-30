@@ -3,6 +3,7 @@
 @defgroup drivers Treiber-Schicht
 @defgroup xpressnet_rs232 XpressNet-/RS232-Treiber
 @ingroup drivers
+@todo Ringbuffer-Funktionen für Shared-Memory-Zugriff auslagern
 @defgroup s88 S88-Treiber
 @ingroup drivers
 @defgroup ssc SSC-Treiber

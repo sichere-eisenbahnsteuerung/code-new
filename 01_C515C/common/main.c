@@ -25,24 +25,5 @@ void main()
 
 	init_common();
 
-	streckenbefehl_xpressnet.target = LOK2;
-	streckenbefehl_xpressnet.command = 3;
-
-    while(1) {
-        xpressnet_work();	 
-    	rs232_work();
-		if(streckenbefehl_xpressnet.target == IDLE) {
-			if(inp == 0) {
-				inp++;	  
-				streckenbefehl_xpressnet.target = ENTKUPPLER1;
-				streckenbefehl_xpressnet.command = 1;
-			}		
-			else if(inp == 1) {
-				inp++;	  		 
-				streckenbefehl_xpressnet.target = WEICHE1;
-				streckenbefehl_xpressnet.command = 0;
-			}
-		}
-
-    }
+	// TODO: Betriebsmittelverwaltung aufrufen
 }

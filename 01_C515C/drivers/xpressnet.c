@@ -3,8 +3,6 @@
  * @ingroup xpressnet_rs232
  * @brief Xpressnet-Treiber
  * @todo Notaus bei fehlerhaften Antworten des XpressNet-Interface
- * @todo Auswertung der Rückmeldung korrekt implementieren (Länge des Befehls 
- *       auswerten etc.)
  */
 
 #include "xpressnet.h"
@@ -18,7 +16,7 @@
  * Experimentell ermittelte Fahrgeschwindigkeiten. Es gibt 128 Fahrstufen
  * (0x00 bis  0x7F), das MSB (0x80) gibt die Fahrtrichtung an (0x80 = vorwärts,
  * 0x00 = rückwärts).
- * 
+ *
  * @todo Validieren der Geschwindigkeiten, experimentelle Bestätigung.
  */
 /*@{*/
@@ -53,7 +51,7 @@
 
 /**
  * @name Funktionen zur Befehlsabarbeitung
- * 
+ *
  * Diese Funktionen lesen die Befehle aus dem Shared Memory ein
  * ( @link xpressnet_shared_memory::streckenbefehl_xpressnet
  * streckenbefehl_xpressnet @endlink ) und starten die Verarbeitung.
@@ -70,15 +68,15 @@ static void commandLok();
 /**
  * @name XpressNet-Codierung
  *
- * Funktionen zur Konvertierung von XpressNet-Befehlen 
+ * Funktionen zur Konvertierung von XpressNet-Befehlen
  * (siehe xpressnet_li101f.pdf, 3.24 und 3.26)
- * 
+ *
  */
 /*@{*/
 static bool writeSchaltbefehl(uint8_t address, uint8_t output, bool activate);
 static bool writeFahrbefehl(uint8_t address, uint8_t speed);
 /*@}*/
- 
+
 /**
  * @name Funktionen zum Lesen und Schreiben der RS232-Ringbuffer
  */
@@ -89,18 +87,24 @@ static uint8_t bytes_to_read();
 static uint8_t read_byte();
 static uint8_t peek_byte();
 /*@}*/
- 
+
 /**
  * @name Lokale Variablen
  */
 /*@{*/
  /**
  * @brief Warten auf Befehlsbestätigung vom LI101F
+ *
+ * Nach dem jedem Befehl sollte die Zentrale eine Quittierung senden. Ausnahme
+ * ist der zweite Befehl (Aktivierung) bei Entkupplern.
  */
 static bool wait_for_answer = TRUE;
  /**
- * @brief Warten auf Schaltinformation vom LI101F (bei Entkupplern die einzige
- *        Rückmeldung)
+ * @brief Warten auf Schaltinformation vom LI101F
+ *
+ * Nach dem zweiten Befehl (Aktivierung) bei Weichen und Entkupplern kommt diese
+ * Rückmeldung. Bei Entkupplern ist dies an der Stelle auch die einzige
+ * Rückmeldung.
  */
 static bool wait_for_schaltinformation = TRUE;
 /**
@@ -118,9 +122,9 @@ static bool activation_pending = FALSE;
  * @brief XpressNet Initialisierung
  *
  * Initialisiert XpressNet.
- * 
+ *
  * @pre RS232 muss bereits initialisiert sein.
- */  
+ */
 void xpressnet_init ()
 {
     wait_for_answer = FALSE;
@@ -130,14 +134,14 @@ void xpressnet_init ()
 /**
  * @brief XpressNet Work-Funktion
  *
- * Verarbeitet zu sendende Streckenbefehle und wertet Antworten vom 
+ * Verarbeitet zu sendende Streckenbefehle und wertet Antworten vom
  * Xpressnet-Interface aus.
- */    
+ */
 void xpressnet_work()
 {
     // Anworten auswerten
     checkForInput();
-    
+
     // Antwort erhalten? Neue Befehle ausführen
     if(!wait_for_answer && !wait_for_schaltinformation) {
         checkForCommands();
@@ -146,7 +150,7 @@ void xpressnet_work()
 
 /**
  * @brief Startet die Streckenbefehlverarbeitung.
- * 
+ *
  * Prüft, ob ein Streckenbefehl vorliegt, und ruft die Funktionen zur
  * Verarbeitung der Befehle auf.
  * @sa commandLok
@@ -165,7 +169,7 @@ static void checkForCommands()
 
 /**
  * @brief Führt einen einen Lokbefehl durch, wenn gesetzt.
- * 
+ *
  * Prüft, ob eine Lok angesteuert werden soll, und sendet den notwendigen
  * Fahrbefehl.
  *
@@ -178,10 +182,10 @@ static void commandLok()
     // XpressNet-Adresse bestimmen
     switch(streckenbefehl_xpressnet.target)
     {
-    case LOK_RED:
+    case LOK_BLACK:
         xpressnet_address = XPRESSNET_LOK_1;
         break;
-    case LOK_BLACK:
+    case LOK_RED:
         xpressnet_address = XPRESSNET_LOK_2;
         break;
     default:
@@ -208,18 +212,19 @@ static void commandLok()
         return;
     }
 
-    if(writeFahrbefehl(xpressnet_address, speed))
+    if(!writeFahrbefehl(xpressnet_address, speed))
     {
         // TODO: FEHLER;
         return;
     }
 
+    // Lokbefehl wird von Zentrale quittiert
     wait_for_answer = TRUE;
 }
 
 /**
  * @brief Führt einen einen Enkupplerbefehl durch, wenn gesetzt.
- * 
+ *
  * Prüft, ob ein Enkuppler gesetzt werden soll, und sendet nacheinander die
  * beiden notwendigen Schaltbefehle.
  *
@@ -250,6 +255,7 @@ static void commandEntkuppler() {
             return;
         }
 
+        // 1. Schaltbefehl wird von Zentrale quittiert
         wait_for_answer = TRUE;
         activation_pending = TRUE;
     }
@@ -261,6 +267,8 @@ static void commandEntkuppler() {
             return;
         }
 
+        // 2. Schaltbefehl wird NICHT von Zentrale quittiert, nur mit
+        // Schaltinformation
         wait_for_schaltinformation = TRUE;
         activation_pending = FALSE;
     }
@@ -268,7 +276,7 @@ static void commandEntkuppler() {
 
 /**
  * @brief Führt einen einen Weichenbefehl durch, wenn gesetzt.
- * 
+ *
  * Prüft, ob eine Weiche gesetzt werden soll, und sendet nacheinander die beiden
  * notwendigen Schaltbefehle.
  *
@@ -301,7 +309,8 @@ static void commandWeiche() {
             // TODO: FEHLER;
             return;
         }
-        
+
+        // 1. Schaltbefehl wird von Zentrale quittiert
         wait_for_answer = TRUE;
         activation_pending = TRUE;
     }
@@ -313,6 +322,8 @@ static void commandWeiche() {
             return;
         }
 
+        // 2. Schaltbefehl wird von Zentrale UND mit Schaltinformation
+        // quittiert
         wait_for_answer = TRUE;
         wait_for_schaltinformation = TRUE;
         activation_pending = FALSE;
@@ -321,9 +332,10 @@ static void commandWeiche() {
 
 /**
  * @brief Wertet die Antworten vom Xpressnet-Interface aus.
- * 
+ *
  * Bei einer Befehlsbestätigung wird der Streckenbefehl zurückgesetzt. Tritt ein
  * Kommunikationsfehler auf, wird der Notaus ausgelöst.
+ *
  */
 static void checkForInput()
 {
@@ -333,10 +345,8 @@ static void checkForInput()
     {
         switch(peek_byte())
         {
-            /*
-            * 0x01: Antwort auf einen Befehl
-            */
         case 0x01:
+            // 0x01: Antwort auf einen Befehl
             if(bytes_to_read() >= 3) {
                 // Headerbyte lesen
                 read_byte();
@@ -347,15 +357,19 @@ static void checkForInput()
                     return;
                 }
                 switch(retval) {
-                case 0x01: 
+                /**
+                 @todo Funktion bei Timeout - so nicht sinnvoll
+
+                case 0x01:
                     // Timeout
                     wait_for_answer = FALSE;
                     wait_for_schaltinformation = FALSE;
-                    if(activation_pending) 
+                    if(activation_pending)
                     {
                         activation_pending = FALSE;
                     }
                     break;
+                */
                 case 0x04:
                     // Alles ok
                     wait_for_answer = FALSE;
@@ -364,26 +378,32 @@ static void checkForInput()
                         streckenbefehl_xpressnet.target = IDLE;
                     }
                     break;
-                case 0x06: 
+                /**
+                 @todo Funktion bei Überlauf - so nicht sinnvoll
+
+                case 0x06:
                     // Überlauf
                     wait_for_answer = FALSE;
                     wait_for_schaltinformation = FALSE;
-                    if(activation_pending) 
+                    if(activation_pending)
                     {
                         activation_pending = FALSE;
                     }
                     break;
+                */
+                /**
+                 @todo Funktion bei anderen Fehlern - so nicht sinnvoll
+
                 default:
                     wait_for_answer = FALSE;
                     break;
                     // TODO: Kommunikationsfehler: NOTAUS
+                */
                 }
             }
             break;
-            /*
-            * 0x42: Schaltinformation
-            */
         case 0x42:
+            // 0x42: Schaltinformation
             if(bytes_to_read() >= 4) {
                 // Checksummen-Prüfung: 4. Byte ist XOR der ersten drei
                 if((read_byte() ^ read_byte() ^ read_byte()) != read_byte()) {
@@ -399,8 +419,12 @@ static void checkForInput()
             }
             break;
         default:
-            // TODO: Behandlung von anderen Nachrichten
             read_byte();
+            /**
+             * @todo Auswertung der Rückmeldung korrekt implementieren (Länge
+             * des Befehls auswerten, andere Antworten und ungefragte
+             * Informationen auswerten etc.)
+             */
         }
     }
 }
@@ -409,6 +433,7 @@ static void checkForInput()
 
  /**
  * @brief Schreibt einen Schaltbefehl für Weichen oder Entkuppler.
+ *
  * @param address  Die Xpressnet-Adresse des Schaltempfängers.
  * @param output   Der zu setztende Ausgang (bei Entkupplern immer 0, bei
  *                 Weichen 0 = Abbiegen, 1 = Geradeaus).
@@ -418,29 +443,32 @@ static void checkForInput()
  *         geschrieben werden konnte, sonst false.
  *
  * @sa rs232_shared_memory.h
- */ 
+ */
 static bool writeSchaltbefehl(uint8_t address, uint8_t output, bool activate) {
     uint8_t xor_byte=0;
 
-    if(max_bytes_to_write() < 4)                         // Vier Byte müssen für die Nachricht frei sein
+    // Vier Byte müssen für die Nachricht frei sein
+    if(max_bytes_to_write() < 4)
     {
         return FALSE;
     }
 
-    xor_byte ^= write_byte(0x52);                            // Header
-    xor_byte ^= write_byte(address >> 2);                   // Address-Gruppe (Adresse / 4), die letzten zwei Bit stehen im nächsten Byte
+    // Header
+    xor_byte ^= write_byte(0x52);
+    // Address-Gruppe (Adresse / 4), die letzten zwei Bit stehen im nächsten Byte
+    xor_byte ^= write_byte(address >> 2);
 
     if(activate) {
         xor_byte ^= write_byte(
-        0x88 |                                     // Aktivierungsbefehl
-        (address & 0x03) << 1    |                // die beiden Address-LSB
-        output);                                // der Ausgang des Schaltempfängers
+        0x88 |                          // Aktivierungsbefehl
+        (address & 0x03) << 1 |         // die beiden Address-LSB
+        output);                        // der Ausgang des Schaltempfängers
     }
     else {
         xor_byte ^= write_byte(
-        0x80 |                                     // Deaktivierungsbefehl
-        (address & 0x03) << 1    |        // die beiden Address-LSB
-        output);                                // der Ausgang des Schaltempfängers
+        0x80 |                          // Deaktivierungsbefehl
+        (address & 0x03) << 1    |      // die beiden Address-LSB
+        output);                        // der Ausgang des Schaltempfängers
     }
 
     write_byte(xor_byte);
@@ -450,27 +478,34 @@ static bool writeSchaltbefehl(uint8_t address, uint8_t output, bool activate) {
 
  /**
  * @brief Schreibt einen Fahrbefehl für eine Lok.
+ *
  * @param address  Die Xpressnet-Adresse der Lok.
  * @param speed    Die Geschwindigkeit
  * @return Gibt true zurück, wenn der Befehl erfolgreich in den RS232-Ringbuffer
  *         geschrieben werden konnte, sonst false.
  *
  * @sa rs232_shared_memory.h
- */ 
+ */
 static bool writeFahrbefehl(uint8_t address, uint8_t speed) {
     uint8_t xor_byte=0;
 
-    if(max_bytes_to_write() < 6)                         // Sechs Byte müssen für die Nachricht frei sein
+    // Sechs Byte müssen für die Nachricht frei sein
+    if(max_bytes_to_write() < 6)
     {
         return FALSE;
     }
 
-    xor_byte ^= write_byte(0xE4);                            // Header
-    xor_byte ^= write_byte(0x13);                            // Header für 128-stufige Geschwindigkeiten
-    xor_byte ^= write_byte(0x00);                            // Adresse High (immer 0)
-    xor_byte ^= write_byte(address);                     // Adresse Low
+    // Header
+    xor_byte ^= write_byte(0xE4);
+    // Header für 128-stufige Geschwindigkeiten
+    xor_byte ^= write_byte(0x13);
+    // Adresse High (immer 0)
+    xor_byte ^= write_byte(0x00);
+    // Adresse Low
+    xor_byte ^= write_byte(address);
 
-    xor_byte ^= write_byte(speed);                         // Geschwindigkeit
+    // Geschwindigkeit
+    xor_byte ^= write_byte(speed);
 
     write_byte(xor_byte);
 
@@ -478,8 +513,8 @@ static bool writeFahrbefehl(uint8_t address, uint8_t speed) {
 }
 
 
-/** 
- * @brief Schreibt ein Byte in den Ausgabepuffer des RS232-Treibers. 
+/**
+ * @brief Schreibt ein Byte in den Ausgabepuffer des RS232-Treibers.
  * @param b Das zu schreibende Byte.
  * @return Das geschriebene Byte.
  */
@@ -489,27 +524,27 @@ static uint8_t write_byte(uint8_t b) {
     return b;
 }
 
-/** 
+/**
  * @brief Gibt die Anzahl der freien Byte im Ausgabepuffer des RS232-Treibers
  *        zurück .
  * @return Die Anzahl der freien Bytes.
  */
 static uint8_t max_bytes_to_write() {
-    return (rs232_output_read_pos + RS232_BUFFERSIZE - 
+    return (rs232_output_read_pos + RS232_BUFFERSIZE -
             rs232_output_write_pos - 1) % RS232_BUFFERSIZE;
 }
 
-/** 
+/**
  * @brief Gibt die Anzahl vorhandenen Bytes im Eingabepuffer des RS232-Treibers
  *        zurück.
  * @return Die Anzahl der zu lesenden Bytes.
  */
 static uint8_t bytes_to_read() {
-    return (rs232_input_write_pos + RS232_BUFFERSIZE - 
+    return (rs232_input_write_pos + RS232_BUFFERSIZE -
             rs232_input_read_pos) % RS232_BUFFERSIZE;
 }
 
-/** 
+/**
  * @brief Liest ein Byte aus dem Eingabepuffer des RS232-Treibers, und entfernt
  *        es aus dem Puffer.
  * @return Das gelesene Byte.
@@ -521,8 +556,8 @@ static uint8_t read_byte() {
     return inp;
 }
 
-/** 
- * @brief Liest ein Byte aus dem Eingabepuffer des RS232-Treibers, ohne es 
+/**
+ * @brief Liest ein Byte aus dem Eingabepuffer des RS232-Treibers, ohne es
           aus dem Puffer zu entfernen.
  * @return Das gelesene Byte.
  */
