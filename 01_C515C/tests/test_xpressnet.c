@@ -69,7 +69,7 @@ START_TEST_FUNC(test_init_xpressnet)
 	
 	xpressnet_init();
 	
-	assert_is_true(streckenbefehl_ev_xpressnet.target == IDLE, "Nach Initialisierung Streckenbefehl nicht IDLE!");
+	assert_is_true(streckenbefehl_xpressnet.target == IDLE, "Nach Initialisierung Streckenbefehl nicht IDLE!");
 }
 
 /**
@@ -79,8 +79,8 @@ START_TEST_FUNC(test_init_xpressnet)
 START_TEST_FUNC(test_xpressnet_weiche1)
 {
 	// Weiche 1
-	streckenbefehl_ev_xpressnet.target = WEICHE_A;
-	streckenbefehl_ev_xpressnet.command = 0; // Geradeaus
+	streckenbefehl_xpressnet.target = WEICHE_A;
+	streckenbefehl_xpressnet.command = 0; // Geradeaus
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 1 geradeaus 1", weiche1_geradeaus1, 4, WEICHE_A)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -88,8 +88,8 @@ START_TEST_FUNC(test_xpressnet_weiche1)
 	xpressnet_work();
 	assert_is_true(bytes_to_read() == 0, "Daten gesendet ohne gesetzten Befehl!");
 	
-	streckenbefehl_ev_xpressnet.target = WEICHE_A;
-	streckenbefehl_ev_xpressnet.command = 1; // Abbiegen
+	streckenbefehl_xpressnet.target = WEICHE_A;
+	streckenbefehl_xpressnet.command = 1; // Abbiegen
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 1 abbiegen 1", weiche1_abbiegen1, 4, WEICHE_A)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -109,8 +109,8 @@ END_TEST_FUNC
 START_TEST_FUNC(test_xpressnet_weiche2)
 {
 	// Weiche 2
-	streckenbefehl_ev_xpressnet.target = WEICHE_B;
-	streckenbefehl_ev_xpressnet.command = 0; // Geradeaus
+	streckenbefehl_xpressnet.target = WEICHE_B;
+	streckenbefehl_xpressnet.command = 0; // Geradeaus
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 2 geradeaus 1", weiche2_geradeaus1, 4, WEICHE_B)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -118,8 +118,8 @@ START_TEST_FUNC(test_xpressnet_weiche2)
 	xpressnet_work();
 	assert_is_true(bytes_to_read() == 0, "Daten gesendet ohne gesetzten Befehl!");
 	
-	streckenbefehl_ev_xpressnet.target = WEICHE_B;
-	streckenbefehl_ev_xpressnet.command = 1; // Abbiegen
+	streckenbefehl_xpressnet.target = WEICHE_B;
+	streckenbefehl_xpressnet.command = 1; // Abbiegen
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 2 abbiegen 1", weiche2_abbiegen1, 4, WEICHE_B)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -138,8 +138,8 @@ END_TEST_FUNC
 START_TEST_FUNC(test_xpressnet_weiche3)
 {
 	// Weiche 3
-	streckenbefehl_ev_xpressnet.target = WEICHE_C;
-	streckenbefehl_ev_xpressnet.command = 0; // Geradeaus
+	streckenbefehl_xpressnet.target = WEICHE_C;
+	streckenbefehl_xpressnet.command = 0; // Geradeaus
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 3 geradeaus 1", weiche3_geradeaus1, 4, WEICHE_C)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -147,8 +147,8 @@ START_TEST_FUNC(test_xpressnet_weiche3)
 	xpressnet_work();
 	assert_is_true(bytes_to_read() == 0, "Daten gesendet ohne gesetzten Befehl!");
 	
-	streckenbefehl_ev_xpressnet.target = WEICHE_C;
-	streckenbefehl_ev_xpressnet.command = 1; // Abbiegen
+	streckenbefehl_xpressnet.target = WEICHE_C;
+	streckenbefehl_xpressnet.command = 1; // Abbiegen
 	xpressnet_work();
 	assert_is_true(testCommand("Weiche 3 abbiegen 1", weiche3_abbiegen1, 4, WEICHE_C)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -168,8 +168,8 @@ END_TEST_FUNC
 START_TEST_FUNC(test_xpressnet_entkuppler1)
 {
 	// Entkuppler 1
-	streckenbefehl_ev_xpressnet.target = ENTKUPPLER_E1;
-	streckenbefehl_ev_xpressnet.command = 0; // Geradeaus
+	streckenbefehl_xpressnet.target = ENTKUPPLER_E1;
+	streckenbefehl_xpressnet.command = 0; // Geradeaus
 	xpressnet_work();
 	assert_is_true(testCommand("Entkuppler 1deaktivieren", entkuppler1_deaktivieren, 4, ENTKUPPLER_E1)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -186,8 +186,8 @@ END_TEST_FUNC
 START_TEST_FUNC(test_xpressnet_entkuppler2)
 {
 	// Entkuppler 1
-	streckenbefehl_ev_xpressnet.target = ENTKUPPLER_E2;
-	streckenbefehl_ev_xpressnet.command = 0; // Geradeaus
+	streckenbefehl_xpressnet.target = ENTKUPPLER_E2;
+	streckenbefehl_xpressnet.command = 0; // Geradeaus
 	xpressnet_work();
 	assert_is_true(testCommand("Entkuppler 1deaktivieren", entkuppler2_deaktivieren, 4, ENTKUPPLER_E2)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -203,23 +203,23 @@ END_TEST_FUNC
  */
 START_TEST_FUNC(test_xpressnet_lok1)
 {
-	streckenbefehl_ev_xpressnet.target = LOK_1;
-	streckenbefehl_ev_xpressnet.command = 0;
+	streckenbefehl_xpressnet.target = LOK_RED;
+	streckenbefehl_xpressnet.command = 0;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Stop", lok1_v0, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK_1;
-	streckenbefehl_ev_xpressnet.command = 1;
+	streckenbefehl_xpressnet.target = LOK_RED;
+	streckenbefehl_xpressnet.command = 1;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Abkoppeln", lok1_v1, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK_1;
-	streckenbefehl_ev_xpressnet.command = 2;
+	streckenbefehl_xpressnet.target = LOK_RED;
+	streckenbefehl_xpressnet.command = 2;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Ankoppeln", lok1_v2, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK_1;
-	streckenbefehl_ev_xpressnet.command = 3;
+	streckenbefehl_xpressnet.target = LOK_RED;
+	streckenbefehl_xpressnet.command = 3;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 1 Fahrt", lok1_v3, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -235,23 +235,23 @@ END_TEST_FUNC
  */
 START_TEST_FUNC(test_xpressnet_lok2)
 {
-	streckenbefehl_ev_xpressnet.target = LOK_2;
-	streckenbefehl_ev_xpressnet.command = 0;
+	streckenbefehl_xpressnet.target = LOK_BLACK;
+	streckenbefehl_xpressnet.command = 0;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Stop", lok2_v0, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK_2;
-	streckenbefehl_ev_xpressnet.command = 1;
+	streckenbefehl_xpressnet.target = LOK_BLACK;
+	streckenbefehl_xpressnet.command = 1;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Abkoppeln", lok2_v1, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK_2;
-	streckenbefehl_ev_xpressnet.command = 2;
+	streckenbefehl_xpressnet.target = LOK_BLACK;
+	streckenbefehl_xpressnet.command = 2;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Ankoppeln", lok2_v2, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	
-	streckenbefehl_ev_xpressnet.target = LOK_2;
-	streckenbefehl_ev_xpressnet.command = 3;
+	streckenbefehl_xpressnet.target = LOK_BLACK;
+	streckenbefehl_xpressnet.command = 3;
 	xpressnet_work();
 	assert_is_true(testCommand("Lok 2 Fahrt", lok2_v3, 6, IDLE)==0, "Fehler in Befehlssequenz!");
 	xpressnet_work();
@@ -313,7 +313,7 @@ int testCommand(char *description, uint8_t *command, int command_length, strecke
 	write_byte(0x05);
 	xpressnet_work();
 	sprintf(problem, "Streckenbefehl ist nicht korrekt - %s", description);
-	assert_is_true(streckenbefehl_ev_xpressnet.target == result_target, problem);
+	assert_is_true(streckenbefehl_xpressnet.target == result_target, problem);
 }
 	
 
