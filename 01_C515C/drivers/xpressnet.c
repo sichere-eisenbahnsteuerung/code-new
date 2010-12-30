@@ -355,7 +355,6 @@ static void checkForInput()
                     {
                         activation_pending = FALSE;
                     }
-                    printf("Timeout XPRESSNET\n");
                     break;
                 case 0x04:
                     // Alles ok
@@ -373,11 +372,9 @@ static void checkForInput()
                     {
                         activation_pending = FALSE;
                     }
-                    printf("UEBERLAUF XPRESSNET\n");
                     break;
                 default:
                     wait_for_answer = FALSE;
-                    printf("FEHLERXPRESSNET 0x%X\n", retval);
                     break;
                     // TODO: Kommunikationsfehler: NOTAUS
                 }
