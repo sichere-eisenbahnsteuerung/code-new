@@ -21,7 +21,7 @@
  */
 /*@{*/
 #define V_STOP 0x00
-#define V_ABKUPPELN 0x08
+#define V_ABKUPPELN 0x88
 #define V_ANKUPPELN 0x1F
 #define V_FAHRT 0xDD
 /*@}*/
