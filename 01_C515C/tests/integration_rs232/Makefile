@@ -2,7 +2,7 @@
 include ../../config.mk
 
 SOURCE = \
-    ../ctest/ctest.c \
+	../ctest/ctest.c \
 	../hardware_simulator.c \
 	../timer_simulator.c \
 	rs232_main.c \
@@ -21,7 +21,15 @@ CFLAGS = $(INCS) -DTARGET_HOST -g
 LDFLAGS = -o $(TARGET_NAME) $(LIBS) -L$(CHECK_LIBDIR)
 
 OBJS = $(SOURCE:.c=.o)
-OBJFILES = $(shell echo $(OBJS) | sed 's/\.\.\/\.\.\/drivers\///g' | sed 's/\.\.\/\.\.\/modules\///g' | sed 's/\.\.\/\.\.\/common\///g' | sed 's/\.\.\/ctest\///g' | sed 's/\.\.\///g')
+
+# Manche Code-Dateien haben als Prefix einen Pfad, diesen dürfen wir nicht für die
+# Objektdateien übernehmen, da die Objektdateien im tests/ Ordner abgelegt werden und
+# sollte der Pfad noch im Namen der Objektdatei enthalten sein, dann wird sie vom
+# Compiler/Linker nicht gefunden.
+OBJFILES = $(shell echo $(OBJS) | sed 's/\.\.\/\.\.\/drivers\///g' | \
+								  sed 's/\.\.\/\.\.\/modules\///g' | \
+								  sed 's/\.\.\/ctest\///g' | \
+								  sed 's/\.\.\///g')
 
 TEST_DATE = $(shell echo `date +%Y%m%d%H%M`)
 
