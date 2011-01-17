@@ -15,7 +15,6 @@
 #include <betriebsmittelverwaltung.h>
 #include <xpressnet_shared_memory.h>
 
-
 /**
  * @brief Leitzentrale initialisieren.
  * @pre Keine.
@@ -33,47 +32,50 @@ END_TEST_FUNC
 START_TEST_FUNC(test_leitzentrale_fahrstufe_wechseln)
 {
     int i, g;
-    
-    for(g=0;g<10;g++) {
+
+    for(g=0; g<10; g++)
+    {
         streckenbefehl_xpressnet.target = IDLE;
-        for(i=0;i<1000;i++) {
+        for(i=0;i<1000;i++)
+        {
             timer_value[TIMER_LEITZENTRALE] = i;
             leitzentrale_work();
             assert_is_true(streckenbefehl_xpressnet.target == IDLE, "Aktion vor 10sec");
         }
-        
+
         timer_value[TIMER_LEITZENTRALE] = 1000;
         leitzentrale_work();
         assert_is_true(streckenbefehl_xpressnet.target == LOK_BLACK, "Falsches Steuerziel!");
         assert_is_true(streckenbefehl_xpressnet.command == 0x01, "Falscher Steuerbefehl!");
-        
+
         streckenbefehl_xpressnet.target = IDLE;
-        for(i=0;i<1000;i+=2) {
+        for(i=0;i<1000;i+=2) 
+        {
             timer_value[TIMER_LEITZENTRALE] = i;
             leitzentrale_work();
             assert_is_true(streckenbefehl_xpressnet.target == IDLE, "Aktion vor 10sec");
         }
-        
+
         timer_value[TIMER_LEITZENTRALE] = 1001;
         leitzentrale_work();
         assert_is_true(streckenbefehl_xpressnet.target == LOK_BLACK, "Falsches Steuerziel!");
         assert_is_true(streckenbefehl_xpressnet.command == 0x03, "Falscher Steuerbefehl!");
-        
+
         timer_value[TIMER_LEITZENTRALE] = 1001;
         leitzentrale_work();
         assert_is_true(streckenbefehl_xpressnet.target == LOK_BLACK, "Falsches Steuerziel (überschrieben)!");
         assert_is_true(streckenbefehl_xpressnet.command == 0x03, "Falscher Steuerbefehl! (überschrieben)");
-        
+
         streckenbefehl_xpressnet.target = IDLE;
         leitzentrale_work();
         assert_is_true(streckenbefehl_xpressnet.target == LOK_BLACK, "Falsches Steuerziel (überschrieben)!");
         assert_is_true(streckenbefehl_xpressnet.command == 0x01, "Falscher Steuerbefehl! (überschrieben)");
-        
+
         timer_value[TIMER_LEITZENTRALE] = 999;
         leitzentrale_work();
         assert_is_true(streckenbefehl_xpressnet.target == LOK_BLACK, "Falsches Steuerziel (überschrieben)!");
         assert_is_true(streckenbefehl_xpressnet.command == 0x01, "Falscher Steuerbefehl! (überschrieben)");
-        
+
         timer_value[TIMER_LEITZENTRALE] = 1000;
         streckenbefehl_xpressnet.target = IDLE;
         leitzentrale_work();
