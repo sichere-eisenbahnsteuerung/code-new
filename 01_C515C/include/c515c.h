@@ -1,15 +1,21 @@
-/**
- * @file
- * @ingroup includes
- * @brief C515C-Systemregister
+/*
+ *    C515c Header
+ *    Copyright (C) 2011 Hochschule Bremen
  *
- * Verwaltung der C515C-Systemregister und der Simulation für
- * Tests am PC.
+ *    This program is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU General Public License as published by
+ *    the Free Software Foundation, either version 3 of the License, or
+ *    (at your option) any later version.
  *
- * @author Hanno Fellmann
- * @date 08.12.2010
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *
+ *    You should have received a copy of the GNU General Public License
+ *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
- 
+
 #ifndef _C515C_H_
 #define _C515C_H_
 

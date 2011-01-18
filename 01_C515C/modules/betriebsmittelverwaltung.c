@@ -1,3 +1,21 @@
+/*
+ *    Die Betriebsmittelverwaltung ist für die Verwaltung von Ressourcen wie Speicherplatz und Rechenzeit verantwortlich.
+ *    Copyright (C) 2011 Hanno Fellmann
+ *
+ *    This program is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU General Public License as published by
+ *    the Free Software Foundation, either version 3 of the License, or
+ *    (at your option) any later version.
+ *
+ *    This program is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU General Public License for more details.
+ *
+ *    You should have received a copy of the GNU General Public License
+ *    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 /**
  * @file
  * @ingroup sharedmemory
@@ -41,7 +59,6 @@ uint8_t rs232_output_write_pos = 0;
  */
 
 streckenbefehl streckenbefehl_xpressnet = { IDLE, 0x00 };
-
 
 /**
  * @brief Timer 1 Steps für 10ms  (1/100 sek)
