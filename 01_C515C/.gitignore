@@ -5,6 +5,7 @@ logs
 *.lst
 *.obj
 *.bak
+*.hex
 save_train_control
 save_train_control.lnp
 save_train_control.M51
