@@ -47,15 +47,15 @@ static uint8_t bytes_sent[20] = {0}, bytes_sent_idx = 0;
  */
 START_TEST_FUNC(test_rs232_init_check_for_correct_hardware_configuration)
 {
-
 	rs232_init();
 	
 	/* Nachbedingungen prüfen */
 	assert_is_true(BD == 1, "Baudratengenerator wurde nicht eingeschaltet");
 	assert_is_true(SM0 == 0 && SM1 == 1, "Falscher Modus für den Baudratengenerator");
-	assert_is_true(SRELH == 0x03 && SRELL == 0xE0, "Falsche Gewschwindigkeit");
+	assert_is_true(SRELH == 0x03 && SRELL == 0xF0, "Falsche Gewschwindigkeit");
 	assert_is_true(REN == 1 && TI == 1, "Serielle Empfang wurde nicht eingeschaltet");
 	assert_is_true(ES == 1, "Serielle Interrupts wurden nicht eingeschaltet");
+	assert_is_true(CTS_PIN == 1, "CTS nicht konfiguriert");
 }
 END_TEST_FUNC
 
