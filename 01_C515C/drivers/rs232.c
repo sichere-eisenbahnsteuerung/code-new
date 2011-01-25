@@ -48,6 +48,10 @@ static bool wait_for_send = TRUE;
  * @brief Baudrate: 19200 Baud
  */
 #define BAUDRATE 19200L
+/**
+ * @brief Wert des Registers SMOD
+ */
+#define SMOD 0
 /** 
  * @brief Reload-Werte für den Baudraten-Generator
  *
@@ -63,7 +67,7 @@ static bool wait_for_send = TRUE;
  *
  * Der 16-Bit Wert wird auf SRELH und SRELL aufgeteilt.
  */
-#define SERIAL_RELOAD 1024L - (2 * QUARZTAKT) / (32 * BAUDRATE)
+#define SERIAL_RELOAD 1024L - ((SMOD ? 2 : 1) * QUARZTAKT) / (32 * BAUDRATE)
 
 /**
  * @brief RS232 Initialisierung.
@@ -72,6 +76,8 @@ static bool wait_for_send = TRUE;
  */
 void rs232_init ()
 {
+	// CTS als Input konfigurieren
+	CTS_PIN = 1;
 	// Baudratengenerator einschalten
     BD = 1;
     // Mode 1 -> 8 Bit, variable Baudrate
@@ -79,7 +85,7 @@ void rs232_init ()
     SM1 = 1;
     // Baudrate setzen (mit SMOD = 1)
 	SRELH = (SERIAL_RELOAD >> 8); 
-	SRELL = SERIAL_RELOAD % 0x100;
+	SRELL = SERIAL_RELOAD & 0xFF;
     // seriellen Empfang einschalten
     REN = 1;
     TI = 1;

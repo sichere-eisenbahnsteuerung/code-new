@@ -201,14 +201,14 @@ static void commandLok()
     // XpressNet-Adresse bestimmen
     switch(streckenbefehl_xpressnet.target)
     {
-    case LOK_BLACK:
+    case LOK_RED:
         xpressnet_address = XPRESSNET_LOK_1;
         break;
-    case LOK_RED:
+    case LOK_BLACK:
         xpressnet_address = XPRESSNET_LOK_2;
         break;
     default:
-        // Kein Entkuppler
+        // Keine Lok
         return;
     }
 
